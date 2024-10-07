@@ -1,0 +1,102 @@
+/* Add some padding to navbar */
+
+.navbar {
+    padding:  0;
+    background-color: #E78F81;
+    
+    max-width:100%;
+    margin-top:0 ;
+    margin: auto;
+    padding: 5px;
+    color: #fff;
+  }
+  
+  .navbar-brand img {
+    width: 40px;
+  }
+  .navbar-brand{
+    color: #fff;
+    font-weight:700;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .navbar-nav .nav-link {
+    color: #fff !important;
+    font-weight: 500;
+  }
+
+  .navbar-nav{
+    margin: auto;
+  }
+ 
+  .navbar-nav .nav-link.active {
+    color: #000 !important;
+  }
+  
+  .btn-danger {
+    background-color: #131842;
+    border-color: #131842;
+  }
+  
+  
+  nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+nav .brand i{
+    color: #6a1b9a;;
+}
+nav .brand{
+    font-size: 2.5rem;
+    color: #000;
+    text-decoration: none;
+    font-weight: 700;
+}
+nav .navbody a{
+    margin-left: 10px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #666;
+}
+nav .navbody a:hover, nav .navbody .active{
+    color: #6a1b9a;;
+}
+
+nav .icons .fh{
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 1rem;
+    height: 3rem;
+    line-height: 3rem;
+    width: 3rem;
+    text-align: center;
+    font-size: 1.3rem;
+    color: #131842;
+    border-radius: 50%;
+    background: #e7e7e7;
+    transition: all .3s linear;
+   
+}
+
+nav .icons .fh:hover{
+    color: #fff;
+    background:#6dcacf;
+    transform: rotate(360deg);
+    
+}
+.fav-no:hover,.cart-no:hover{
+  background-color: #131842;
+}
+.cart-no,.fav-no{
+    position: absolute;
+    min-width: 20px;
+    min-height: 20px;
+    border-radius: 50%;
+    background-color: #6dcacf;
+    color: #e7e7e7;
+    text-align: center;
+    top: -12px;
+    right: -12px;
+}

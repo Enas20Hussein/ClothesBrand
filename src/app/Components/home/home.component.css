@@ -1,0 +1,85 @@
+
+.hero-section {
+  background-color:  #6dcacf;
+  
+}
+
+h1, h3 {
+  color: white;
+}
+h2{
+  color: #131842;
+}
+.projects-section {
+  background-color: #fff;
+  color: #333;
+}
+
+.text-warning {
+  color: #fff;
+}
+
+.btn-primary {
+  background-color: #E78F81;
+  border-color: #E78F81;
+  border-radius: 40px;
+  &:hover {
+    background-color: #131842;
+  }
+}
+
+.btn-link {
+  color: #131842;
+  font-weight: bold;
+  &:hover {
+    color: #131858;
+  }
+}
+
+.card {
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  width: 180px;
+  
+  .card-img-top {
+    object-fit: cover;
+    border-radius: 20px;
+    height: 220px;
+  }
+}
+
+.img-main{
+    border-radius: 8px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    width: 450px;
+    height: 600px;
+}
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 6px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+
+}
+.line{
+  height: 3px;
+  width: 70px;
+  background-color:#131842;
+  display: inline-block;
+  margin-bottom: 7px;
+  margin-right: 30px;
+}
+.text-warn{
+color: #131842;
+font-family: 'Courier New', Courier, monospace;
+}
+
+/*
+discount section
+*/
+

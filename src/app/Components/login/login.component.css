@@ -1,0 +1,53 @@
+body {
+  background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.card {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  border-radius: 20px;
+  background-color: #ffffff;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.animate-card {
+  transform: translateY(50px);
+  opacity: 0;
+  animation: slide-up 0.8s forwards ease-in-out;
+}
+
+@keyframes slide-up {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.btn-animated {
+  background-color: #6a1b9a;
+  color: #ffffff;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-animated:hover {
+  background-color: #8e24aa;
+  transform: scale(1.05);
+}
+
+.form-control::placeholder {
+  color: #a0a0a0;
+}
+
+.focus-effect:focus {
+  border-color: #8e24aa;
+  box-shadow: 0 0 8px rgba(142, 36, 170, 0.6);
+  transition: all 0.3s ease;
+}
+
+.text-muted:hover {
+  color: #6a1b9a;
+  transition: color 0.3s ease;
+}

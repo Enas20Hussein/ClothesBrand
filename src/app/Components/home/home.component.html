@@ -1,1 +1,107 @@
-<p>home works!</p>
+<section class="main">
+  <div class="container-fluid hero-section py-5 text-white">
+    <div class="container my-5">
+      <div class="row align-items-start">
+        <!-- Left Column -->
+        <div class="col-md-7 col-sm-12">
+          <h3 class="text-warn"><div class="line"></div>Welcome To Fashly</h3>
+          <h3 class="display-4">Best Fashion Designer To Enhance The Look Of Your Body</h3>
+          <p class="lead">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <button class="btn btn-primary btn-lg">Get Started</button>
+  
+          <!-- Slider Section -->
+          <div class="text-center mt-4  m-auto">
+            <div class="row no-gutters">
+                <div class="mb-4">
+                  <div class="dots" style="text-align:center">
+                    <span class="dot"(click)="prevSlide()"></span>
+                    <span class="dot"(click)="nextSlide()"></span>
+                    
+                </div>
+              </div>
+              <!-- Loop through the projects and place them in a row -->
+              <div class="col-4" *ngFor="let project of displayedProjects">
+                <div class="card border-0">
+                  <img [src]="project.img" alt="Project Image" class="card-img-top" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Right Column (Image) -->
+        <div class="col-md-5 col-sm-12 text-center mt-4 mt-md-0">
+          <img src="Images/mainpic.jpg" alt="Fashion Designer" class="img-main img-fluid " />
+          <br><br>
+          <h4 class="text-center mb-4">Check Our Latest Project</h4>
+          <div class="text-center">
+            <a routerLink="Home" class="btn btn-link text-decoration-none">All Projects &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="about" >
+  <div class="container my-5">
+    <div class="row align-items-center">
+        <!-- Left Side: Text Content -->
+        <div class="col-lg-6 mb-4 mb-lg-0">
+            <h2 class="fw-bold">We Have 15 Years Of Experiences In Fashion Designer Service</h2>
+            <p class="text-muted">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            </p>
+            <div class="col">
+              <img src="Images/aboutpic.jpg" alt="Fashion Sketches" class="img-fluid rounded shadow-lg">
+          </div>
+        </div>
+        
+        <!-- Right Side: Images -->
+        <div class="col-lg-6">
+          <div class="col">
+            <img src="Images/pinceldraw.jpg" alt="Designers with Color Samples" class="img-fluid rounded shadow-lg">
+        </div>
+            <div class="row">
+                <!-- Image 1 -->
+                
+                <div class="col">
+                  <h3 class="fw-bold">1,485 +</h3>
+                  <p class="text-muted">Satisfied Clients</p>
+              </div>
+              <!-- Projects Completed -->
+              <div class="col">
+                <div class="number-wrapper"><span class="prefix"></span>
+                  <span class="number loaded" data-value="2560" data-animation-duration="3500">2,560</span>
+                  <span class="suffix"></span><sup class="super">+</sup></div>
+                  <p class="text-muted">Projects Completed</p>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Statistics Section -->
+    <div class="row text-center mt-5">
+        <!-- Satisfied Clients -->
+     
+    </div>
+
+    <!-- Testimonial Section -->
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <blockquote class="blockquote">
+                <p class="mb-0">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."</p>
+                <footer class="blockquote-footer">Gracie Potts, <cite title="Source Title">Founder, Fashly</cite></footer>
+            </blockquote>
+        </div>
+
+        <!-- More About Us Button -->
+        <div class="col-md-6 text-end">
+            <a href="#" class="btn btn-primary btn-lg">More About Us</a>
+        </div>
+    </div>
+</div>
+
+</section>

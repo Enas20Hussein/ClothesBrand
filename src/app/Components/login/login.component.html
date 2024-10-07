@@ -1,0 +1,66 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="card shadow-lg border-0 animate-card">
+          <div class="card-body p-5">
+            <h3 class="card-title text-center mb-4" style="font-family: 'Playfair Display', serif; font-weight: bold;">
+              Welcome Back
+            </h3>
+            <p class="text-center text-muted" style="font-family: 'Open Sans', sans-serif;">Sign in to continue</p>
+  
+            <form [formGroup] ="loginForm" (ngSubmit)="Onsubmit()">
+              <div class="form-group mb-4">
+                <label for="email" class="form-label" style="font-weight: bold;">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  formControlName="email"
+                  name="email"
+                  class="form-control form-control-lg focus-effect"
+                  style="border-radius: 10px;"
+                  placeholder="you@example.com"
+                  required
+                />
+              </div>
+  
+              <div class="form-group mb-4">
+                <label for="password" class="form-label" style="font-weight: bold;">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  formControlName="password"
+                  name="password"
+                  class="form-control form-control-lg focus-effect"
+                  style="border-radius: 10px;"
+                  placeholder="********"
+                  required
+                />
+              </div>
+  
+              <div *ngIf="errorMessage" class="alert alert-danger text-center">
+                {{ errorMessage }}
+              </div>
+  
+              <div class="d-grid gap-2">
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-lg btn-animated"
+                  [disabled]="loading"
+                  style="border-radius: 10px; background-color: #6a1b9a; font-family: 'Open Sans', sans-serif;"
+                >
+                  {{ loading ? 'Logging in...' : 'Login' }}
+                </button>
+              </div>
+            </form>
+  
+            <div class="text-center mt-3">
+              <a href="#" class="text-muted" style="text-decoration: none; font-family: 'Open Sans', sans-serif;">
+                Forgot password?
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

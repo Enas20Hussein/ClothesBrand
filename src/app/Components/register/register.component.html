@@ -1,0 +1,93 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h3 class="card-title text-center">Register</h3>
+  
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+              
+              <!-- Name Input -->
+              <div class="form-group mb-3">
+                <label for="name">Name</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  class="form-control" 
+                  formControlName="name"
+                  required 
+                   />
+                  <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched" class="text-danger">
+                    Name is required and must be at least 3 characters.
+                  </div>
+              </div>
+  
+              <!-- Email Input -->
+              <div class="form-group mb-3">
+                <label for="email">Email</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  class="form-control" 
+                  formControlName="email"
+                  required 
+                  email
+                   />
+                   <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="text-danger">
+                    emial is required and must be match all condition.
+                  </div>
+              </div>
+  
+              <!-- Password Input -->
+              <div class="form-group mb-3">
+                <label for="password">Password</label>
+                <input 
+                  type="password" 
+                  id="password" 
+                  name="password" 
+                  class="form-control" 
+                  formControlName="password"
+                  required 
+                  
+                  />
+                  <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="text-danger">
+                    Name is required and must be at least 6 characters and numiric and spatial character.
+                  </div>
+              </div>
+  
+              <!-- Confirm Password Input -->
+              <div class="form-group mb-3">
+                <label for="confirmPassword">Confirm Password</label>
+                <input 
+                  type="password" 
+                  id="confirmPassword" 
+                  name="confirmPassword" 
+                  class="form-control" 
+                  formControlName="confirmPassword"
+                  required 
+                  [ngClass]="{ 'is-invalid': passwordMismatch }" />
+                <div *ngIf="passwordMismatch" class="text-danger">
+                  Passwords do not match.
+                </div>
+              </div>
+  
+              <!-- Error Message -->
+              <div *ngIf="errorMessage" class="alert alert-danger">
+                {{ errorMessage }}
+              </div>
+  
+              <!-- Submit Button -->
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary"  [disabled]="loading || registerForm.invalid || passwordMismatch">
+                  {{ loading ? 'Registering...' : 'Register' }}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
