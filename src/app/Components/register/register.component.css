@@ -1,0 +1,52 @@
+.fashion-input {
+    border: none;
+    border-bottom: 2px solid #ccc;
+    border-radius: 0;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    padding: 10px 12px;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .fashion-input:focus {
+    outline: none;
+    border-bottom: 2px solid #FF8F81;
+    background-color: #f7f7f7;
+  }
+  
+  .fashion-btn {
+    background-color: #34044b;
+    color: #fff;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .fashion-btn:hover {
+    background-color: #2a013d;
+  }
+  
+  .card {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+  }
+  
+  .main {
+    font-family: 'Montserrat', sans-serif;
+    background-size: cover;
+  }
+  .card {
+    background-color: #965c86;
+    opacity: 0.9; 
+    margin: 20px;
+}
+  
+  .fashion-input{
+    border-radius:30px;
+  } 
+  form{
+    height: 80%;
+  }

@@ -25,6 +25,7 @@ export class AccounteService {
   login(values: any){
     return this.http.post<User>(this.apiUrl+'login',values).pipe(
       map(user=>{
+        localStorage.setItem('token',user.token)
         this.CurrentUserSource.next(user);
         return user;
       })
@@ -33,6 +34,7 @@ export class AccounteService {
   }
 
   logout(){
+    localStorage.removeItem('token');
     this.CurrentUserSource.next(null);
     this.router.navigateByUrl('register')
   }

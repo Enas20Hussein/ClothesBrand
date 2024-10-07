@@ -1,15 +1,18 @@
+<div class="main" style="  background-image: url('Images/register2.jpg');">
 <div class="container mt-5">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center my-5">
       <div class="col-md-4">
-        <div class="card shadow-lg border-0 animate-card">
-          <div class="card-body p-5">
-            <h3 class="card-title text-center mb-4" style="font-family: 'Playfair Display', serif; font-weight: bold;">
+        <div class="card mt-5 shadow-lg border-0 animate-card">
+          <div class="card-body p-3">
+            <div class="text-center mb-2">
+              <img src="Images/register.jpg" alt="Fashion Logo" class="img-fluid" style="border-radius: 50%; height: 100px; width: 100px;">
+            </div>
+            <h5 class="card-title text-center mb-2" style="font-family: 'Playfair Display', serif; font-weight: bold;">
               Welcome Back
-            </h3>
-            <p class="text-center text-muted" style="font-family: 'Open Sans', sans-serif;">Sign in to continue</p>
+            </h5>
   
             <form [formGroup] ="loginForm" (ngSubmit)="Onsubmit()">
-              <div class="form-group mb-4">
+              <div class="form-group mb-3">
                 <label for="email" class="form-label" style="font-weight: bold;">Email</label>
                 <input
                   type="email"
@@ -17,13 +20,12 @@
                   formControlName="email"
                   name="email"
                   class="form-control form-control-lg focus-effect"
-                  style="border-radius: 10px;"
                   placeholder="you@example.com"
                   required
                 />
               </div>
   
-              <div class="form-group mb-4">
+              <div class="form-group mb-3">
                 <label for="password" class="form-label" style="font-weight: bold;">Password</label>
                 <input
                   type="password"
@@ -31,7 +33,6 @@
                   formControlName="password"
                   name="password"
                   class="form-control form-control-lg focus-effect"
-                  style="border-radius: 10px;"
                   placeholder="********"
                   required
                 />
@@ -46,14 +47,14 @@
                   type="submit"
                   class="btn btn-primary btn-lg btn-animated"
                   [disabled]="loading"
-                  style="border-radius: 10px; background-color: #6a1b9a; font-family: 'Open Sans', sans-serif;"
+                  style="background-color: #6a1b9a; border-radius: 30px; border: none; font-family: 'Open Sans', sans-serif;"
                 >
                   {{ loading ? 'Logging in...' : 'Login' }}
                 </button>
               </div>
             </form>
   
-            <div class="text-center mt-3">
+            <div class="text-center mt-2">
               <a href="#" class="text-muted" style="text-decoration: none; font-family: 'Open Sans', sans-serif;">
                 Forgot password?
               </a>
@@ -63,4 +64,4 @@
       </div>
     </div>
   </div>
-  
+</div>

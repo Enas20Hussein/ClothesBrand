@@ -2,7 +2,7 @@
 
 .navbar {
     padding:  0;
-    background-color: #E78F81;
+    background-color: #965c86;
     
     max-width:100%;
     margin-top:0 ;
@@ -20,7 +20,7 @@
     font-family: Arial, Helvetica, sans-serif;
   }
   .navbar-nav .nav-link {
-    color: #fff !important;
+    color: #000 !important;
     font-weight: 500;
   }
 
