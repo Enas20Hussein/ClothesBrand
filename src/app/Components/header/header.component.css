@@ -67,7 +67,7 @@ nav .navbody a:hover, nav .navbody .active{
 nav .icons .fh{
     cursor: pointer;
     text-decoration: none;
-    margin-left: 1rem;
+    margin-left: .7rem;
     height: 3rem;
     line-height: 3rem;
     width: 3rem;
@@ -99,4 +99,7 @@ nav .icons .fh:hover{
     text-align: center;
     top: -12px;
     right: -12px;
+}
+.offcanvas-header{
+  background-color: #965c86;
 }

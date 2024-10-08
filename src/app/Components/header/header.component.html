@@ -14,10 +14,10 @@
                             <a class="nav-link mx-lg-2 active" aria-current="page" routerLink="Home">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link mx-lg-2" href="#About">About</a>
+                            <a class="nav-link mx-lg-2 active"  routerLink="product">Product</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link mx-lg-2" href="#menu">Menu</a>
+                            <a class="nav-link mx-lg-2" href="#menu">sevices</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link mx-lg-2" routerLink="About">About</a>
@@ -32,20 +32,20 @@
     
     
             <div class="icons">
-                <a class="position-relative" id="heart">
-                    <i class="fas fa-heart fh"></i>
-                    <div class="fav-no">3</div>
-                </a>
                 <a class="position-relative"  id="shopping">
                     <i class="fas fa-shopping-cart fh"></i>
                     <div class="cart-no">3</div>
                 </a>
-                <a   class="uiverse" routerLink="Login">
+                <a class="uiverse" routerLink="Login">
                     <span>
-                        <i class="fas fa-user fh" id="login_icon"></i>
+                        <i class="fas fa-user fh" id="login_icon"></i> 
                     </span>
                      
                 </a>
+                <a class="position-relative" routerLink="register" id="signup">
+                    <i class="fa-solid fa-user-plus fh"></i>
+                </a>
+               
             </div>
             <!-- <ng-container *ngif="AccounteService.CurrentUser$|async as user">
                 welcome {{user.name}}

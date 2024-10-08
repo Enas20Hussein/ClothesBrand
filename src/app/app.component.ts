@@ -6,11 +6,12 @@ import { RegisterComponent } from './Components/register/register.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { HomeComponent } from './Components/home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProductComponent } from './Components/product/product.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,HeaderComponent,LoginComponent,RegisterComponent,FooterComponent,HomeComponent,ReactiveFormsModule],
+  imports: [RouterOutlet,HeaderComponent,LoginComponent,RegisterComponent,FooterComponent,HomeComponent,ReactiveFormsModule,ProductComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
