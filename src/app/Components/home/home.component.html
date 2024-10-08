@@ -1,4 +1,4 @@
-<section class="main">
+<div class="main">
   <div class="container-fluid hero-section py-5 text-white"style="background-image: url('Images/seewing.jpg');" >
     <div class="container my-5">
       <div class="m-auto">
@@ -8,19 +8,20 @@
           <h3 class="mb-5">Best Fashion Designer To Enhance The Look Of Your Body</h3>
            
           <!-- Slider Section -->
-          <div class="text-center mt-5  m-auto">
+          <div class="text-center slider m-auto">
             <div class="row no-gutters mt-5">
-                <div class="mb-4">
-                  <div class="dots" style="text-align:center">
-                    <span class="dot"(click)="prevSlide()"></span>
-                    <span class="dot"(click)="nextSlide()"></span>
-                    
-                </div>
-              </div>
+              
               <!-- Loop through the projects and place them in a row -->
-              <div class="col-4" *ngFor="let project of displayedProjects">
+              <div class="col-4 " *ngFor="let project of displayedProjects">
                 <div class="card border-0">
                   <img [src]="project.img" alt="Project Image" class="card-img-top" />
+                </div>
+              </div>
+              <div class="mb-4">
+                <div class="dots" style="text-align:center">
+                  <span class="dot"(click)="prevSlide()"></span>
+                  <span class="dot"(click)="nextSlide()"></span>
+                  <span class="dot"(click)="nextSlide()"></span>
                 </div>
               </div>
             </div>
@@ -39,7 +40,11 @@
       </div>
     </div>
   </div>
-</section>
+</div>
+
+<app-product></app-product>
+
+
 <section class="about" >
   <div class="container my-5">
     <div class="row align-items-center">

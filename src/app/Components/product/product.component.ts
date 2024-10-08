@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ProductsService } from '../../Services/products.service';
 
+
 @Component({
   selector: 'app-product',
   standalone: true,

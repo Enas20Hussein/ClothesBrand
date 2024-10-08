@@ -9,7 +9,7 @@ h3 {
   color:#64265a;
   font-weight: 700;
   font-family: 'Courier New', Courier, monospace;
-  margin-top:20px ;
+  margin:20px 2px 80px 2px   ;
 
 }
 h2{
@@ -64,8 +64,8 @@ h2{
 .dot {
   height: 10px;
   width: 10px;
-  margin: 0 6px;
-  background-color: #bbb;
+  margin: 30px 6px;
+  background-color: #9c3b8f;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
@@ -83,7 +83,15 @@ h2{
 color: #0c0b0c;
 font-weight:800 ;
 }
+.slider{
+  margin-top:100px ;
+}
+.main{
+  margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 
+}
 /*
 discount section
 */
