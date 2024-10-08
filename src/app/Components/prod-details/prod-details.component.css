@@ -1,0 +1,41 @@
+.product-detail-card {
+    background-color: #965c86;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    padding: 20px;
+  }
+  
+  .product-detail-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .product-detail-card img {
+    border-radius: 20px 20px 0 0;
+  }
+  
+  .card-title {
+    color: #fafafa;
+    font-family: 'Cursive', sans-serif;
+  }
+  
+  .card-text {
+    color: #f7f7f7;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .list-group-item {
+    background-color: transparent;
+    border: none;
+    color: #fafafa;
+  }
+  .main {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-size: cover;
+  }  
+
+  .card{
+    margin:2rem 0px;
+    padding: 10px;
+  }

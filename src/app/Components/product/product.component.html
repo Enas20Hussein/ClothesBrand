@@ -16,7 +16,7 @@
                 <h6 style="color: #FF8F81; font-weight: bold;">${{product.price}}</h6>
                 <div class="d-grid gap-2">
                   <button class="btn fashion-btn">Add to Cart</button>
-                  <button class="btn fashion-btn-outline">View Details</button>
+                  <button class="btn fashion-btn-outline" [routerLink]="['/product', product.id]">View Details</button>
                 </div>
               </div>
             </div>
