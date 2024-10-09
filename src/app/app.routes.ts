@@ -6,6 +6,7 @@ import { ContactUSComponent } from './Components/contact-us/contact-us.component
 import { AboutComponent } from './Components/about/about.component';
 import { ProductComponent } from './Components/product/product.component';
 import { ProdDetailsComponent } from './Components/prod-details/prod-details.component';
+import { CourseComponent } from './Components/course/course/course.component';
 
 export const routes: Routes = [
 
@@ -15,6 +16,8 @@ export const routes: Routes = [
     {path: 'Home' , component:HomeComponent},
     {path: 'product' , component:ProductComponent},
     {path: 'Contact' , component:ContactUSComponent},
+    {path: 'Courses' , component:CourseComponent},
+
     {path: 'About' , component:AboutComponent},
     { path: 'product/:id', component: ProdDetailsComponent }, // Example route for product details
     { path: '', redirectTo: '/products', pathMatch: 'full' }
