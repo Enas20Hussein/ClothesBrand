@@ -17,7 +17,6 @@ export class LoginComponent {
 
   constructor(private accountService: AccounteService, private router: Router) {}
 
-  // Define the login form using FormGroup
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),  
     password: new FormControl('', Validators.required)
@@ -31,6 +30,8 @@ export class LoginComponent {
       error:error=>console.log(error)
       
     })
+    this.router.navigate(['/Home']) 
+
       
   }
   

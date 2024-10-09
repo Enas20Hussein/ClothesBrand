@@ -41,10 +41,11 @@ export class RegisterComponent {
   onSubmit(){
     this.accountService.register(this.registerForm.value).subscribe({
       next:user=>console.log(user),
-      error:error=>console.log(error)
-      
+      error:error=>console.log(error),
       
     })
+    this.router.navigate(['/Login']) 
+
 
   }
 }
