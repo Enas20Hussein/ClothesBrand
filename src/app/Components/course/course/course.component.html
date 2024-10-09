@@ -1,0 +1,163 @@
+<div class="row">
+@for (item of data; track item.id) {
+  <div class="col-sm-4 mb-2">
+    <app-course-card [course]="item"></app-course-card>
+  </div>
+}
+</div>
+<!-- <div class="row">
+  @for (item of students; track item.id) {
+   
+     <div class="col-sm-3 mb-2">
+       <app-student-card [std]="item"></app-student-card>
+     </div>
+  }
+ </div> -->
+
+
+<!-- <hr>
+<hr>
+<hr> -->
+
+<!-- <h2 >GO DEEPER WITH OUR ONLINE COURSES</h2>
+<section class="articles">
+  <article>
+    <div class="article-wrapper">
+      <figure>
+        <img src="../Images/course tailoring.jpg" alt="" />
+      </figure>
+      <div class="article-body">
+        <h2>level one</h2>
+        <p>
+          This course is all about creating backgrounds to stitch into. 
+It's delivered in three sections, firstly how to embellish and colour fabrics and papers with paint and pens. Secondly, I demonstrate how to wet collage them together to create a firm, interesting background to stitch into.
+
+        </p>
+        <a href="#" class="read-more">
+          Read more <span class="sr-only">about this is some title</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+       
+          <a href="#" class="btn btn-warning btn-lg">Enroll </a>
+      
+      </div>
+    </div>
+  </article>
+  <article>
+
+    <div class="article-wrapper">
+      <figure>
+        <img src="../Images/course tailoring2.jpg" alt="" />
+      </figure>
+      <div class="article-body">
+        <h2>level Two</h2>
+        <p>
+          This course is for absolute beginners to free machine embroidery, (the art of drawing with your sewing machine). It is a short course but has all of the 
+        </p>
+        <a href="#" class="read-more">
+          Read more <span class="sr-only">about this is some title</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </article>
+  <article>
+
+    <div class="article-wrapper">
+      <figure>
+        <img src="../Images/course tailoring4.jpg" alt="" />
+      </figure>
+      <div class="article-body">
+        <h2>Intensive Course</h2>
+        <p>
+          This course is for absolute beginners to free machine embroidery, (the art of drawing with your sewing machine). It is a short course but has all of the.
+        </p>
+        <a href="#" class="read-more">
+          Read more <span class="sr-only">about this is some title</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </article>
+</section>
+
+
+ -->
+
+
+
+
+<!-- 
+<ul class="cards">
+    <li>
+      <a href="" class="card">
+        <img src="https://i.imgur.com/oYiTqum.jpg" class="card__image" alt="" />
+        <div class="card__overlay">
+          <div class="card__header">
+            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+            <img class="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" />
+            <div class="card__header-text">
+              <h3 class="card__title">Jessica Parker</h3>            
+              <span class="card__status">1 hour ago</span>
+            </div>
+          </div>
+          <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+        </div>
+      </a>      
+    </li>
+    <li>
+      <a href="" class="card">
+        <img src="https://i.imgur.com/2DhmtJ4.jpg" class="card__image" alt="" />
+        <div class="card__overlay">        
+          <div class="card__header">
+            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
+            <img class="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />
+            <div class="card__header-text">
+              <h3 class="card__title">kim Cattrall</h3>
+              <span class="card__status">3 hours ago</span>
+            </div>
+          </div>
+          <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="" class="card">
+        <img src="https://i.imgur.com/oYiTqum.jpg" class="card__image" alt="" />
+        <div class="card__overlay">
+          <div class="card__header">
+            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+            <img class="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" />
+            <div class="card__header-text">
+              <h3 class="card__title">Jessica Parker</h3>
+              <span class="card__tagline">Lorem ipsum dolor sit amet consectetur</span>            
+              <span class="card__status">1 hour ago</span>
+            </div>
+          </div>
+          <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="" class="card">
+        <img src="https://i.imgur.com/2DhmtJ4.jpg" class="card__image" alt="" />
+        <div class="card__overlay">
+          <div class="card__header">
+            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
+            <img class="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />
+            <div class="card__header-text">
+              <h3 class="card__title">kim Cattrall</h3>
+              <span class="card__status">3 hours ago</span>
+            </div>          
+          </div>
+          <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+        </div>
+      </a>
+    </li>    
+  </ul> -->

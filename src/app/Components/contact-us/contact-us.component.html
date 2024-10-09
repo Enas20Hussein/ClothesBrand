@@ -1,1 +1,70 @@
-<p>contact-us works!</p>
+<hr>
+<hr>
+<hr>
+
+
+<div class="contact-container  ">
+  <div class="row justify-content-center"></div>
+    <div class="contact-info ">
+      <div class="" >
+      <!-- <h1>Contact Information</h1>
+      <p style="color: #965c86;">We love to hear from our fellow sewists, and value both your questions and your input. If you have a technical, sewing-related question, please contact Judith at support--sewliberated.com. If you have a business question or need general customer service, please contact us using the form to the right.</p> -->
+      <div>
+        <p >Let's talk about everything!</p>
+        <p style="color: #965c86; font-weight: bold;">We love to hear from our fellow sewists.</p> 
+  
+          <span >📞 +2012 3456 789</span>
+          <span>✉️ Sara&#64;gmail.com</span>
+          <span>📍 132 Omer bnKhatab Street Bani Suef ,  002 Egypt</span>
+        </div>
+      <div  >
+        <img style="height: 70rex; width: 20rem;" src="../Images/contact.svg"  alt="">
+     </div>
+      
+     
+    </div>
+    </div>
+    <div class="contact-form col-md-6">
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div>
+          <label>First Name</label>
+          <input formControlName="firstName" placeholder="First Name" />
+        </div>
+        <div>
+          <label>Last Name</label>
+          <input formControlName="lastName" placeholder="Last Name" />
+        </div>
+        <div>
+          <label>Email</label>
+          <input formControlName="email" placeholder="Email" />
+        </div>
+        <div>
+          <label>Phone Number</label>
+          <input formControlName="phoneNumber" placeholder="+1 012 3456 789" />
+        </div>
+        <div class="subject">
+          <label>Select Subject?</label>
+          <div>
+            <label>
+              <input type="radio" formControlName="subject" value="general" />
+              General Inquiry
+            </label>
+            <label>
+              <input type="radio" formControlName="subject" value="sales" />
+              Sales Inquiry
+            </label>
+            <label>
+              <input type="radio" formControlName="subject" value="support" />
+              Support
+            </label>
+          </div>
+        </div>
+        <div>
+          <label>Message</label>
+          <textarea formControlName="message" placeholder="Write your message..."></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+  
