@@ -22,18 +22,27 @@ export class LoginComponent {
     password: new FormControl('', Validators.required)
   });
 
-  ngOnInit() { }  
-  Onsubmit(){
-    
-    this.accountService.login(this.loginForm.value).subscribe({
-      next:user=>console.log(user),
-      error:error=>console.log(error)
-      
-    })
-    this.router.navigate(['/Home']) 
+  ngOnInit() {}
 
-      
+  Onsubmit() {
+    if (this.loginForm.invalid) {
+      this.errorMessage = "Please fill in all required fields correctly.";
+      return;
+    }
+
+    this.loading = true;  // Show loading indicator
+
+    this.accountService.login(this.loginForm.value).subscribe({
+      next: (user) => {
+        console.log(user)
+        this.loading = false;  // Hide loading indicator
+        this.router.navigate(['/Home']); // Redirect after successful login
+      },
+      error: (error) => {
+        this.loading = false;  // Hide loading indicator
+        console.log(error);
+        this.errorMessage = "Login failed. Please check your credentials.";
+      }
+    });
   }
-  
-  
 }

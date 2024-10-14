@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormsModule, MinLengthValidator, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AccounteService } from '../../Services/Account.service';
 
@@ -24,7 +24,7 @@ export class RegisterComponent {
   ngOnInit(): void {
     // Initialize registerForm in ngOnInit after FormBuilder is initialized
     this.registerForm = this.fb.group({
-      name: ['', Validators.required],
+      name: ['', Validators.required,MinLengthValidator],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
       confirmPassword: ['', Validators.required],

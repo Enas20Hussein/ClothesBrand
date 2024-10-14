@@ -1,76 +1,73 @@
-.contact-container {
-    display: flex;
-    justify-content: space-between;
-    background: #fff;
-    padding: 20px;
-    border-radius: 5px  ;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .contact-info {
-    background: #fff;
-    color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    max-width: 500px;
-    flex: 1;
-  }
-  
-  .contact-info h1 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 28px;
-    line-height: 42px;
-  }
-  
-  .contact-info p {
-    color: #fff;
-    font-size: 25px;
-  }
-  
-  .contact-info span {
-    display: block;
-    margin-top: 10px;
-    color: #965c86;
-    font-weight: 600;
-  }
-  
-  .contact-form {
-    flex: 2;
-    padding-left: 20px;
-  }
-  
-  .contact-form div {
-    margin-bottom: 15px;
-  }
-  
-  .contact-form label {
-    display: block;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    margin-bottom: 5px;
-  }
-  
-  .contact-form input,
-  .contact-form textarea,
-  .contact-form button {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #fff;
-    border-radius: 3px;
-    font-size: 14px;
-  }
-  
-  .contact-form button {
-    background: #965c86;
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    cursor: pointer;
-  }
-  
-  .subject div {
-    display: flex;
-    gap: 10px;
-  }
-  
+/* Container styles */
+.contact-info {
+  color: #333;
+  text-align: left;
+  font-size: 16px;
+}
+
+.contact-header {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.contact-link {
+  color: #5d9150;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+/* Form card styling */
+.contact-form-container {
+  width: 100%;
+  max-width: 400px;
+  background-color: #ebe7e7;
+  padding: 30px;
+}
+
+.contact-input {
+  border-radius: 50px;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.contact-input:focus {
+  border-color: #5d9150;
+  box-shadow: none;
+}
+
+.contact-submit-btn {
+  background-color:#396958;;
+  color: #fff;
+  border-radius: 50px;
+  padding: 10px 0;
+  margin-left: 80px;
+  transition: background-color 0.3s ease;
+  padding: 10px;
+}
+
+.contact-submit-btn:hover {
+  background-color: #49753b;
+}
+
+.form-text {
+  font-size: 12px;
+}
+
+/* General card styling */
+.card {
+  border: none;
+}
+
+small.text-muted {
+  font-size: 12px;
+}
+
+.message{
+  border-radius: 5px;
+}

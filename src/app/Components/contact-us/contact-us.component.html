@@ -1,70 +1,42 @@
-<hr>
-<hr>
-<hr>
-
-
-<div class="contact-container  ">
-  <div class="row justify-content-center"></div>
-    <div class="contact-info ">
-      <div class="" >
-      <!-- <h1>Contact Information</h1>
-      <p style="color: #965c86;">We love to hear from our fellow sewists, and value both your questions and your input. If you have a technical, sewing-related question, please contact Judith at support--sewliberated.com. If you have a business question or need general customer service, please contact us using the form to the right.</p> -->
-      <div>
-        <p >Let's talk about everything!</p>
-        <p style="color: #965c86; font-weight: bold;">We love to hear from our fellow sewists.</p> 
-  
-          <span >📞 +2012 3456 789</span>
-          <span>✉️ Sara&#64;gmail.com</span>
-          <span>📍 132 Omer bnKhatab Street Bani Suef ,  002 Egypt</span>
-        </div>
-      <div  >
-        <img style="height: 70rex; width: 20rem;" src="../Images/contact.svg"  alt="">
-     </div>
-      
-     
-    </div>
-    </div>
-    <div class="contact-form col-md-6">
-      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-        <div>
-          <label>First Name</label>
-          <input formControlName="firstName" placeholder="First Name" />
-        </div>
-        <div>
-          <label>Last Name</label>
-          <input formControlName="lastName" placeholder="Last Name" />
-        </div>
-        <div>
-          <label>Email</label>
-          <input formControlName="email" placeholder="Email" />
-        </div>
-        <div>
-          <label>Phone Number</label>
-          <input formControlName="phoneNumber" placeholder="+1 012 3456 789" />
-        </div>
-        <div class="subject">
-          <label>Select Subject?</label>
-          <div>
-            <label>
-              <input type="radio" formControlName="subject" value="general" />
-              General Inquiry
-            </label>
-            <label>
-              <input type="radio" formControlName="subject" value="sales" />
-              Sales Inquiry
-            </label>
-            <label>
-              <input type="radio" formControlName="subject" value="support" />
-              Support
-            </label>
+<div class="container-fluid vh-90 py-5 d-flex justify-content-center align-items-center">
+  <div class="row w-100 align-items-center">
+    <!-- Left side - Contact Info -->
+    <div class="col-md-6 d-flex flex-column justify-content-center contact-info">
+      <div class="pl-5">
+          <div class="text-center mb-4">
+            <p class="contact-header" style="color: #8A552A;">Let's talk about everything!</p>
+            <p style="color:#8A552A;; font-weight: bold;">We love to hear from our fellow sewists.</p>
+            <span>📞 +2012 3456 789</span><br>
+            <span>✉️ Sara&#64;gmail.com</span><br>
+            <span>📍 132 Omer bn Khatab Street Bani Suef, 002 Egypt</span>
+          </div>
+          <div class="text-center">
+            <img class="contact-image " src="../Images/contact.svg" style="width: 150px;" alt="Contact Image">
           </div>
         </div>
-        <div>
-          <label>Message</label>
-          <textarea formControlName="message" placeholder="Write your message..."></textarea>
+      
+    </div>
+
+    <!-- Right side - Contact Form -->
+    <div class="col-md-6 d-flex justify-content-center">
+      <div class="card shadow-sm contact-form-container" style="border-radius: 10px;">
+        <div class="card-body">
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <div class="form-group mb-3">
+              <input formControlName="firstName" placeholder="Name" class="form-control contact-input" />
+            </div>
+            <div class="form-group mb-3">
+              <input formControlName="email" placeholder="Email" class="form-control contact-input" />
+            </div>
+            <div class="form-group mb-3">
+              <textarea formControlName="message" placeholder="Send us a message ..." class="form-control message contact-input" rows="3"></textarea>
+              <small class="text-muted float-right">0 of 1000</small>
+            </div>
+            <button type="submit" class="btn btn-block contact-submit-btn">Send Message</button>
+            
+          </form>
         </div>
-        <button type="submit">Send Message</button>
-      </form>
+      </div>
     </div>
   </div>
-  
+</div>

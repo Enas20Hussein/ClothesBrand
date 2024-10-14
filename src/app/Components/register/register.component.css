@@ -1,52 +1,88 @@
-.fashion-input {
-    border: none;
-    border-bottom: 2px solid #ccc;
-    border-radius: 0;
-    background-color: #f9f9f9;
-    font-size: 16px;
-    padding: 10px 12px;
-    transition: border-color 0.3s ease-in-out;
-  }
-  
-  .fashion-input:focus {
-    outline: none;
-    border-bottom: 2px solid #FF8F81;
-    background-color: #f7f7f7;
-  }
-  
-  .fashion-btn {
-    background-color: #34044b;
-    color: #fff;
-    border-radius: 25px;
-    padding: 10px 20px;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  .fashion-btn:hover {
-    background-color: #2a013d;
-  }
-  
-  .card {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-  }
-  
-  .main {
-    font-family: 'Montserrat', sans-serif;
-    background-size: cover;
-  }
-  .card {
-    background-color: #965c86;
-    opacity: 0.9; 
-    margin: 20px;
+/* Main container styles */
+.container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
+
+/* Left side - Registration Form */
+.card {
+  border: none;
+  border-radius: 20px;
+  width: 100%;
   
-  .fashion-input{
-    border-radius:30px;
-  } 
-  form{
-    height: 80%;
-  }
+}
+
+/* Card body styling */
+.card-body {
+  padding: 3rem;
+}
+
+/* Title styling */
+.card-title {
+  font-family: 'Cursive', sans-serif;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Form input styles */
+.form-control {
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+/* Input focus effect */
+.form-control:focus {
+  border-color: #a23e2c;
+  box-shadow: 0 0 5px rgba(162, 62, 44, 0.5);
+}
+
+/* Button styles */
+.fashion-btn {
+  background-color: #396958;
+  border: #396958;
+  color: white;
+  border-radius: 15px;
+  padding: 10px 0;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.fashion-btn:hover {
+  background-color: #1e362e;
+  border: #1e362e;
+}
+
+/* Error message styles */
+.text-danger {
+  color: #dc3545;
+}
+
+/* Adjustments for form-group spacing */
+.form-group {
+  margin-bottom: 1.5rem; /* Add some margin to form groups */
+}
+
+/* Centering the logo */
+.text-center {
+  text-align: center;
+}
+
+/* Icon size */
+.input-group-text i {
+  font-size: 1.2rem; /* Adjust icon size */
+}
+
+/* Image section styles */
+.image-section {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+.fas{
+  border-right: none;
+  padding: 10px;
+}

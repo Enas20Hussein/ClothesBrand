@@ -1,0 +1,26 @@
+.container {
+    margin-top: 20px;
+  }
+  
+  table {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  img {
+    margin-right: 10px;
+  }
+  
+  .text-right {
+    text-align: right;
+  }
+  
+   .checkout{
+    background-color: #315350;
+    border-radius: 35px;
+    color: aliceblue;
+     }
+    .checkout:hover{
+    
+      background-color: #243d3b;
+     }

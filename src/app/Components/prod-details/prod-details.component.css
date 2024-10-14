@@ -1,6 +1,5 @@
 .product-detail-card {
-    background-color: #965c86;
-    border-radius: 20px;
+    
     transition: all 0.3s ease;
     padding: 20px;
   }
@@ -9,24 +8,25 @@
     transform: scale(1.05);
   }
   
-  .product-detail-card img {
-    border-radius: 20px 20px 0 0;
+  img {
+    height: 80vh;
+    width: 400px;
   }
   
   .card-title {
-    color: #fafafa;
+    color: #315350;
     font-family: 'Cursive', sans-serif;
   }
   
   .card-text {
-    color: #f7f7f7;
+    color: #315350;
     font-family: 'Montserrat', sans-serif;
   }
   
   .list-group-item {
     background-color: transparent;
     border: none;
-    color: #fafafa;
+    color: #315350;
   }
   .main {
     margin: 0;
@@ -39,3 +39,12 @@
     margin:2rem 0px;
     padding: 10px;
   }
+.fashion-btn{
+background-color: #315350;
+border-radius: 35px;
+color: aliceblue;
+ }
+ .fashion-btn:hover{
+
+  background-color: #243d3b;
+ }

@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="card">
+      <div class="card-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Subtotal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of cartItems">
+              <td>
+                <img [src]="item.imageUrl" alt="Product Image" style="width: 50px;">
+                {{ item.productName }}
+              </td>
+              <td>{{ item.price | currency }}</td>
+              <td>{{ item.quantity }}</td>
+              <td>{{ (item.price * item.quantity) | currency }}</td>
+            </tr>
+          </tbody>
+        </table>
+  
+        <div class="row">
+          <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="Coupon code">
+            <button class="btn btn-secondary mt-2">Apply coupon</button>
+          </div>
+          <div class="col-md-6 text-right">
+            <p><strong>Subtotal:</strong> {{ subtotal | currency }}</p>
+            <p><strong>Total:</strong> {{ subtotal | currency }}</p>
+            <button class="btn checkout ">Proceed to checkout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

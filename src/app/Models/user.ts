@@ -3,5 +3,6 @@ export interface User {
     password:string,
     name:string,
     role:string,
-    token:string
+    token:string,
+    userId:string
 }

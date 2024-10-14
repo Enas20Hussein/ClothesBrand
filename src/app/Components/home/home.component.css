@@ -1,6 +1,5 @@
 
 .hero-section {
-  background-color: #ccc1c9;
   background-size: cover;
 
 }
@@ -80,7 +79,7 @@ h2{
   margin-right: 30px;
 }
 .text-warn{
-color: #0c0b0c;
+color: #64265a;;
 font-weight:800 ;
 }
 .slider{
