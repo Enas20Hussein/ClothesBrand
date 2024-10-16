@@ -4,18 +4,24 @@
         <table class="table">
           <thead>
             <tr>
+              <th></th>
               <th scope="col">Product</th>
+              <th scope="col">Product Name</th>
               <th scope="col">Price</th>
               <th scope="col">Quantity</th>
               <th scope="col">Subtotal</th>
             </tr>
           </thead>
-          <tbody>
-            <tr *ngFor="let item of cartItems">
+          <tbody *ngIf="cartData && cartData.shoppingCartItems && cartData.shoppingCartItems.length > 0">
+            <tr  *ngFor="let item of cartData.shoppingCartItems">
+                <td>
+                    <span></span>
+                    <button (click)="deleteToCart(item.productId)"><i class="fa-solid fa-xmark"></i></button>
+                </td>
               <td>
-                <img [src]="item.imageUrl" alt="Product Image" style="width: 50px;">
-                {{ item.productName }}
+                <img src="https://localhost:7108//images/{{item.imageUrl}}" alt="{{ item.productName }}" height="80" width="100">
               </td>
+              <td>  {{ item.productName }} </td>
               <td>{{ item.price | currency }}</td>
               <td>{{ item.quantity }}</td>
               <td>{{ (item.price * item.quantity) | currency }}</td>
@@ -25,13 +31,11 @@
   
         <div class="row">
           <div class="col-md-6">
-            <input type="text" class="form-control" placeholder="Coupon code">
-            <button class="btn btn-secondary mt-2">Apply coupon</button>
+            <button class="btn btn-outline-danger mt-2" (click)="clearcart()">Clear Cart</button>
           </div>
           <div class="col-md-6 text-right">
-            <p><strong>Subtotal:</strong> {{ subtotal | currency }}</p>
-            <p><strong>Total:</strong> {{ subtotal | currency }}</p>
-            <button class="btn checkout ">Proceed to checkout</button>
+            <p  *ngIf="cartData && cartData.totalPrice"><strong>Total:</strong> {{ cartData.totalPrice | currency }}</p>
+            <button class="btn checkout "  (click)="goToOrderPage()">Proceed to checkout</button>
           </div>
         </div>
       </div>

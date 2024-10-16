@@ -9,6 +9,8 @@ import { ProdDetailsComponent } from './Components/prod-details/prod-details.com
 import { CourseComponent } from './Components/course/course/course.component';
 import { CartComponent } from './Components/cart/cart.component';
 import { OurServicesComponent } from './Components/our-services/our-services.component';
+import { OrderComponent } from './Components/order/order.component';
+import { CofirmedOrderComponent } from './Components/cofirmed-order/cofirmed-order.component';
 
 export const routes: Routes = [
 
@@ -23,7 +25,10 @@ export const routes: Routes = [
     {path: 'Cart' , component:CartComponent},
     {path: 'About' , component:AboutComponent},
     { path: 'product/:id', component: ProdDetailsComponent }, // Example route for product details
-    { path: '', redirectTo: '/products', pathMatch: 'full' }
+    { path: '', redirectTo: '/products', pathMatch: 'full' },
+    { path: 'order', component: OrderComponent },
+    { path: 'order-confirmation', component: OrderComponent },
+    { path: 'Confirm-Order', component:CofirmedOrderComponent }
 
 
 

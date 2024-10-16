@@ -8,7 +8,7 @@
   }
   
   img {
-    margin-right: 10px;
+    border-radius: 8px;
   }
   
   .text-right {
@@ -23,4 +23,9 @@
     .checkout:hover{
     
       background-color: #243d3b;
+     }
+
+     td,th{
+      align-items: center;
+      text-align: center;
      }

@@ -34,7 +34,7 @@ export class LoginComponent {
 
     this.accountService.login(this.loginForm.value).subscribe({
       next: (user) => {
-        console.log(user)
+        console.log(user);
         this.loading = false;  // Hide loading indicator
         this.router.navigate(['/Home']); // Redirect after successful login
       },

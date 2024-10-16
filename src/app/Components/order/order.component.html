@@ -1,0 +1,172 @@
+<div class="container-fluid vh-90 d-flex">
+  <div class="row w-100 flex-fill">
+
+<!-- Right Side: Order Summary -->
+    <div class="col-lg-6 p-0">
+      <div class="card p-5 bg-white rounded h-100">
+        <h5 class="card-title text-center mb-2">YOUR ORDER</h5>
+        <table class="table table-borderless">
+          <thead>
+            <tr>
+              <th>PRODUCT</th>
+              <th>Name</th>
+              <th>Quantity</th>
+              <th class="text-right">TOTAL</th>
+            </tr>
+          </thead>
+          <tbody *ngIf="cartData?.shoppingCartItems?.length > 0">
+            <tr *ngFor="let item of cartData.shoppingCartItems">
+              <td>
+                <img src="https://localhost:7108/images/{{item.imageUrl}}" class="product-img" alt="Product Image" />
+              </td>
+              <td>{{ item.productName }}</td>
+              <td> {{ item.quantity }}</td>
+              <td class="text-right">{{ (item.price * item.quantity) | currency }}</td>
+            </tr>
+            <tr>
+              <td class="font-weight-bold">TOTAL</td>
+              <td></td>
+              <td></td>
+              <td class="text-right font-weight-bold">{{ cartData.totalPrice | currency }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <br><br><br>
+    <!-- Left Side: Checkout Form -->
+    <div class="col-lg-6 p-0">
+      <div class="form-container p-5 rounded-3 bg-white h-100">
+        <h3 class="text-center mb-2">Checkout</h3>
+        <form (submit)="onCheckout()" class="needs-validation" novalidate>
+          <!-- Address Line 1 -->
+          <div class="mb-1">
+            <label for="AddressLine1" class="form-label">Address Line 1:</label>
+            <input
+              type="text"
+              id="AddressLine1"
+              [(ngModel)]="shippingDetails.AddressLine1"
+              name="AddressLine1"
+              class="form-control"
+              placeholder="Enter Address Line 1"
+              required
+            />
+            <div class="invalid-feedback">
+              Please enter your address line 1.
+            </div>
+          </div>
+          <div class="mb-1">
+            <label for="AddressLine2" class="form-label">Address Line 2:</label>
+            <input
+              type="text"
+              id="AddressLine2"
+              [(ngModel)]="shippingDetails.AddressLine2"
+              name="AddressLine2"
+              class="form-control"
+              placeholder="Enter Address Line 2 (optional)"
+              
+            />
+          </div>
+          <!-- City -->
+          <div class="mb-1">
+            <label for="City" class="form-label">City:</label>
+            <input
+              type="text"
+              id="City"
+              [(ngModel)]="shippingDetails.City"
+              name="City"
+              class="form-control"
+              placeholder="Enter City"
+              required
+            />
+            <div class="invalid-feedback">
+              Please enter your city.
+            </div>
+          </div>
+
+          <!-- State -->
+          <div class="mb-1">
+            <label for="State" class="form-label">State:</label>
+            <input
+              type="text"
+              id="State"
+              [(ngModel)]="shippingDetails.State"
+              name="State"
+              class="form-control"
+              placeholder="Enter State"
+              required
+            />
+            <div class="invalid-feedback">
+              Please enter your state.
+            </div>
+          </div>
+
+          <!-- Postal Code -->
+          <div class="mb-1">
+            <label for="postal_code" class="form-label">Postal Code:</label>
+            <input
+              type="text"
+              id="postal_code"
+              [(ngModel)]="shippingDetails.postal_code"
+              name="postal_code"
+              class="form-control"
+              placeholder="Enter Postal Code"
+              required
+            />
+            <div class="invalid-feedback">
+              Please enter your postal code.
+            </div>
+          </div>
+
+          <!-- Country -->
+          <div class="mb-1">
+            <label for="Country" class="form-label">Country:</label>
+            <input
+              type="text"
+              id="Country"
+              [(ngModel)]="shippingDetails.Country"
+              name="Country"
+              class="form-control"
+              placeholder="Enter Country"
+              required
+            />
+            <div class="invalid-feedback">
+              Please enter your country.
+            </div>
+          </div>
+
+          <!-- Shipping Method -->
+          <div class="mb-1">
+            <label for="ShippingMethod" class="form-label">Shipping Method:</label>
+            <select
+              id="ShippingMethod"
+              [(ngModel)]="shippingDetails.ShippingMethod"
+              name="ShippingMethod"
+              class="form-select"
+              required
+            >
+              <option value="" disabled>Select Shipping Method</option>
+              <option *ngFor="let method of shippingMethods" [value]="method">
+                {{ method }}
+              </option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a shipping method.
+            </div>
+          </div>
+
+          <!-- Payment Section -->
+          <div id="card-element" class="mb-1">
+            <!-- Placeholder for payment widget (e.g. Stripe, PayPal) -->
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100 mt-1">Pay Now</button>
+        </form>
+      </div>
+    </div>
+    <br><br>
+    
+   
+  </div>
+</div>
