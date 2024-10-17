@@ -11,6 +11,7 @@ import { CartComponent } from './Components/cart/cart.component';
 import { OurServicesComponent } from './Components/our-services/our-services.component';
 import { OrderComponent } from './Components/order/order.component';
 import { CofirmedOrderComponent } from './Components/cofirmed-order/cofirmed-order.component';
+import { CheckOutComponent } from './Components/check-out/check-out.component';
 
 export const routes: Routes = [
 
@@ -28,7 +29,9 @@ export const routes: Routes = [
     { path: '', redirectTo: '/products', pathMatch: 'full' },
     { path: 'order', component: OrderComponent },
     { path: 'order-confirmation', component: OrderComponent },
-    { path: 'Confirm-Order', component:CofirmedOrderComponent }
+    { path: 'Confirm-Order', component:CofirmedOrderComponent },
+    { path: 'checkout/:orderId', component: CheckOutComponent }
+
 
 
 

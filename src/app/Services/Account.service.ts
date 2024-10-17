@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, map, Observable } from 'rxjs';
 import { User } from '../Models/user';
 import { Router } from '@angular/router';
@@ -8,12 +8,21 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AccounteService {
+ 
+
   private apiUrl = 'https://localhost:7108/api/Account/identity/'; 
   private CurrentUserSource =new BehaviorSubject<User|null>(null);
   CurrentUser$= this.CurrentUserSource.asObservable();
   
   userId:string | null=null
   constructor(private http: HttpClient,private router:Router) {}
+
+    getAuthHeaders(): HttpHeaders {
+    const token = localStorage.getItem('token'); // Ensure the token is stored in localStorage or another secure place
+    return new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+  }
 // Retrieve the user ID
 getUserId(): string | null {
   return this.userId || localStorage.getItem('userId');

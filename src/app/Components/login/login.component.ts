@@ -14,7 +14,11 @@ import { CommonModule } from '@angular/common';
 export class LoginComponent {
   errorMessage: string = '';
   loading: boolean = false;
+  showPassword: boolean = false;
 
+  togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
+  }
   constructor(private accountService: AccounteService, private router: Router) {}
 
   loginForm = new FormGroup({
