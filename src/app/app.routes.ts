@@ -11,6 +11,8 @@ import { CartComponent } from './Components/cart/cart.component';
 import { OurServicesComponent } from './Components/our-services/our-services.component';
 import { OrderComponent } from './Components/order/order.component';
 import { CofirmedOrderComponent } from './Components/cofirmed-order/cofirmed-order.component';
+import { ForgetPasswordComponent } from './Components/forget-password/forget-password.component';
+import { ResetPasswordComponent } from './Components/reset-password/reset-password.component';
 
 export const routes: Routes = [
 
@@ -28,7 +30,12 @@ export const routes: Routes = [
     { path: '', redirectTo: '/products', pathMatch: 'full' },
     { path: 'order', component: OrderComponent },
     { path: 'order-confirmation', component: OrderComponent },
-    { path: 'Confirm-Order', component:CofirmedOrderComponent }
+    { path: 'Confirm-Order', component:CofirmedOrderComponent },
+    { path: 'ForgetPassword', component:ForgetPasswordComponent },
+    { path: 'ResetPassword', component:ResetPasswordComponent },
+
+
+
 
 
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, map, Observable } from 'rxjs';
 import { User } from '../Models/user';
 import { Router } from '@angular/router';
@@ -54,10 +54,19 @@ setUserId(id: string) {
  
 
   
-
+ ResetPassword(methodName:string,QueryUrl:any){
+  const headers = new HttpHeaders({
+    'Content-Type': 'application/json'
+  });
+  return this.http.post(this.apiUrl+methodName,QueryUrl,{ headers })
+    
+ }
   checkEmailExists(email:string){
     return this.http.get<boolean>(this.apiUrl+'EmailExists?email='+email)
 
+  }
+  ForgetPassword(url:string){
+    return this.http.get(this.apiUrl+url)
   }
  
 }
