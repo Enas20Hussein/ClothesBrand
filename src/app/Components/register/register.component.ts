@@ -16,9 +16,12 @@ export class RegisterComponent {
   loading: boolean = false;
   errorMessage: string = '';
   role:string='user'
-  
   registerForm: any;  
-  
+  showPassword: boolean = false;
+
+  togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
+  }
   constructor(private accountService: AccounteService, private router: Router, private fb: FormBuilder) {}
 
   ngOnInit(): void {

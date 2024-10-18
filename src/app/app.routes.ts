@@ -13,6 +13,9 @@ import { OrderComponent } from './Components/order/order.component';
 import { CofirmedOrderComponent } from './Components/cofirmed-order/cofirmed-order.component';
 import { ForgetPasswordComponent } from './Components/forget-password/forget-password.component';
 import { ResetPasswordComponent } from './Components/reset-password/reset-password.component';
+import { CheckOutComponent } from './Components/check-out/check-out.component';
+import { CustomOrderComponent } from './Components/custom-order/custom-order.component';
+import { CreateCustomOrderComponent } from './Components/create-custom-order/create-custom-order.component';
 
 export const routes: Routes = [
 
@@ -34,6 +37,12 @@ export const routes: Routes = [
     { path: 'ForgetPassword', component:ForgetPasswordComponent },
     { path: 'ResetPassword', component:ResetPasswordComponent },
 
+
+
+    { path: 'Confirm-Order', component:CofirmedOrderComponent },
+    { path: 'checkout/:orderId', component: CheckOutComponent },
+    {path: 'create-order',component:CreateCustomOrderComponent},
+    {path:'orders',component:CustomOrderComponent}
 
 
 

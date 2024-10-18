@@ -1,0 +1,70 @@
+import { Component } from '@angular/core';
+import { CustomOrderService } from '../../Services/custom-order.service';
+import { CustomClothingOrder } from '../../Models/CustomClothingOrder';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+@Component({
+  selector: 'app-create-custom-order',
+  standalone: true,
+  imports: [CommonModule,FormsModule,ReactiveFormsModule],
+  templateUrl: './create-custom-order.component.html',
+  styleUrl: './create-custom-order.component.css'
+})
+export class CreateCustomOrderComponent {
+
+  userId :string|null=localStorage.getItem('userId');
+
+  order: CustomClothingOrder = {
+    id: 0,
+    designDescription: '',
+    fabricDetails: '',
+    depositAmount: 0,
+    customOrderStatus: 'Pending',
+    shoulderWidth: 0,
+    chestCircumference: 0,
+    waistCircumference: 0,
+    hipCircumference: 0,
+    waistLength: 0,
+    armLength: 0,
+    bicepSize: 0,
+    modelLength: 0,
+    image: null,
+    userId: this.userId
+  };
+
+  constructor(private customOrderService: CustomOrderService, private router: Router) {}
+
+  onFileChange(event: any) {
+    if (event.target.files && event.target.files.length > 0) {
+      this.order.image = event.target.files[0]; // Assign the selected file to order.image
+    }
+  }
+
+  onSubmit() {
+    const formData = new FormData();
+    formData.append('designDescription', this.order.designDescription);
+    formData.append('fabricDetails', this.order.fabricDetails);
+    formData.append('depositAmount', this.order.depositAmount.toString());
+    formData.append('customOrderStatus', this.order.customOrderStatus);
+    formData.append('shoulderWidth', this.order.shoulderWidth.toString());
+    formData.append('chestCircumference', this.order.chestCircumference.toString());
+    formData.append('waistCircumference', this.order.waistCircumference.toString());
+    formData.append('hipCircumference', this.order.hipCircumference.toString());
+    formData.append('waistLength', this.order.waistLength.toString());
+    formData.append('armLength', this.order.armLength.toString());
+    formData.append('bicepSize', this.order.bicepSize.toString());
+    formData.append('modelLength', this.order.modelLength.toString());
+    if (this.order.image) {
+
+      formData.append('image', this.order.image); // Append the image file
+    }
+
+    this.customOrderService.createOrder(formData).subscribe(response => {
+      // Handle the response after submitting the form
+      console.log('Order created successfully', response);
+    });
+  }
+
+
+}
