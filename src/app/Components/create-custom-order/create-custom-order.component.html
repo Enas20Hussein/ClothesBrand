@@ -1,0 +1,83 @@
+<div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card shadow-lg p-4 rounded-3 bg-light">
+          <h2 class="text-center mb-4">Custom Order Form</h2>
+          <form (ngSubmit)="onSubmit()" #customOrderForm="ngForm">
+            <div class="row">
+              <!-- Left Column -->
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="designDescription" class="form-label">Design Description</label>
+                  <input type="text" class="form-control" id="designDescription" required [(ngModel)]="order.designDescription" name="designDescription" placeholder="Describe your design">
+                </div>
+  
+                <div class="mb-3">
+                  <label for="fabricDetails" class="form-label">Fabric Details</label>
+                  <input type="text" class="form-control" id="fabricDetails" required [(ngModel)]="order.fabricDetails" name="fabricDetails" placeholder="Enter fabric details">
+                </div>
+  
+                <div class="mb-3">
+                  <label for="depositAmount" class="form-label">Deposit Amount</label>
+                  <input type="number" class="form-control" id="depositAmount" required [(ngModel)]="order.depositAmount" name="depositAmount" placeholder="Enter deposit amount">
+                </div>
+  
+                <div class="mb-3">
+                  <label for="shoulderWidth" class="form-label">Shoulder Width (cm)</label>
+                  <input type="number" class="form-control" id="shoulderWidth" required [(ngModel)]="order.shoulderWidth" name="shoulderWidth" placeholder="Enter shoulder width">
+                </div>
+  
+                <div class="mb-3">
+                  <label for="chestCircumference" class="form-label">Chest Circumference (cm)</label>
+                  <input type="number" class="form-control" id="chestCircumference" required [(ngModel)]="order.chestCircumference" name="chestCircumference" placeholder="Enter chest circumference">
+                </div>
+  
+                <div class="mb-3">
+                  <label for="waistCircumference" class="form-label">Waist Circumference (cm)</label>
+                  <input type="number" class="form-control" id="waistCircumference" required [(ngModel)]="order.waistCircumference" name="waistCircumference" placeholder="Enter waist circumference">
+                </div>
+              </div>
+  
+              <!-- Right Column -->
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="hipCircumference" class="form-label">Hip Circumference (cm)</label>
+                  <input type="number" class="form-control" id="hipCircumference" required [(ngModel)]="order.hipCircumference" name="hipCircumference" placeholder="Enter hip circumference">
+                </div>
+  
+                <div class="mb-3">
+                  <label for="waistLength" class="form-label">Waist Length (cm)</label>
+                  <input type="number" class="form-control" id="waistLength" required [(ngModel)]="order.waistLength" name="waistLength" placeholder="Enter waist length">
+                </div>
+  
+                <div class="mb-3">
+                  <label for="armLength" class="form-label">Arm Length (cm)</label>
+                  <input type="number" class="form-control" id="armLength" required [(ngModel)]="order.armLength" name="armLength" placeholder="Enter arm length">
+                </div>
+  
+                <div class="mb-3">
+                  <label for="bicepSize" class="form-label">Bicep Size (cm)</label>
+                  <input type="number" class="form-control" id="bicepSize" required [(ngModel)]="order.bicepSize" name="bicepSize" placeholder="Enter bicep size">
+                </div>
+  
+                <div class="mb-3">
+                  <label for="modelLength" class="form-label">Model Length (cm)</label>
+                  <input type="number" class="form-control" id="modelLength" required [(ngModel)]="order.modelLength" name="modelLength" placeholder="Enter model length">
+                </div>
+  
+                <div class="mb-3">
+                  <label for="imageUrl" class="form-label">Upload Image</label>
+                  <input type="file" class="form-control" id="imageUrl" (change)="onFileChange($event)" accept="image/*" required>
+                </div>
+              </div>
+            </div>
+  
+            <div class="d-flex justify-content-center mt-4">
+              <button type="submit" class="btn btn-primary btn-lg w-50">Submit Order</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
