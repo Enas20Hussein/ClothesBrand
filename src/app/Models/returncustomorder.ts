@@ -1,4 +1,5 @@
-export interface CustomClothingOrder {
+export interface returnCustomClothingOrder {
+  id: number;
   designDescription: string;
   fabricDetails: string;
   depositAmount: number;
@@ -11,6 +12,6 @@ export interface CustomClothingOrder {
   armLength: number;
   bicepSize: number;
   modelLength: number;
-  image: File | null;
+  imageUrl: string;
   userId: string | null;
 }

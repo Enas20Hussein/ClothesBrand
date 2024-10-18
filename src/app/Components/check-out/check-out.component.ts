@@ -18,13 +18,13 @@ constructor(private route: ActivatedRoute,private accserv:AccounteService,privat
 
   stripe: any;
   cardElement: any;
-  userId: string|null = null; 
+  userId: string|null = null;
   order: any;
   orderId: number = 0;
   async ngOnInit() {
     this.orderId = +this.route.snapshot.paramMap.get('orderId')!;
     console.log('Order ID from route:', this.orderId);
-    
+
     this.stripe = await loadStripe("pk_test_51Q7PfwBzrGISKilkwaR00D7vJn68wZL6qHcXEsOhNMbATTbOL7K6PUxWdBK5ARpAEWEPSEVjpBG31BlKFtena4MC00IPm2z6Fp"); // Replace with your Stripe publishable key
     const elements = this.stripe.elements();
     this.cardElement = elements.create('card');
@@ -52,13 +52,13 @@ constructor(private route: ActivatedRoute,private accserv:AccounteService,privat
 
   async onCheckout(event: Event) {
     event.preventDefault();  // Prevent form from submitting
-  
+
     // Create payment method via Stripe
     const { paymentMethod, error } = await this.stripe.createPaymentMethod({
       type: 'card',
       card: this.cardElement,
     });
-  
+
     if (error) {
       console.error('Error creating payment method:', error);
       // Show error message to the user, if needed
@@ -68,12 +68,12 @@ constructor(private route: ActivatedRoute,private accserv:AccounteService,privat
       this.ProceedToPayment(paymentMethod.id);
     }
   }
-  
+
   ProceedToPayment(paymentMethodId: string) {
     const requestBody = {
-     
+
         paymentMethodId: paymentMethodId
-      
+
     };
     console.log('Request body:', requestBody);
     const headers = this.accserv.getAuthHeaders(); // Get the authorization header

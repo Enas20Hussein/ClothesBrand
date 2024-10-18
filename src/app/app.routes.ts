@@ -42,7 +42,7 @@ export const routes: Routes = [
     { path: 'Confirm-Order', component:CofirmedOrderComponent },
     { path: 'checkout/:orderId', component: CheckOutComponent },
     {path: 'create-order',component:CreateCustomOrderComponent},
-    {path:'orders',component:CustomOrderComponent}
+    {path:'orders/:orderId',component:CustomOrderComponent}
 
 
 

@@ -4,19 +4,19 @@ import { CustomClothingOrder } from '../../Models/CustomClothingOrder';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @Component({
   selector: 'app-create-custom-order',
   standalone: true,
-  imports: [CommonModule,FormsModule,ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './create-custom-order.component.html',
-  styleUrl: './create-custom-order.component.css'
+  styleUrls: ['./create-custom-order.component.css']
 })
 export class CreateCustomOrderComponent {
 
-  userId :string|null=localStorage.getItem('userId');
+  userId: string | null = localStorage.getItem('userId');
 
   order: CustomClothingOrder = {
-    id: 0,
     designDescription: '',
     fabricDetails: '',
     depositAmount: 0,
@@ -35,14 +35,17 @@ export class CreateCustomOrderComponent {
 
   constructor(private customOrderService: CustomOrderService, private router: Router) {}
 
+  // Handle image file change
   onFileChange(event: any) {
     if (event.target.files && event.target.files.length > 0) {
-      this.order.image = event.target.files[0]; // Assign the selected file to order.image
+      this.order.image = event.target.files[0];
     }
   }
 
+  // Submit order form
   onSubmit() {
     const formData = new FormData();
+
     formData.append('designDescription', this.order.designDescription);
     formData.append('fabricDetails', this.order.fabricDetails);
     formData.append('depositAmount', this.order.depositAmount.toString());
@@ -55,16 +58,23 @@ export class CreateCustomOrderComponent {
     formData.append('armLength', this.order.armLength.toString());
     formData.append('bicepSize', this.order.bicepSize.toString());
     formData.append('modelLength', this.order.modelLength.toString());
-    if (this.order.image) {
+    formData.append('userId', this.order.userId || '');
 
-      formData.append('image', this.order.image); // Append the image file
+    if (this.order.image) {
+      formData.append('image', this.order.image);
     }
 
-    this.customOrderService.createOrder(formData).subscribe(response => {
-      // Handle the response after submitting the form
-      console.log('Order created successfully', response);
+    this.customOrderService.createOrder(formData).subscribe({
+      next: (response) => {
+        console.log('Order created successfully');
+        console.log(response);
+
+        const createdOrderId = response.id;
+        this.router.navigate(['/orders',createdOrderId]);
+      },
+      error: (error) => {
+        console.error('Error creating order:', error);
+      }
     });
   }
-
-
 }

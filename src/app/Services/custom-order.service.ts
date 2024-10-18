@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CustomClothingOrder } from '../Models/CustomClothingOrder';
 import { AccounteService } from './Account.service';
+import { returnCustomClothingOrder } from '../Models/returncustomorder';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,18 +12,18 @@ export class CustomOrderService {
 
   constructor(private http: HttpClient,private auth:AccounteService) {}
 
-  
 
-  getOrderById(id: number): Observable<CustomClothingOrder> {
+
+  getOrderById(id: number): Observable<returnCustomClothingOrder> {
     const headers = this.auth.getAuthHeaders(); // Get the authorization header
 
-    return this.http.get<CustomClothingOrder>(`${this.apiUrl}/${id}`,{headers});
+    return this.http.get<returnCustomClothingOrder>(`${this.apiUrl}${id}`,{headers});
   }
 
-  createOrder(order: FormData): Observable<CustomClothingOrder> {
+  createOrder(order: FormData): Observable<returnCustomClothingOrder> {
     const headers = this.auth.getAuthHeaders(); // Get the authorization header
 
-    return this.http.post<CustomClothingOrder>(this.apiUrl, order,{headers});
+    return this.http.post<returnCustomClothingOrder>(this.apiUrl, order,{headers});
   }
 
   updateOrder(id: number, order: CustomClothingOrder): Observable<CustomClothingOrder> {
