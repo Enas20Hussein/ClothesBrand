@@ -33,12 +33,9 @@ export const routes: Routes = [
     { path: '', redirectTo: '/products', pathMatch: 'full' },
     { path: 'order', component: OrderComponent },
     { path: 'order-confirmation', component: OrderComponent },
-    { path: 'Confirm-Order', component:CofirmedOrderComponent },
+    { path: 'Confirm-Order/:orderId', component:CofirmedOrderComponent },
     { path: 'ForgetPassword', component:ForgetPasswordComponent },
     { path: 'ResetPassword', component:ResetPasswordComponent },
-
-
-
     { path: 'Confirm-Order', component:CofirmedOrderComponent },
     { path: 'checkout/:orderId', component: CheckOutComponent },
     {path: 'create-order',component:CreateCustomOrderComponent},

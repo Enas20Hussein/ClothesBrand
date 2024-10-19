@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { AccounteService } from '../../Services/Account.service';
 import { Router } from '@angular/router';
+import { CartSharedService } from '../../Services/cart-shared.service';
 
 @Component({
   selector: 'app-cart',
@@ -14,13 +15,13 @@ import { Router } from '@angular/router';
 })
 export class CartComponent implements OnInit {
   cartData: any;
-  userId: string|null = null;  
+  userId: string|null = null;
   subtotal: number = 0;
   dataloaded:any;
-  cartnumber:number=0;
-  static shoppingCartItems: any;
-  
-  constructor(private cartService: CartService,private accserv:AccounteService,private router:Router) {}
+  cartnumber: number = 0;
+
+
+  constructor(private cartService: CartService,private accserv:AccounteService,private router:Router,private cartSharedService: CartSharedService) {}
 
   ngOnInit(): void {
     this.userId = localStorage.getItem('userId');
@@ -28,6 +29,8 @@ export class CartComponent implements OnInit {
       console.error('User ID is missing');
       return;
     }
+
+    this.loadCartData(this.userId);
 
     // Subscribe to cart updates
     this.cartService.getCartData().subscribe((cartData) => {
@@ -42,13 +45,28 @@ export class CartComponent implements OnInit {
       (response) => {
         this.cartData = response;
         this.cartnumber = this.cartData.shoppingCartItems.length;
-        console.log(this.cartnumber)
+        console.log(this.cartnumber);
+        this.cartSharedService.updateCartNumber(this.cartnumber); // Update shared cart number
+
       },
       (error) => {
         console.error('Error retrieving cart data', error);
       }
     );
-    
+
+  }
+
+  loadCartData(userid : string) {
+    this.cartService.getCartByUserId(userid).subscribe(
+      (response) => {
+        this.cartData = response;
+        this.cartnumber = this.cartData.shoppingCartItems.length; // Assuming cartData is an array of items
+        this.cartSharedService.updateCartNumber(this.cartnumber);  // Update shared cart number
+      },
+      (error) => {
+        console.error('Error retrieving cart data', error);
+      }
+    );
   }
 
 
@@ -57,11 +75,14 @@ export class CartComponent implements OnInit {
       this.cartService.deleteToCart(this.userId, prodId).subscribe(
         (response) => {
           console.log('Item removed successfully:', response);
-          
+
           // Update cart after deletion
           this.cartService.getCartByUserId(this.userId!).subscribe(
             (cartResponse) => {
               this.cartService.updateCartData(cartResponse);
+              this.cartnumber = this.cartData.shoppingCartItems.length;
+              this.cartSharedService.updateCartNumber(this.cartnumber);  // Update shared service
+
             }
           );
         },
@@ -81,6 +102,8 @@ export class CartComponent implements OnInit {
           this.cartService.getCartByUserId(this.userId!).subscribe(
             (cartResponse) => {
               this.cartService.updateCartData(cartResponse);
+              this.cartnumber = 0; // Reset cart number after clearing
+              this.cartSharedService.updateCartNumber(this.cartnumber);
             }
           );
         },
@@ -89,15 +112,15 @@ export class CartComponent implements OnInit {
         }
       );
   }
-  
+
   goToOrderPage() {
    this.router.navigate(['/order']);
   }
-  
 
- 
-  
 
- 
+
+
+
+
 
 }

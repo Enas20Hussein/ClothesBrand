@@ -55,8 +55,8 @@ export class CartService {
   }
   updateCartCountAfterChange(userId: string | null) {
     this.getCartByUserId(userId!).subscribe((cart) => {
-      if (cart && cart.items) {
-        this.updateCartCount(cart.items.length);  // Update count based on the number of items
+      if (cart && cart.shoppingCartItems) {
+        this.updateCartCount(cart.shoppingCartItems.length);  // Update count based on the number of items
       } else {
         this.updateCartCount(0);  // Set cart count to 0 if no items are found
       }

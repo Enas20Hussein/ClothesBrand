@@ -1,37 +1,22 @@
-
-<div class="container slider-container">
-    <div class="row">
-     
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"><div class="container slider-container">
   
-      <!-- Slider Area -->
-      <div class="col-10">
-        <div class="slider-track" [style.transform]="'translateX(' + (-currentIndex * 100 / slidesPerView) + '%)'">
-          <div class="slider-item" *ngFor="let product of getCurrentProducts()">
-            <a [routerLink]="['/product', product.id]">
-            <div class="card product-card">
-              <img [src]="product.imageUrl" class="card-img-top" alt="{{ product.name }}">
-              <div class="card-body">
-                <h5 class="card-title">{{ product.name }}</h5>
-                <p class="card-text">{{ product.description }}</p>
-                <span class="product-type">{{ product.type }}</span>
-              </div>
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" *ngFor="let product of products">
+        <div class="card"  >
+          <img [src]="product.imageUrl" alt="">
+          <div class="card-overlay">
+            <h3 class="name">{{ product.name }}</h3>
+            <p class="price">${{ product.price }}</p>
+            <div style="position: relative;">
+              <a class="plus" [routerLink]="['/product', product.id]"><i class="bi bi-info-circle"></i></a>
             </div>
-          </a>
           </div>
         </div>
       </div>
-  
-      
-  
-    <!-- Pagination Dots -->
-    <div class="pagination-dots">
-      <span *ngFor="let dot of [].constructor(totalPages); let pageIndex = index"
-            [class.active]="pageIndex === currentIndex"
-            (click)="goToSlide(pageIndex)">
-            {{pageIndex+1}}
-      </span>
+    
+    
     </div>
   </div>
-  
-
 

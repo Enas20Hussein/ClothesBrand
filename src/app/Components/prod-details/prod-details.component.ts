@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { ProductsService } from '../../Services/products.service';
 import { CommonModule } from '@angular/common';
 import { CartService } from '../../Services/cart.service';
@@ -17,7 +17,7 @@ export class ProdDetailsComponent implements OnInit {
 
   product:any=[];
   
-    constructor(private route: ActivatedRoute,private accserv:AccounteService, private productService: ProductsService,private cartService: CartService // Inject CartService
+    constructor(private route: ActivatedRoute,private router:Router,private accserv:AccounteService, private productService: ProductsService,private cartService: CartService // Inject CartService
     ) {}
     ngOnInit(): void {
       const productId: any = this.route.snapshot.paramMap.get('id');
@@ -41,6 +41,7 @@ export class ProdDetailsComponent implements OnInit {
         },
         (error) => {
           console.error('Error adding product to cart', error); // Handle any errors that occur
+          //this.router.navigate(['/Login'])
         }
       );
     }

@@ -11,10 +11,7 @@
         <div class="card-body py-5 ">
           <h3 class="card-title mb-3">{{ product?.name }}</h3>
           <h4 style="color: #315350;">Price: ${{ product?.price }}</h4>
-
           <p class="card-text">{{ product?.description }}</p>
-         <h6> Discount: ${{ product.price - product.Discount}}</h6>
-
           <div class="mt-4">
             <a routerLink="/Cart">
             <button class="btn fashion-btn" (click)="addToCart()">
