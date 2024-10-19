@@ -17,7 +17,7 @@
           <tbody *ngIf="cartData?.shoppingCartItems?.length > 0">
             <tr *ngFor="let item of cartData.shoppingCartItems">
               <td>
-                <img src="https://localhost:7108/images/{{item.imageUrl}}" class="product-img" alt="Product Image" />
+                <img src="{{item.imageUrl}}" class="product-img" alt="Product Image" />
               </td>
               <td>{{ item.productName }}</td>
               <td> {{ item.quantity }}</td>
@@ -38,8 +38,8 @@
     <!-- Left Side: Checkout Form -->
     <div class="col-lg-6 p-0">
       <div class="form-container p-5 rounded-3 bg-white h-100">
-        <h3 class="text-center mb-2">Checkout</h3>
-        <form (submit)="onCheckout()" class="needs-validation" novalidate>
+        <h3 class="text-center mb-2">Shipping Details</h3>
+        <form (submit)="checkout()" class="needs-validation" novalidate>
           <!-- Address Line 1 -->
           <div class="mb-1">
             <label for="AddressLine1" class="form-label">Address Line 1:</label>
@@ -157,11 +157,12 @@
           </div>
 
           <!-- Payment Section -->
-          <div id="card-element" class="mb-1">
+          <!-- <div id="card-element" class="mb-1"> -->
             <!-- Placeholder for payment widget (e.g. Stripe, PayPal) -->
-          </div>
+          <!-- </div> -->
 
-          <button type="submit" class="btn btn-primary w-100 mt-1">Pay Now</button>
+          <!-- <button type="submit" class="btn btn-primary w-100 mt-1">Pay Now</button> -->
+          <button type="submit" class="btn btn-primary w-100 mt-1">place Order</button>
         </form>
       </div>
     </div>

@@ -19,7 +19,7 @@
                     <button (click)="deleteToCart(item.productId)"><i class="fa-solid fa-xmark"></i></button>
                 </td>
               <td>
-                <img src="https://localhost:7108//images/{{item.imageUrl}}" alt="{{ item.productName }}" height="80" width="100">
+                <img src="{{item.imageUrl}}" alt="{{ item.productName }}" height="80" width="100">
               </td>
               <td>  {{ item.productName }} </td>
               <td>{{ item.price | currency }}</td>

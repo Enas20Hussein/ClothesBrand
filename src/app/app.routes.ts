@@ -11,8 +11,13 @@ import { CartComponent } from './Components/cart/cart.component';
 import { OurServicesComponent } from './Components/our-services/our-services.component';
 import { OrderComponent } from './Components/order/order.component';
 import { CofirmedOrderComponent } from './Components/cofirmed-order/cofirmed-order.component';
+
 import { ForgetPasswordComponent } from './Components/forget-password/forget-password.component';
 import { ResetPasswordComponent } from './Components/reset-password/reset-password.component';
+
+import { CheckOutComponent } from './Components/check-out/check-out.component';
+import { ChangePasswordComponent } from './Components/change-password/change-password.component';
+
 
 export const routes: Routes = [
 
@@ -33,7 +38,9 @@ export const routes: Routes = [
     { path: 'Confirm-Order', component:CofirmedOrderComponent },
     { path: 'ForgetPassword', component:ForgetPasswordComponent },
     { path: 'ResetPassword', component:ResetPasswordComponent },
+    { path: 'changePassword', component:ChangePasswordComponent },
 
+    { path: 'checkout/:orderId', component: CheckOutComponent }
 
 
 
