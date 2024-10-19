@@ -18,7 +18,7 @@ export class CartComponent implements OnInit {
   subtotal: number = 0;
   dataloaded:any;
   cartnumber:number=0;
-  static shoppingCartItems: any;
+  
   
   constructor(private cartService: CartService,private accserv:AccounteService,private router:Router) {}
 
@@ -41,8 +41,8 @@ export class CartComponent implements OnInit {
     this.cartService.getCartByUserId(this.userId).subscribe(
       (response) => {
         this.cartData = response;
-        this.cartnumber = this.cartData.shoppingCartItems.length;
-        console.log(this.cartnumber)
+        // this.cartnumber = this.cartData.shoppingCartItems.length;
+        // console.log(this.cartnumber)
       },
       (error) => {
         console.error('Error retrieving cart data', error);

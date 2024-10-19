@@ -22,13 +22,14 @@ export class ProductComponent {
   constructor(private productsService: ProductsService) {}
 
   ngOnInit(): void {
+    //this.products;
     this.loadProducts(); // Fetch product data
   }
 
   loadProducts(): void {
     this.productsService.getAllProducts().subscribe((data: any) => {
       this.products = data;
-      this.totalPages = Math.ceil(this.products.length / this.slidesPerView)-1;
+      // this.totalPages = Math.ceil(this.products.length / this.slidesPerView)-1;
     });
   }
 
