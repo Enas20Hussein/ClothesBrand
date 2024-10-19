@@ -2,7 +2,7 @@ import { Component, HostListener, Input, input, OnInit } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { AccounteService } from '../../Services/Account.service';
 import { CommonModule } from '@angular/common';
-import { CartService } from '../../Services/cart.service';
+import { CartSharedService } from '../../Services/cart-shared.service';
 
 @Component({
   selector: 'app-header',
@@ -13,14 +13,19 @@ import { CartService } from '../../Services/cart.service';
 })
 export class HeaderComponent  {
   // cartCount: number = 0;
+  cartnumber: number = 0;
 
-  // constructor(private cartService: CartService) {}
+constructor(private cartSharedService: CartSharedService) {}
 
-  // ngOnInit(): void {
-  //   this.cartService.getCartCount().subscribe((count) => {
-  //     this.cartCount = count; // Update cart icon number
-  //   });
-  // }
+   ngOnInit(): void {
+   // Subscribe to the cart number updates
+   this.cartSharedService.currentCartNumber.subscribe(
+    (cartnumber) => {
+      this.cartnumber = cartnumber;
+    }
+  );
+   }
+
 
   isScrolled = false;
   isNavbarCollapsed = true;
