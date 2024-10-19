@@ -1,4 +1,8 @@
 /* Icon container */
+
+.container-fluid{
+  margin-top: 5rem ;
+}
 .input-group-prepend .input-group-text {
   background-color: #fff;
   border-right: none;

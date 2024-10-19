@@ -1,31 +1,73 @@
-.container {
-    margin-top: 20px;
-  }
-  
-  table {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
-  img {
-    border-radius: 8px;
-  }
-  
-  .text-right {
-    text-align: right;
-  }
-  
-   .checkout{
-    background-color: #315350;
-    border-radius: 35px;
-    color: aliceblue;
-     }
-    .checkout:hover{
-    
-      background-color: #243d3b;
-     }
+/* General container padding and responsive adjustments */
+.container-fluid {
+  padding: 0 1rem;
+  margin-top: 5rem ;
+  height: 100vh;
+}
 
-     td,th{
-      align-items: center;
-      text-align: center;
-     }
+.card-responsive {
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.table {
+  margin-bottom: 20px;
+}
+
+.table th, .table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.img-thumbnail {
+  border-radius: 8px;
+  max-width: 100px;
+}
+
+.total-price {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Checkout button styling */
+.checkout-btn {
+  background-color: #315350;
+  border-radius: 35px;
+  color: aliceblue;
+}
+.btn-outline-danger{
+  border-radius: 35px;
+
+}
+.checkout-btn:hover {
+  background-color: #243d3b;
+}
+
+/* Responsive design for mobile screens */
+@media (max-width: 768px) {
+  .table-responsive-md {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+  }
+
+  .checkout-btn {
+      width: 100%; /* Full width on mobile */
+      margin-top: 10px;
+  }
+
+  .total-price {
+      text-align: left;
+  }
+
+  .btn-outline-danger {
+      width: 100%;
+  }
+}
+
+/* Additional adjustments for larger screens */
+@media (min-width: 768px) {
+  .text-md-right {
+      text-align: right;
+  }
+}
