@@ -1,0 +1,48 @@
+.container-fluid {
+    background-color: #f9fafb;
+    margin-top:7rem ;
+    height: auto;
+  }
+  
+  h6.text-primary {
+    color: #ff6633; /* Orange color for the small heading */
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 1rem;
+    color: #555555;
+  }
+  
+  .card {
+    border: none;
+    background-color: #f1f1f1;
+    border-radius: 15px;
+  }
+  
+  .card h3 {
+    font-size: 2rem;
+    color: #333333;
+  }
+  
+  .card p {
+    color: #777777;
+    margin: 0;
+  }
+  
+  /* Adjust the text size for smaller screens */
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 2rem;
+    }
+  
+    .counter {
+      font-size: 1.5rem;
+    }
+  }
+  
