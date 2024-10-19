@@ -1,0 +1,45 @@
+.order-card {
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.order-card-header {
+  background-image: linear-gradient(to right, #007bff, #6610f2);
+  color: #fff;
+  padding: 20px;
+  border-bottom: none;
+}
+
+.card-body {
+  padding: 40px;
+}
+
+.measurements-section p {
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+.list-group-item {
+  border: none;
+  padding: 10px 20px;
+}
+
+img.img-thumbnail {
+  border: 2px solid #dee2e6;
+  border-radius: 10px;
+}
+
+.badge-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.badge-warning {
+  background-color: #ffc107;
+  color: #000;
+}
+
+hr {
+  border-top: 1px solid #bbb;
+}
