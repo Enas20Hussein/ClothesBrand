@@ -111,7 +111,11 @@ background-color:#335353;
   padding: 1rem 0rem;
 }
 
-
+.quiz-section .btn{
+background-color:  rgba(177, 70, 70, 0.692);
+border-radius: 35px;
+border-color:rgba(177, 70, 70, 0.692);
+}
 .quiz-images img {
   width: 300px;
   border-radius: 8px;

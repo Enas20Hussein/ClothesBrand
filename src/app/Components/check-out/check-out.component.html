@@ -61,10 +61,10 @@
 
 
 
-   <div class="container vh-100 d-flex align-items-center justify-content-center">
-    <div class="row w-75">
+   <div class="container justify-content-between">
+    <div class="row ">
       <!-- Credit Card Design -->
-      <div class="col-lg-6 px-4">
+      <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="credit-card-container">
           <div class="credit-card" id="credit-card">
             <!-- Front of the Card -->
@@ -96,7 +96,7 @@
       </div>
 
       <!-- Payment Form -->
-      <div class="col-lg-6 px-4">
+      <div class="col-lg-6 col-md-6 col-sm-12 ">
         <div class="form-container bg-white p-5 rounded-3 shadow">
           <h3 class="text-center mb-4">Payment Details</h3>
           <form (submit)="onCheckout($event)" class="needs-validation">
@@ -110,7 +110,7 @@
               <label for="card-cvc">CVC</label>
               <div id="card-cvc" class="form-control stripe-input"></div>
             </div>
-            <button type="submit" class="btn btn-primary w-100 mt-3">Pay Now</button>
+            <button type="submit" class="btn w-100 mt-3" style="background-color: rgba(172, 65, 65, .8);">Pay Now</button>
           </form>
         </div>
       </div>

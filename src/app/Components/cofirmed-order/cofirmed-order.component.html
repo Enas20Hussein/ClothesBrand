@@ -1,27 +1,31 @@
-<div class="order-confirmation-card">
-  <div *ngIf="order">
-    <h2>Order Confirmation</h2>
-    <p><strong>Date:</strong> {{ order.orderDate | date:'medium' }}</p>
-    <p><strong>Total Price:</strong> {{ order.totalPrice > 0 ? '$' + order.totalPrice : 'Free' }}</p>
-    <p><strong>Payment Status:</strong> {{ order.paymentStatus }}</p>
-    <p><strong>Order Status:</strong> {{ order.orderStatus }}</p>
+<div class="container">
+  <div class="order-confirmation-card">
+    <div *ngIf="order">
+      <h2>Order Confirmation</h2>
+      <p><strong>Date:</strong> {{ order.orderDate | date:'medium' }}</p>
+      <p><strong>Total Price:</strong> {{ order.totalPrice > 0 ? '$' + order.totalPrice : 'Free' }}</p>
+      <p><strong>Payment Status:</strong> {{ order.paymentStatus }}</p>
+      <p><strong>Order Status:</strong> {{ order.orderStatus }}</p>
 
-    <h3>Shipping Details</h3>
-    <p>{{ order.addressLine1 }}</p>
-    <p *ngIf="order.addressLine2">{{ order.addressLine2 }}</p>
-    <p>{{ order.city }}, {{ order.state }}, {{ order.country }} - {{ order.postalCode }}</p>
+      <h3>Shipping Details</h3>
+      <p>{{ order.addressLine1 }}</p>
+      <p *ngIf="order.addressLine2">{{ order.addressLine2 }}</p>
+      <p>{{ order.city }}, {{ order.state }}, {{ order.country }} - {{ order.postalCode }}</p>
 
-    <h3>Order Items</h3>
-    <ul>
-      <li *ngFor="let item of order.orderItems">
-        <img *ngIf="item.imageUrl" [src]="item.imageUrl" alt="{{item.productName}}" style="width: 100px; height: auto; margin-right: 10px;">
-        <p><strong>Product Name:</strong> {{ item.productName }}</p>
-        <p><strong>Quantity:</strong> {{ item.quantity }}</p>
-        <p><strong>Price:</strong> {{ item.price > 0 ? '$' + item.price : 'Free' }}</p>
-      </li>
-    </ul>
-  </div>
-  <div *ngIf="!order">
-    <p>Loading order details...</p>
+      <h3>Order Items</h3>
+      <ul>
+        <li *ngFor="let item of order.orderItems">
+          <img *ngIf="item.imageUrl" [src]="item.imageUrl" alt="{{item.productName}}" class="product-image">
+          <div>
+            <p><strong>Product Name:</strong> {{ item.productName }}</p>
+            <p><strong>Quantity:</strong> {{ item.quantity }}</p>
+            <p><strong>Price:</strong> {{ item.price > 0 ? '$' + item.price : 'Free' }}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="!order">
+      <p>Loading order details...</p>
+    </div>
   </div>
 </div>

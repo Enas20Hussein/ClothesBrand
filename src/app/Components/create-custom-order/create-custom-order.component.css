@@ -1,8 +1,10 @@
 .container {
-    margin-top: 6rem ;
+    margin: 7rem ;
     height: auto;
   }
-  
+  h3{
+    color: rgba(171, 69, 69, 0.692);
+  }
   .card {
     border-radius: 12px;
     background-color: #f9f9f9;
@@ -13,11 +15,11 @@
   }
   
   .btn-primary {
-    background: linear-gradient(45deg, #007bff, #0056b3);
+    background: linear-gradient(45deg, rgba(128, 69, 69, 0.692), rgba(177, 70, 70, 0.692));
     border: none;
   }
   
   .btn-primary:hover {
-    background: linear-gradient(45deg, #0056b3, #007bff);
+    background: linear-gradient(45deg, rgba(128, 69, 69, 0.692), rgba(146, 56, 56, 0.616));
   }
   
