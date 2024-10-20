@@ -1,108 +1,292 @@
-/* Add some padding to navbar */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800');
+@import url('https://fonts.googleapis.com/css?family=Lobster');
 
 .navbar {
-    padding:  12px 5px;
-    background-color:#e3c0b0;
-    max-width:100%;
-    margin-top:0 ;
-    margin: auto;
-    color: #593818
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0;
+  width: 100%;
+  transition: background 0.6s ease-in;
+  z-index: 99999;
+}
+
+.navbar.fixed-top {
+  position: fixed;
+  animation: navbar-animation 0.6s;
+  background-color: rgba(0, 0, 0, .9);
+}
+
+
+.overlay::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, .3);
+}
+
+.navbar .navbar-brand {
+  font-family: 'Lobster', cursive;
+  font-size: 2.5rem;
+  padding-right: 30px;
+  color: #131842;
+}
+.navbar .navbar-toggler {
+  position: relative;
+  height: 50px;
+  width: 50px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+.navbar .navbar-toggler .menu-icon-bar {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  height: 2px;
+  background-color: #fff;
+  opacity: 0;
+  -webkit-transform: translateY(-1px);
+  -ms-transform: translateY(-1px);
+  transform: translateY(-1px);
+  transition: all 0.3s ease-in;
+}
+.navbar .navbar-toggler .menu-icon-bar:first-child {
+  opacity: 1;
+  -webkit-transform: translateY(-1px) rotate(45deg);
+  -ms-sform: translateY(-1px) rotate(45deg);
+  transform: translateY(-1px) rotate(45deg);
+}
+.navbar .navbar-toggler .menu-icon-bar:last-child {
+  opacity: 1;
+  -webkit-transform: translateY(-1px) rotate(135deg);
+  -ms-sform: translateY(-1px) rotate(135deg);
+  transform: translateY(-1px) rotate(135deg);
+}
+.navbar .navbar-toggler.collapsed .menu-icon-bar {
+  opacity: 1;
+}
+.navbar .navbar-toggler.collapsed .menu-icon-bar:first-child {
+  -webkit-transform: translateY(-7px) rotate(0);
+  -ms-sform: translateY(-7px) rotate(0);
+  transform: translateY(-7px) rotate(0);
+}
+.navbar .navbar-toggler.collapsed .menu-icon-bar:last-child {
+  -webkit-transform: translateY(5px) rotate(0);
+  -ms-sform: translateY(5px) rotate(0);
+  transform: translateY(5px) rotate(0);
+}
+.navbar-dark .navbar-nav .nav-link {
+  position: relative;
+  color: #131842;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+  color: #fff;
+}
+.navbar .dropdown-menu {
+  padding: 0;
+  background-color: rgba(0, 0, 0, .9);
+}
+.navbar .dropdown-menu .dropdown-item {
+  position: relative;
+  padding: 10px 20px;
+  color:#af7b62;
+  font-size: 1.4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+  transition: color 0.2s ease-in;
+}
+.navbar .dropdown-menu .dropdown-item:last-child {
+  border-bottom: none;
+}
+.navbar .dropdown-menu .dropdown-item:hover {
+  background: transparent;
+  color: #af7b62;
+}
+.navbar .dropdown-menu .dropdown-item::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  width: 8px;
+  background-color: #fff;
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+}
+.navbar .dropdown-menu .dropdown-item:hover::before {
+  opacity: 1;
+}
+.navbar.fixed-top {
+  position: fixed;
+  -webkit-animation: navbar-animation 0.6s;
+  animation: navbar-animation 0.6s;
+  background-color: rgba(0, 0, 0, 0.541);
+}
+.navbar.fixed-top.navbar-dark .navbar-nav .nav-link.active {
+  color: #fff;
+}
+.navbar.fixed-top.navbar-dark .navbar-nav .nav-link::after {
+  background-color: #fff;
+}
+.content {
+  padding: 120px 0;
+}
+
+.navbar-nav li a {
+  font-size: 0.9rem; /* Adjust this value to make the font smaller */
+}
+
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icons .fh {
+  cursor: pointer;
+  font-size: 1.3rem;
+  color: #af7b62;; /* Light color for icons */
+  border-radius: 50%;
+  background: #131842; /* Dark background for icons */
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for icons */
+}
+
+.icons .fh:hover {
+  background-color: #593818;; /* Change icon background on hover */
+  color: #fff; /* Change icon color on hover */
+  transform: rotate(360deg); /* Rotate effect on hover */
+}
+
+/* Cart notification badge */
+.cart-no {
+  position: absolute;
+  min-width: 20px;
+  min-height: 20px;
+  border-radius: 50%;
+  background-color: #131842; /* Badge color */
+  color: #fdfdfd; /* Badge text color */
+  text-align: center;
+  top: -10px;
+  right: -10px;
+  font-size: 0.8rem;
+}
+
+/* Media queries for small devices */
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 10px;
   }
-  
-  .navbar-brand img {
+  .navbar-brand {
+    font-size: 1.8rem;
+    margin-left: 20px;
+    color: #131842;
+  }
+  .navbar-toggler {
     width: 40px;
+    height: 40px;
   }
-  .navbar-brand a{
-    color: rgba(227,192,176,255);
-    font-weight:800;
-    
+  .navbar-toggler .menu-icon-bar {
+    left: 10px;
+    right: 10px;
+  }
+  .navbar-nav {
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.432);
+    text-align: center;
   }
   .navbar-nav .nav-link {
-    color: #000 !important;
+    padding: 15px 0;
+    font-size: 1rem;
     font-weight: 500;
   }
+  .navbar .dropdown-menu {
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+  }
+  .navbar .dropdown-menu .dropdown-item {
+    padding: 10px;
+    font-size: .9rem;
+  }
+  .icons {
+    margin-top: 10px;
+    justify-content: center;
+    gap: 20px;
+  }
+  .icons .fh {
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: .8rem;
+  }
+  .cart-no {
+    min-width: 15px;
+    min-height: 15px;
+    font-size: 0.7rem;
+  }
+  .icons {
+    display: none; /* Hide the icons on small screens */
+  }
 
-  .navbar-nav{
-    margin: auto;
+  .navbar-collapse.show ~ .icons {
+    display: flex; /* Show icons when the menu is toggled */
   }
- 
-  .navbar-nav .nav-link.active {
-    color: #000 !important;
+}
+
+/* Media queries for larger devices */
+@media screen and (min-width: 769px) {
+  .navbar {
+    padding: 15px 20px;
+    background-color: transparent;
+    transition: background-color 0.6s;
   }
-  
-  .btn-danger {
-    background-color: #131842;
-    border-color: #131842;
+  .navbar.fixed-top {
+    background-color: rgba(0, 0, 0, 0.8);
   }
-  
-  
-  nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px;
-}
-nav .brand i{
-    color: #6a1b9a;;
-}
-nav .brand{
-    font-size: 2.5rem;
-    color: #000;
-    text-decoration: none;
-    font-weight: 700;
-}
-nav .navbody a{
-    margin-left: 10px;
+  .navbar .navbar-nav .nav-link {
+    font-size: 1.6rem;
+    padding: 15px 20px;
+    transition: all 0.2s ease-in;
+  }
+  .navbar .navbar-nav .nav-link:hover {
+    color: #af7b62;;
+  }
+  .navbar .dropdown-menu {
+    min-width: 220px;
+  }
+  .icons {
+    gap: 15px;
+  }
+  .icons .fh {
     font-size: 1.3rem;
-    font-weight: 600;
-    text-decoration: none;
-    color: #666;
-}
-nav .navbody a:hover, nav .navbody .active{
-    color: #6a1b9a;;
+  }
 }
 
-nav .icons .fh{
-    cursor: pointer;
-    text-decoration: none;
-    margin-left: .7rem;
-    height: 3rem;
-    line-height: 3rem;
-    width: 3rem;
-    text-align: center;
-    font-size: 1.3rem;
-    color: #131842;
-    border-radius: 50%;
-    background: #e7e7e7;
-    transition: all .3s linear;
-   
-}
-
-nav .icons .fh:hover{
-    color: #fff;
-    background:#6dcacf;
-    transform: rotate(360deg);
-    
-}
-.fav-no:hover,.cart-no:hover{
-  background-color: #131842;
-}
-.cart-no,.fav-no{
+/* Hover effects on larger screens */
+@media screen and (min-width: 1200px) {
+  .navbar-dark .navbar-nav .nav-link:hover::after {
+    content: '';
     position: absolute;
-    min-width: 20px;
-    min-height: 20px;
-    border-radius: 50%;
-    background-color: #6dcacf;
-    color: #e7e7e7;
-    text-align: center;
-    top: -12px;
-    right: -12px;
-}
-.offcanvas-header{
-  background-color: #593818;
-  color:#e3c0b0
-}
-.offcanvas-body{
-  background-color: #e3c0b0;
-  color: #593818;
+    bottom: 10px;
+    left: 20%;
+    right: 20%;
+    height: 2px;
+    background-color: #131842;
+    transform: scaleX(0);
+    transition: transform 0.2s ease-in;
+  }
+  .navbar-dark .navbar-nav .nav-link:hover::after {
+    transform: scaleX(1);
+  }
 }

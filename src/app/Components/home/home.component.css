@@ -1,6 +1,7 @@
 
 .hero-section {
   background-size: cover;
+  height: 100vh;
 
 }
 
@@ -92,6 +93,36 @@ font-weight:800 ;
 
 }
 /*
-discount section
+st-course section
 */
 
+
+.quiz-section{
+padding: 50px;
+display: flex;
+margin: auto;
+background-color:#335353;
+}
+.left-side{
+  padding: 0px;
+}
+.quiz-section h2,p{
+  color: #fff;
+  padding: 1rem 0rem;
+}
+
+
+.quiz-images img {
+  width: 300px;
+  border-radius: 8px;
+  height: 350px;
+  margin: auto;
+}
+
+.quiz-images {
+  display: flex;
+  flex-direction: column;
+  left: 150px;
+  
+
+}
