@@ -1,45 +1,61 @@
+.container{
+  margin: 7rem ;
+  height: auto;
+}
 .order-card {
-  border-radius: 15px;
-  overflow: hidden;
-  background-color: #fff;
-}
-
-.order-card-header {
-  background-image: linear-gradient(to right, #007bff, #6610f2);
-  color: #fff;
-  padding: 20px;
-  border-bottom: none;
-}
-
-.card-body {
-  padding: 40px;
-}
-
-.measurements-section p {
-  font-size: 16px;
-  margin-bottom: 0;
-}
-
-.list-group-item {
-  border: none;
-  padding: 10px 20px;
-}
-
-img.img-thumbnail {
-  border: 2px solid #dee2e6;
-  border-radius: 10px;
-}
-
-.badge-success {
-  background-color: #28a745;
-  color: #fff;
-}
-
-.badge-warning {
-  background-color: #ffc107;
-  color: #000;
-}
-
-hr {
-  border-top: 1px solid #bbb;
-}
+    border-radius: 10px;
+    border: none;
+    overflow: hidden;
+  }
+  
+  .card-header {
+    background-image: linear-gradient(135deg, #af5653e0 0%, #a34949e5 100%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.2rem;
+  }
+  
+  .card-body {
+    background-color: #f8f9fa;
+    padding: 20px;
+  }
+  
+  .list-group-item {
+    border: none;
+    padding: 10px 15px;
+  }
+  
+  .list-group-item strong {
+    color: #343a40;
+  }
+  
+  .list-group-item .badge {
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+  
+  .img-thumbnail {
+    border-radius: 5px;
+    max-width: 100%;
+  }
+  
+  .measurements-section .col-sm-12 {
+    padding: 15px;
+    background-color: #ffffff;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .measurements-section p {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  .measurements-section strong {
+    color: #495057;
+  }
+  
+  .text-muted {
+    color: #6c757d !important;
+  }
+  
