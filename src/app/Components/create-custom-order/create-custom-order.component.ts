@@ -28,6 +28,8 @@ export class CreateCustomOrderComponent {
     waistLength: 0,
     armLength: 0,
     bicepSize: 0,
+    customerName: '',
+    phoneNumber: '',
     modelLength: 0,
     image: null,
     userId: this.userId
@@ -45,7 +47,8 @@ export class CreateCustomOrderComponent {
   // Submit order form
   onSubmit() {
     const formData = new FormData();
-
+    formData.append('customerName' , this.order.customerName);
+    formData.append('phoneNumber' , this.order.phoneNumber);
     formData.append('designDescription', this.order.designDescription);
     formData.append('fabricDetails', this.order.fabricDetails);
     formData.append('depositAmount', this.order.depositAmount.toString());

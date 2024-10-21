@@ -12,6 +12,9 @@ export interface returnCustomClothingOrder {
   armLength: number;
   bicepSize: number;
   modelLength: number;
+  customerName : string;
+  phoneNumber : string;
+  customOrderDate : Date;
   imageUrl: string;
   userId: string | null;
 }

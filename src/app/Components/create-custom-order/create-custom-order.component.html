@@ -5,6 +5,37 @@
           <h2 class="text-center mb-4">Custom Order Form</h2>
           <form (ngSubmit)="onSubmit()" #customOrderForm="ngForm">
 
+            <div class="form-group">
+              <label for="customerName">Client Name:</label>
+              <input
+                type="text"
+                id="customerName"
+                name="customerName"
+                class="form-control"
+                required
+                [(ngModel)]="order.customerName"
+                #customerName="ngModel"
+              />
+              <div *ngIf="customerName.invalid && customerName.touched" class="text-danger">
+                Client Name is required.
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="phoneNumber">PhoneNumber:</label>
+              <input
+                type="text"
+                id="phoneNumber"
+                name="phoneNumber"
+                class="form-control"
+                required
+                [(ngModel)]="order.phoneNumber"
+                #phoneNumber="ngModel"
+              />
+              <div *ngIf="phoneNumber.invalid && phoneNumber.touched" class="text-danger">
+                phone Number is required.
+              </div>
+            </div>
             <!-- Design Description -->
             <div class="form-group">
               <label for="designDescription">Design Description:</label>
@@ -67,11 +98,12 @@
                 name="shoulderWidth"
                 class="form-control"
                 required
+                min = "0"
                 [(ngModel)]="order.shoulderWidth"
                 #shoulderWidth="ngModel"
               />
               <div *ngIf="shoulderWidth.invalid && shoulderWidth.touched" class="text-danger">
-                Shoulder width is required.
+                Shoulder width is required and must be greater than 0.
               </div>
             </div>
 
@@ -83,11 +115,12 @@
                 name="chestCircumference"
                 class="form-control"
                 required
+                min="0"
                 [(ngModel)]="order.chestCircumference"
                 #chestCircumference="ngModel"
               />
               <div *ngIf="chestCircumference.invalid && chestCircumference.touched" class="text-danger">
-                Chest circumference is required.
+                Chest circumference is required and must be greater than 0.
               </div>
             </div>
 
@@ -100,11 +133,12 @@
                 name="waistCircumference"
                 class="form-control"
                 required
+                min="0"
                 [(ngModel)]="order.waistCircumference"
                 #waistCircumference="ngModel"
               />
               <div *ngIf="waistCircumference.invalid && waistCircumference.touched" class="text-danger">
-                Waist circumference is required.
+                Waist circumference is required and must be greater than 0.
               </div>
             </div>
 
@@ -116,11 +150,12 @@
                 name="hipCircumference"
                 class="form-control"
                 required
+                min = "0"
                 [(ngModel)]="order.hipCircumference"
                 #hipCircumference="ngModel"
               />
               <div *ngIf="hipCircumference.invalid && hipCircumference.touched" class="text-danger">
-                Hip circumference is required.
+                Hip circumference is required and must be greater than 0.
               </div>
             </div>
 
@@ -132,11 +167,12 @@
                 name="waistLength"
                 class="form-control"
                 required
+                min="0"
                 [(ngModel)]="order.waistLength"
                 #waistLength="ngModel"
               />
               <div *ngIf="waistLength.invalid && waistLength.touched" class="text-danger">
-                Waist length is required.
+                Waist length is required and must be greater than 0.
               </div>
             </div>
 
@@ -148,11 +184,12 @@
                 name="armLength"
                 class="form-control"
                 required
+                min = "0"
                 [(ngModel)]="order.armLength"
                 #armLength="ngModel"
               />
               <div *ngIf="armLength.invalid && armLength.touched" class="text-danger">
-                Arm length is required.
+                Arm length is required and must be greater than 0.
               </div>
             </div>
 
@@ -164,11 +201,12 @@
                 name="bicepSize"
                 class="form-control"
                 required
+                min="0"
                 [(ngModel)]="order.bicepSize"
                 #bicepSize="ngModel"
               />
               <div *ngIf="bicepSize.invalid && bicepSize.touched" class="text-danger">
-                Bicep size is required.
+                Bicep size is required and must be greater than 0.
               </div>
             </div>
 
@@ -180,11 +218,12 @@
                 name="modelLength"
                 class="form-control"
                 required
+                min="0"
                 [(ngModel)]="order.modelLength"
                 #modelLength="ngModel"
               />
               <div *ngIf="modelLength.invalid && modelLength.touched" class="text-danger">
-                Model length is required.
+                Model length is required and must be greater than 0.
               </div>
             </div>
 
