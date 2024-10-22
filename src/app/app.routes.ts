@@ -16,6 +16,10 @@ import { ResetPasswordComponent } from './Components/reset-password/reset-passwo
 import { CheckOutComponent } from './Components/check-out/check-out.component';
 import { CustomOrderComponent } from './Components/custom-order/custom-order.component';
 import { CreateCustomOrderComponent } from './Components/create-custom-order/create-custom-order.component';
+import { CourseDetailsComponent } from './Components/course/courseDetail/course-detail/course-detail.component';
+import { CourseCardComponent } from './Components/course/courseCard/course-card/course-card.component';
+import { EnrollmentSuccessComponent } from './Components/enrollment-success/enrollment-success.component';
+import { AlreadyEnrolledComponent } from './Components/already-enrolled/already-enrolled.component';
 
 export const routes: Routes = [
 
@@ -26,7 +30,7 @@ export const routes: Routes = [
     {path: 'product' , component:ProductComponent},
     {path: 'Contact' , component:ContactUSComponent},
     {path: 'Services' , component:OurServicesComponent},
-    {path: 'Courses' , component:CourseComponent},
+    {path: 'Courses' , component:CourseCardComponent},
     {path: 'Cart' , component:CartComponent},
     {path: 'About' , component:AboutComponent},
     { path: 'product/:id', component: ProdDetailsComponent }, // Example route for product details
@@ -39,7 +43,13 @@ export const routes: Routes = [
     { path: 'Confirm-Order', component:CofirmedOrderComponent },
     { path: 'checkout/:orderId', component: CheckOutComponent },
     {path: 'create-order',component:CreateCustomOrderComponent},
-    {path:'orders/:orderId',component:CustomOrderComponent}
+    {path:'orders/:orderId',component:CustomOrderComponent},
+    { path: 'course/:id', component: CourseDetailsComponent },
+    { path: 'enrollment-success/:id', component: EnrollmentSuccessComponent },
+    { path: 'already-enrolled', component: AlreadyEnrolledComponent }
+
+
+
 
 
 

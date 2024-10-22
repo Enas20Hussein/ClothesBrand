@@ -13,6 +13,13 @@
           <h5 class="text-secondary mb-4">Customer Information</h5>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
+              <strong>Client Name:</strong> {{ order?.customerName }}
+            </li>
+
+            <li class="list-group-item">
+              <strong>Phone Number:</strong> {{ order?.phoneNumber }}
+            </li>
+            <li class="list-group-item">
               <strong>Deposit Amount:</strong> ${{ order?.depositAmount }}
             </li>
             <li class="list-group-item">
@@ -31,15 +38,7 @@
           <ul class="list-group list-group-flush">
 
             <li class="list-group-item">
-              <strong>Client Name:</strong> {{ order?.customerName }}
-            </li>
-
-            <li class="list-group-item">
-              <strong>Phone Number:</strong> {{ order?.phoneNumber }}
-            </li>
-
-            <li class="list-group-item">
-              <strong>Order Fate : :</strong> {{ order?.customOrderDate }}
+              <strong>Order Date : :</strong> {{ order?.customOrderDate }}
             </li>
 
             <li class="list-group-item">

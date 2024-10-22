@@ -1,165 +1,126 @@
-.articles{
-  margin: 6rem 1rem;
-  height: 100vh;
+/* Ensure body has a margin to avoid overlap with navbar */
+body {
+  font-family: 'Roboto', sans-serif; /* Use a modern font */
+  background-color: #f0f4f8; /* Soft light background for contrast */
 }
-article {
-    --img-scale: 1.001;
-    --title-color: black;
-    --link-icon-translate: -20px;
-    --link-icon-opacity: 0;
-    position: relative;
-    border-radius: 16px;
-    box-shadow: none;
-    background: #fff;
-    transform-origin: center;
-    transition: all 0.4s ease-in-out;
-    overflow: hidden;
-  }
-  
-  article a::after {
-    position: absolute;
-    inset-block: 0;
-    inset-inline: 0;
-    cursor: pointer;
-    content: "";
-  }
-  
-  /* basic article elements styling */
-  article h2 {
-    margin: 0 0 18px 0;
-    font-family: "Bebas Neue", cursive;
-    font-size: 1.9rem;
-    letter-spacing: 0.06em;
-    color: var(--title-color);
-    transition: color 0.3s ease-out;
-  }
-  
-  figure {
-    margin: 0;
-    padding: 0;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-  }
-  
-  article img {
-    max-width: 100%;
-    transform-origin: center;
-    transform: scale(var(--img-scale));
-    transition: transform 0.4s ease-in-out;
-  }
-  
-  .article-body {
-    padding: 24px;
-  }
-  
-  article a {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    color: #28666e;
-  }
-  
-  article a:focus {
-    outline: 1px dotted #28666e;
-  }
-  
-  article a .icon {
-    min-width: 24px;
-    width: 24px;
-    height: 24px;
-    margin-left: 5px;
-    transform: translateX(var(--link-icon-translate));
-    opacity: var(--link-icon-opacity);
-    transition: all 0.3s;
-  }
-  
-  /* using the has() relational pseudo selector to update our custom properties */
-  article:has(:hover, :focus) {
-    --img-scale: 1.1;
-    --title-color: #28666e;
-    --link-icon-translate: 0;
-    --link-icon-opacity: 1;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-  }
-  
-  
-  /************************ 
-  Generic layout (demo looks)
-  **************************/
-  
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0;
-    padding: 48px 0;
-    font-family: "Figtree", sans-serif;
-    font-size: 1.2rem;
-    line-height: 1.6rem;
-    background-image: linear-gradient(45deg, #7c9885, #b5b682);
-    min-height: 100vh;
-  }
-  
-  .articles {
-    display: grid;
-    max-width: 1200px;
-    margin-inline: auto;
-    padding-inline: 24px;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 24px;
-  }
-  
-  @media screen and (max-width: 960px) {
-    article {
-      container: card/inline-size;
-    }
-    .article-body p {
-      display: none;
-    }
-  }
-  
-  @container card (min-width: 380px) {
-    .article-wrapper {
-      display: grid;
-      grid-template-columns: 100px 1fr;
-      gap: 16px;
-    }
-    .article-body {
-      padding-left: 0;
-    }
-    figure {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-    figure img {
-      height: 100%;
-      aspect-ratio: 1;
-      object-fit: cover;
-    }
-  }
-  
-  .sr-only:not(:focus):not(:active) {
-    clip: rect(0 0 0 0); 
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap; 
-    width: 1px;
-  }
-  .btn{
-    background-color: #113438;
-    border-radius: 30px;
-    color: #fff;
-    padding: 10px 30px;
-    margin-left: 7rem;
-  }
-  
-  
-  
-  
-  
+
+/* Container to hold all course cards */
+.course-container {
+
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap into rows */
+  justify-content: start; /* Center cards in the container */
+  padding: 150px 20px; /* Increased padding for a spacious feel */
+  max-width: 1800px; /* Set a max-width for larger screens */
+  margin: 0 auto; /* Center the container */
+}
+
+/* Header styling */
+.header {
+  font-size: 2.5rem; /* Larger header */
+  margin-bottom: 40px; /* More space below the header */
+  text-align: center;
+  color: #34495e; /* Darker text for better readability */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Card styling */
+.course-card {
+  background: #ffffff; /* Solid white background */
+  border-radius: 15px; /* Rounded corners for a softer look */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  width: 350px; /* Fixed width for cards */
+  height: 400px;
+  margin: 25px; /* Space between cards */
+  padding: 25px; /* Padding for content */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+  cursor: pointer; /* Pointer cursor on hover */
+  overflow: hidden; /* Prevent overflow for contents */
+  position: relative; /* For positioning elements inside */
+}
+
+/* Card hover effect */
+.course-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Header within card */
+.course-card-header {
+  margin-bottom: 15px;
+}
+
+/* Course title styling */
+.course-title {
+  font-size: 1.5rem; /* Title size */
+  margin: 0;
+  color: #2c3e50; /* Dark color for title */
+  font-weight: 600; /* Medium weight for visibility */
+  text-align: center; /* Center align the title */
+}
+
+/* Course duration styling */
+.course-duration {
+  font-size: 0.9rem; /* Smaller font size for duration */
+  color: #7f8c8d; /* Softer color for duration */
+  text-align: center; /* Center align duration */
+  margin: 5px 0; /* Margins for spacing */
+}
+
+/* Content within card */
+.course-card-content {
+  margin-bottom: 20px; /* Space for better readability */
+}
+
+/* Description styling */
+.course-description {
+  color: #555; /* Soft dark color for description */
+  font-size: 0.95rem; /* Standard font size for description */
+  margin: 10px 0; /* Space around description */
+}
+
+/* Price styling */
+.price {
+  font-weight: bold; /* Bold for visibility */
+  font-size: 1.3rem; /* Slightly larger price font */
+  color: #e74c3c; /* Standout color for price */
+  text-align: center; /* Center align the price */
+}
+
+/* Action button styling */
+.course-card-actions {
+  text-align: center; /* Center the actions */
+}
+
+/* Enroll button styling */
+.enroll-button {
+  background-color: #3498db; /* Calm blue for the button */
+  color: white;
+  border: none;
+  border-radius: 30px; /* Fully rounded button */
+  padding: 12px 24px; /* Padding for the button */
+  font-size: 1rem; /* Font size for button text */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Smooth transitions */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for button */
+}
+
+.enroll-button:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Read more link */
+.read-more {
+  color: #2980b9; /* Calm blue for links */
+  text-decoration: none; /* No underline */
+  font-size: 0.9rem; /* Smaller font size for links */
+  margin-top: 10px; /* Space above the link */
+  display: block; /* Block display for margin */
+  transition: color 0.3s; /* Smooth transition for color */
+}
+
+.read-more:hover {
+  color: #1f639b; /* Darker blue on hover */
+}

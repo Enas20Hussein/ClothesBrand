@@ -1,0 +1,39 @@
+<div class="success-container">
+  <div class="success-message-box">
+    <h1 class="success-title">🎉 Congratulations! 🎉</h1>
+    <p class="success-subtitle">You have successfully enrolled in the course.</p>
+
+    <div class="course-details">
+      <h2 class="course-title">Course Title: <span>{{ courseDetails?.title }}</span></h2>
+      <p class="course-start">Enroll Date: <strong>{{ enrollmentDetails?.enrollDate }}</strong></p>
+      <p class="course-duration">Duration: <strong>{{ courseDetails?.duration }}</strong></p>
+    </div>
+
+    <div class="next-steps">
+      <h3>What happens next?</h3>
+      <ul>
+        <li>Check your email for more information about the course and to know when and where start will be .</li>
+        <li>To  access the course materials and complete payment get in touch on whatsapp  .</li>
+        <li>If you have any questions, feel free to contact us.</li>
+      </ul>
+    </div>
+
+    <!-- WhatsApp Contact Section -->
+    <div class="whatsapp-contact">
+      <h3>Need assistance?</h3>
+      <p>Click the button below to contact the course owner directly on WhatsApp for details regarding the course and payment options.</p>
+      <a
+        href="https://wa.me/201095690405?text=Hello, I would like to inquire about the course titled '{{ courseDetails?.title }}'."
+        target="_blank"
+        class="btn whatsapp-btn"
+      >
+        Get In Touch on WhatsApp
+      </a>
+    </div>
+
+    <div class="success-actions">
+      <a routerLink="/dashboard" class="btn primary-btn">Go to Dashboard</a>
+      <a routerLink="/Courses" class="btn secondary-btn">Explore More Courses</a>
+    </div>
+  </div>
+</div>

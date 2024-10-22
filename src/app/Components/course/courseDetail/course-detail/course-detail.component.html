@@ -1,1 +1,18 @@
-<p>course-detail works!</p>
+<div class="course-details-page" *ngIf="course">
+  <div class="course-header">
+    <h1 class="course-title">{{ course.title }}</h1>
+    <p class="course-duration">{{ course.duration }}</p>
+    <div class="course-price">Price: ${{ course.price.toFixed(2) }}</div>
+  </div>
+
+  <div class="course-content">
+    <section class="course-description-section">
+      <h2>Course Description</h2>
+      <p>{{ course.description }}</p>
+    </section>
+
+    <section class="course-action-section">
+      <button class="enroll-button" (click)="enrollInCourse()">Enroll Now</button>
+    </section>
+  </div>
+</div>

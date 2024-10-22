@@ -4,13 +4,17 @@ import { CustomClothingOrder } from '../../Models/CustomClothingOrder';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { AuthInterceptor } from '../../Models/AuthInterceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 @Component({
   selector: 'app-create-custom-order',
   standalone: true,
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './create-custom-order.component.html',
-  styleUrls: ['./create-custom-order.component.css']
+  styleUrls: ['./create-custom-order.component.css'],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true } // Provide the interceptor here
+  ]
 })
 export class CreateCustomOrderComponent {
 
@@ -76,7 +80,11 @@ export class CreateCustomOrderComponent {
         this.router.navigate(['/orders',createdOrderId]);
       },
       error: (error) => {
-        console.error('Error creating order:', error);
+        if (error.status === 401) {
+          this.router.navigate(['/Login']); // Navigate to login on 401 error
+        } else {
+          console.error('Error fetching data', error);
+        }
       }
     });
   }
