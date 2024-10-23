@@ -24,6 +24,7 @@ import { MyOrdersComponent } from './Components/my-orders/my-orders.component';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { MyCoursesComponent } from './Components/my-courses/my-courses.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { MyCustomOrdersComponent } from './Components/my-custom-orders/my-custom-orders.component';
 import { authGuard } from './Guard/auth.guard';
 
 export const routes: Routes = [
@@ -57,6 +58,11 @@ export const routes: Routes = [
     { path: 'dashboard', component: DashboardComponent,canActivate:[authGuard] },
     {path: 'create-order',component:CreateCustomOrderComponent,canActivate:[authGuard]},
     {path:'orders/:orderId',component:CustomOrderComponent,canActivate:[authGuard]},
+    {path:'custom-orders',component:MyCustomOrdersComponent,canActivate:[authGuard]}
+
+
+
+
 
 
 
