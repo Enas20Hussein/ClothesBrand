@@ -145,7 +145,73 @@
               </div>
             </div>
           </div>
+          <div class="form-group">
+            <label for="waistLength">Waist Length:</label>
+            <input
+              type="number"
+              id="waistLength"
+              name="waistLength"
+              class="form-control"
+              required
+              min="0"
+              [(ngModel)]="order.waistLength"
+              #waistLength="ngModel"
+            />
+            <div *ngIf="waistLength.invalid && waistLength.touched" class="invalid-feedback">
+              Waist length is required and must be greater than 0.
+            </div>
+          </div>
 
+          <div class="form-group">
+            <label for="armLength">Arm Length:</label>
+            <input
+              type="number"
+              id="armLength"
+              name="armLength"
+              class="form-control"
+              required
+              min = "0"
+              [(ngModel)]="order.armLength"
+              #armLength="ngModel"
+            />
+            <div *ngIf="armLength.invalid && armLength.touched" class="invalid-feedback">
+              Arm length is required and must be greater than 0.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="bicepSize">Bicep Size:</label>
+            <input
+              type="number"
+              id="bicepSize"
+              name="bicepSize"
+              class="form-control"
+              required
+              min="0"
+              [(ngModel)]="order.bicepSize"
+              #bicepSize="ngModel"
+            />
+            <div *ngIf="bicepSize.invalid && bicepSize.touched" class="invalid-feedback">
+              Bicep size is required and must be greater than 0.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="modelLength">Model Length:</label>
+            <input
+              type="number"
+              id="modelLength"
+              name="modelLength"
+              class="form-control"
+              required
+              min="0"
+              [(ngModel)]="order.modelLength"
+              #modelLength="ngModel"
+            />
+            <div *ngIf="modelLength.invalid && modelLength.touched" class="invalid-feedback">
+              Model length is required and must be greater than 0.
+            </div>
+          </div>
           <!-- Image Upload -->
           <div class="form-group">
             <label for="image" class="form-label">Upload Design Image:</label>

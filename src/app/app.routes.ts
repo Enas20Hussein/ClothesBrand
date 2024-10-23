@@ -60,7 +60,7 @@ export const routes: Routes = [
     { path: 'dashboard', component: DashboardComponent,canActivate:[authGuard] },
     {path: 'create-order',component:CreateCustomOrderComponent,canActivate:[authGuard]},
     {path:'orders/:orderId',component:CustomOrderComponent,canActivate:[authGuard]},
-    {path:'custom-orders',component:MyCustomOrdersComponent,canActivate:[authGuard]}
+    {path:'custom-orders',component:MyCustomOrdersComponent,canActivate:[authGuard]},
 
 
 
