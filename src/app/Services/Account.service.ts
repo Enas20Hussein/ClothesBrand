@@ -8,12 +8,12 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AccounteService {
- 
 
-  private apiUrl = 'https://localhost:7108/api/Account/identity/'; 
+
+  private apiUrl = 'https://localhost:7108/api/Account/identity/';
   private CurrentUserSource =new BehaviorSubject<User|null>(null);
   CurrentUser$= this.CurrentUserSource.asObservable();
-  
+
   userId:string | null=null
   constructor(private http: HttpClient,private router:Router) {}
 
@@ -36,7 +36,7 @@ setUserId(id: string) {
     return this.http.post<User>(this.apiUrl+'create',values).pipe(
       map(user=>{
         this.CurrentUserSource.next(user);
-        
+
       })
     )
 
@@ -47,28 +47,28 @@ setUserId(id: string) {
         localStorage.setItem('token',user.token);
         this.setUserId(user.userId);
         this.CurrentUserSource.next(user);
-      
+
         return user;
       })
     )
-    
+
   }
 
   logout(){
-    localStorage.removeItem('userId'); 
+    localStorage.removeItem('userId');
     localStorage.removeItem('token');
     this.CurrentUserSource.next(null);
-    this.router.navigateByUrl('register')
+    this.router.navigateByUrl('Login');
   }
- 
 
-  
+
+
  ResetPassword(methodName:string,QueryUrl:any){
   const headers = new HttpHeaders({
     'Content-Type': 'application/json'
   });
   return this.http.post(this.apiUrl+methodName,QueryUrl,{ headers })
-    
+
  }
   checkEmailExists(email:string){
     return this.http.get<boolean>(this.apiUrl+'EmailExists?email='+email)
@@ -77,5 +77,5 @@ setUserId(id: string) {
   ForgetPassword(url:string){
     return this.http.get(this.apiUrl+url)
   }
- 
+
 }

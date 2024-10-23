@@ -20,6 +20,10 @@ import { CourseDetailsComponent } from './Components/course/courseDetail/course-
 import { CourseCardComponent } from './Components/course/courseCard/course-card/course-card.component';
 import { EnrollmentSuccessComponent } from './Components/enrollment-success/enrollment-success.component';
 import { AlreadyEnrolledComponent } from './Components/already-enrolled/already-enrolled.component';
+import { MyOrdersComponent } from './Components/my-orders/my-orders.component';
+import { ProfileComponent } from './Components/profile/profile.component';
+import { MyCoursesComponent } from './Components/my-courses/my-courses.component';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
 
 export const routes: Routes = [
 
@@ -46,7 +50,18 @@ export const routes: Routes = [
     {path:'orders/:orderId',component:CustomOrderComponent},
     { path: 'course/:id', component: CourseDetailsComponent },
     { path: 'enrollment-success/:id', component: EnrollmentSuccessComponent },
-    { path: 'already-enrolled', component: AlreadyEnrolledComponent }
+    { path: 'already-enrolled', component: AlreadyEnrolledComponent },
+    { path: 'MyOrders', component: MyOrdersComponent },
+    { path: 'enrolled-courses', component: MyCoursesComponent },
+    { path: 'profile', component: ProfileComponent },
+    { path: 'dashboard', component: DashboardComponent }
+
+
+
+
+
+
+
 
 
 

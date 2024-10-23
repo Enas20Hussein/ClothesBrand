@@ -1,0 +1,107 @@
+/* orders.component.css */
+.orders-container {
+  max-width: 1100px; /* Set max width for the container */
+  margin: 20px auto; /* Center the container */
+  padding: 80px;
+  border-radius: 8px; /* Rounded corners */
+}
+
+.section-title {
+  text-align: center; /* Center the title */
+  font-size: 24px; /* Large font size */
+  color: #333; /* Dark color for text */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+.no-orders {
+  text-align: center;
+  color: #888; /* Lighter color for the message */
+  font-size: 18px; /* Slightly smaller font size */
+}
+
+.order-card {
+  margin-bottom: 20px; /* Space between cards */
+  padding: 15px; /* Internal padding */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.order-header {
+  border-bottom: 2px solid #e0e0e0; /* Underline for separation */
+  padding-bottom: 10px; /* Space below the header */
+  margin-bottom: 15px; /* Space below the header */
+}
+
+.order-date {
+  font-size: 20px; /* Slightly larger font size */
+  color: #007bff; /* Bootstrap primary color for the date */
+}
+
+.order-summary {
+  display: flex;
+  justify-content: space-between; /* Distribute space evenly */
+  flex-wrap: wrap; /* Allow wrapping */
+}
+
+.order-total {
+  font-weight: bold; /* Emphasize total price */
+  color: #4caf50; /* Green color for positive status */
+}
+
+.order-status {
+  color: #555; /* Grey color for status */
+}
+
+.shipping-title {
+  font-size: 18px; /* Medium font size for shipping title */
+  margin-top: 10px; /* Space above the title */
+  color: #333; /* Dark text color */
+}
+
+.shipping-details {
+  margin-bottom: 15px; /* Space below shipping details */
+}
+
+.order-items-table {
+  width: 100%; /* Full width for table */
+  border-collapse: collapse; /* Remove double borders */
+}
+
+.order-items-table th,
+.order-items-table td {
+  padding: 10px; /* Internal padding for table cells */
+  text-align: left; /* Left align text */
+  border-bottom: 1px solid #e0e0e0; /* Bottom border for rows */
+}
+
+.order-items-table th {
+  background-color: #f2f2f2; /* Light grey for header */
+  font-weight: bold; /* Bold text for headers */
+}
+
+.order-items-table tbody tr:hover {
+  background-color: #f9f9f9; /* Highlight row on hover */
+}
+
+.order-status span {
+  font-weight: bold; /* Emphasize status text */
+}
+
+.completed {
+  color: #4caf50; /* Green for completed orders */
+}
+
+.pending {
+  color: #ff9800; /* Orange for pending orders */
+}
+
+.cancelled {
+  color: #f44336; /* Red for cancelled orders */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .order-summary {
+    flex-direction: column; /* Stack summary items on small screens */
+  }
+}

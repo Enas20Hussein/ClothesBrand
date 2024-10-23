@@ -1,0 +1,25 @@
+<!-- profile-dashboard.component.html -->
+<div class="dashboard">
+  <header class="header">
+    <div class="logo"></div>
+    <div class="user-info">
+      <img src="Images/user.png" alt="User Avatar" class="avatar"  width="50px"/>
+      <span class="username">Username</span>
+    </div>
+  </header>
+
+  <div class="sidebar">
+    <nav>
+      <ul>
+        <li><a routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
+        <li><a routerLink="/MyOrders" routerLinkActive="active">Orders</a></li>
+        <li><a routerLink="/enrolled-courses" routerLinkActive="active">Enrolled Courses</a></li>
+        <li><a routerLink="/custom-orders" routerLinkActive="active">Custom Orders</a></li>
+        <li><a routerLink="/account-settings" routerLinkActive="active">Account Settings</a></li>
+        <li><a (click)="logout()">Logout</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+    <app-dashboard></app-dashboard>

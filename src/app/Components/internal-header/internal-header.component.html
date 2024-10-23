@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-md navbar-dark" [ngClass]="{'fixed-top': isScrolled}">
+  <div class="container">
+    <!-- Logo and Toggle Button -->
+    <a href="#" class="navbar-brand">
+      <img src="Images/logo.png" alt="Logo" class="logo-img" style="width: 80px;"> Sara.com
+    </a>
+    <button (click)="toggleNavbar()" class="navbar-toggler collapsed" type="button">
+      <span class="menu-icon-bar"></span>
+      <span class="menu-icon-bar"></span>
+      <span class="menu-icon-bar"></span>
+    </button>
+
+    <!-- Main Navigation Links -->
+    <div id="main-nav" class="collapse navbar-collapse" [ngClass]="{'show': !isNavbarCollapsed}">
+      <ul class="navbar-nav ml-auto">
+        <li><a routerLink="Home" class="nav-item nav-link active" style="font-size:larger;">Home</a></li>
+
+        <li><a routerLink="Courses" class="nav-item nav-link" style="font-size:larger;">Courses</a></li>
+
+        <li><a routerLink="products" class="nav-item nav-link" style="font-size:larger;">Products</a></li>
+
+        <li><a routerLink="create-order" class="nav-item nav-link" style="font-size:larger;">Make a custom sewing order</a></li>
+
+      </ul>
+    </div>
+
+
+    <div>
+      <a routerLink="MyOrders" class="nav-item nav-link" style="font-size:larger;">My Orders</a>
+      </div>
+
+    <div class="icons" *ngIf="isNavbarCollapsed">
+      <a class="position-relative" routerLink="/Cart" id="shopping">
+          <i class="fas fa-shopping-cart fh"></i>
+          <div class="cart-no">{{ cartnumber }}</div>
+      </a>
+      </div>
+    <!-- Always Show Username and Logout -->
+    <div class="icons">
+      <a routerLink="profile" class="nav-item nav-link" style="color: white; font-size: larger;">Hello, John Doe</a>
+      <a class="nav-item nav-link" (click)="logout()" title="Logout" style="cursor: pointer;">
+        <i class="fas fa-sign-out-alt fh"></i>
+      </a>
+    </div>
+  </div>
+</nav>

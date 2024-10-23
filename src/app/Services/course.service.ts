@@ -58,11 +58,12 @@ enrollUrl = "https://localhost:7108/api/Enroll"
 
 
   // Get courses for a specific user
-  getCoursesForUser(userID: string | null): Observable<Course[]> {
+  getCoursesForUser(userId: string | null): Observable<Course[]> {
 
     const headers = this.auth.getAuthHeaders(); // Get the authorization header
 
-    return this.http.get<Course[]>(`${this.apiUrl}/GetCoursesForUser/${userID}` , {headers});
+    return this.http.get<Course[]>(`${this.enrollUrl}/GetCoursesForUser/${userId}` , {headers});
   }
+
 
 }
