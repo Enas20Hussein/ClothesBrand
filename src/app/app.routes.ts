@@ -23,9 +23,12 @@ import { ChangePasswordComponent } from './Components/change-password/change-pas
 
 import { CustomOrderComponent } from './Components/custom-order/custom-order.component';
 import { CreateCustomOrderComponent } from './Components/create-custom-order/create-custom-order.component';
+import { ProfileComponent } from './Components/profile/profile.component';
+import { authGuard } from './Guard/auth.guard';
+
 
 export const routes: Routes = [
-
+    {path:'ccc',component:ProfileComponent,canActivate:[authGuard]},
     {path: 'Login' , component:LoginComponent},
     {path: 'register' , component:RegisterComponent},
     {path: '' , component:HomeComponent},
@@ -34,25 +37,27 @@ export const routes: Routes = [
     {path: 'Contact' , component:ContactUSComponent},
     {path: 'Services' , component:OurServicesComponent},
     {path: 'Courses' , component:CourseComponent},
-    {path: 'Cart' , component:CartComponent},
+    {path: 'Cart' , component:CartComponent,canActivate:[authGuard]},
     {path: 'About' , component:AboutComponent},
-    { path: 'product/:id', component: ProdDetailsComponent }, // Example route for product details
+    { path: 'product/:id', component: ProdDetailsComponent ,canActivate:[authGuard]}, // Example route for product details
     { path: '', redirectTo: '/products', pathMatch: 'full' },
-    { path: 'order', component: OrderComponent },
-    { path: 'order-confirmation', component: OrderComponent },
-    { path: 'Confirm-Order', component:CofirmedOrderComponent },
+    { path: 'order', component: OrderComponent ,canActivate:[authGuard]},
+    { path: 'order-confirmation', component: OrderComponent ,canActivate:[authGuard]},
+    { path: 'Confirm-Order', component:CofirmedOrderComponent ,canActivate:[authGuard]},
     { path: 'ForgetPassword', component:ForgetPasswordComponent },
     { path: 'ResetPassword', component:ResetPasswordComponent },
 
-    { path: 'changePassword', component:ChangePasswordComponent },
+    { path: 'changePassword', component:ChangePasswordComponent ,canActivate:[authGuard]},
 
     { path: 'checkout/:orderId', component: CheckOutComponent },
 
 
-    { path: 'Confirm-Order', component:CofirmedOrderComponent },
+    { path: 'Confirm-Order', component:CofirmedOrderComponent ,canActivate:[authGuard]},
 
-    {path: 'create-order',component:CreateCustomOrderComponent},
-    {path:'orders/:orderId',component:CustomOrderComponent}
+    {path: 'create-order',component:CreateCustomOrderComponent,canActivate:[authGuard]},
+    {path:'orders/:orderId',component:CustomOrderComponent,canActivate:[authGuard]},
+    
+
 
 
 

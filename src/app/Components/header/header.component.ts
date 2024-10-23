@@ -1,4 +1,4 @@
-import { Component, HostListener, Input, input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { AccounteService } from '../../Services/Account.service';
 import { CommonModule } from '@angular/common';
@@ -8,23 +8,91 @@ import { CartService } from '../../Services/cart.service';
   selector: 'app-header',
   standalone: true,
   imports: [RouterModule,CommonModule],
-  templateUrl: './header.component.html',
+  
+templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent  {
+
+export class HeaderComponent implements OnChanges {
   // cartCount: number = 0;
 
-  // constructor(private cartService: CartService) {}
+   constructor(private _account:AccounteService)  {}
+  ngOnChanges(changes: SimpleChanges): void {
+    throw new Error('Method not implemented.');
+  }
+
 
   // ngOnInit(): void {
   //   this.cartService.getCartCount().subscribe((count) => {
   //     this.cartCount = count; // Update cart icon number
   //   });
   // }
-
+  isLogging:boolean=false;
+  user:string="";
   isScrolled = false;
   isNavbarCollapsed = true;
   isDropdownOpen = false;
+
+  ngOnInit(): void {
+
+      this._account.isLoggedIn().subscribe({
+        next:(res)=>{
+          if(res!=false){
+          this._account.GetFullName().subscribe({
+            next:(res)=>{
+              console.log(res);
+              const apiResponse = res as { flag: boolean; message: string };
+              console.log(typeof(res));
+             console.log(apiResponse.flag);
+             this.isLogging=apiResponse.flag;
+              if(apiResponse.flag){
+                this.user=apiResponse.message;
+              }
+      
+            },
+            error:(err)=>{
+              console.log(err);
+              this.isLogging=false;
+      
+            }
+          });
+        }
+        else{
+          this.isLogging=false;
+        }
+        },
+        error:(err)=>{
+          this._account.GetFullName().subscribe({
+            next:(res)=>{
+              console.log(res);
+              const apiResponse = res as { flag: boolean; message: string };
+              console.log(typeof(res));
+             console.log(apiResponse.flag);
+             this.isLogging=apiResponse.flag;
+              if(apiResponse.flag){
+                this.user=apiResponse.message;
+              }
+      
+            },
+            error:(err)=>{
+              console.log(err);
+              this.isLogging=false;
+      
+            }
+          });
+
+        }
+      })
+
+
+
+   
+    
+    
+  }
+
+
+
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -38,4 +106,10 @@ export class HeaderComponent  {
   toggleNavbar() {
     this.isNavbarCollapsed = !this.isNavbarCollapsed;
   }
+
+  logout(){
+    this._account.logout();
+  }
+
+
 }

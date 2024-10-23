@@ -39,13 +39,25 @@ export class LoginComponent {
     this.accountService.login(this.loginForm.value).subscribe({
       next: (user) => {
         console.log(user);
-        this.loading = false;  // Hide loading indicator
-        this.router.navigate(['/Home']); // Redirect after successful login
+      
+          this.loading = false;  // Hide loading indicator
+          this.router.navigate(['/Home']); // Redirect after successful login
+        
+       
       },
       error: (error) => {
-        this.loading = false;  // Hide loading indicator
+        console.log(error.status)
         console.log(error);
-        this.errorMessage = "Login failed. Please check your credentials.";
+        if(error.status==400){
+          this.errorMessage = error.error;
+          this.loading = false; 
+        }
+        else{
+          this.loading = false;  // Hide loading indicator
+         
+          this.errorMessage = "Login failed. Please check your credentials Or connection To Server. ";
+        }
+     
       }
     });
   }
