@@ -28,3 +28,8 @@
 .btn-primary:hover {
   background-color: #1e362e;
 }
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}

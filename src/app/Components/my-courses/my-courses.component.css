@@ -1,0 +1,75 @@
+/* courses.component.css */
+.courses-container {
+  padding: 100px;
+  background-color: #f3f4f6; /* Light gray background for a soft look */
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #333;
+  font-family: 'Georgia', serif; /* Elegant font for headings */
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 2.5em; /* Larger font size for impact */
+}
+
+.no-courses-message {
+  text-align: center;
+  font-size: 18px;
+  color: #777;
+  margin: 20px 0;
+}
+
+.courses-list {
+  list-style: none; /* Remove default list styles */
+  padding: 0; /* Remove padding */
+}
+
+.course-item {
+  background: white;
+  border-radius: 12px;
+  padding: 20px 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.course-item:hover {
+  transform: translateY(-3px); /* Subtle lift effect on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.course-title {
+  font-size: 24px; /* Larger font size for titles */
+  color: #007bff; /* Blue color for titles */
+  margin-bottom: 10px; /* Space below the title */
+  font-family: 'Arial', sans-serif; /* Clean and modern font */
+}
+
+.course-description {
+  color: #555;
+  font-size: 16px; /* Readable font size */
+  line-height: 1.6; /* Improved readability */
+  margin-bottom: 10px; /* Space below description */
+}
+
+.course-details {
+  display: flex;
+  justify-content: space-between; /* Align price and duration */
+  align-items: center;
+}
+
+.course-price {
+  font-size: 20px; /* Slightly larger font for price */
+  color: #28a745; /* Green color for price */
+  font-weight: bold;
+}
+
+.course-duration {
+  font-size: 16px; /* Readable font size */
+  color: #666;
+  font-style: italic; /* Italicized for differentiation */
+}
