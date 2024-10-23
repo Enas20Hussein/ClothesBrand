@@ -41,9 +41,14 @@ export const routes: Routes = [
     {path: 'About' , component:AboutComponent},
     { path: 'product/:id', component: ProdDetailsComponent ,canActivate:[authGuard]}, // Example route for product details
     { path: '', redirectTo: '/products', pathMatch: 'full' },
+
     { path: 'order', component: OrderComponent ,canActivate:[authGuard]},
     { path: 'order-confirmation', component: OrderComponent ,canActivate:[authGuard]},
     { path: 'Confirm-Order', component:CofirmedOrderComponent ,canActivate:[authGuard]},
+
+   
+    { path: 'Confirm-Order/:orderId', component:CofirmedOrderComponent },
+
     { path: 'ForgetPassword', component:ForgetPasswordComponent },
     { path: 'ResetPassword', component:ResetPasswordComponent },
 

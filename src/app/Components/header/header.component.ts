@@ -2,7 +2,7 @@ import { Component, HostListener, Input, input, OnChanges, OnInit, SimpleChanges
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { AccounteService } from '../../Services/Account.service';
 import { CommonModule } from '@angular/common';
-import { CartService } from '../../Services/cart.service';
+import { CartSharedService } from '../../Services/cart-shared.service';
 
 @Component({
   selector: 'app-header',
@@ -15,8 +15,10 @@ templateUrl: './header.component.html',
 
 export class HeaderComponent implements OnChanges {
   // cartCount: number = 0;
+  cartnumber: number = 0;
 
-   constructor(private _account:AccounteService)  {}
+
+   constructor(private _account:AccounteService,private cartSharedService: CartSharedService)  {}
   ngOnChanges(changes: SimpleChanges): void {
     throw new Error('Method not implemented.');
   }
@@ -29,6 +31,12 @@ export class HeaderComponent implements OnChanges {
   // }
   isLogging:boolean=false;
   user:string="";
+
+
+
+
+
+
   isScrolled = false;
   isNavbarCollapsed = true;
   isDropdownOpen = false;
@@ -83,8 +91,12 @@ export class HeaderComponent implements OnChanges {
 
         }
       })
-
-
+// Subscribe to the cart number updates
+      this.cartSharedService.currentCartNumber.subscribe(
+        (cartnumber) => {
+          this.cartnumber = cartnumber;
+        }
+      );
 
    
     

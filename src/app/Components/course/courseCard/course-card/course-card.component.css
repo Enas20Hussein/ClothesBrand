@@ -151,7 +151,13 @@ article {
     white-space: nowrap; 
     width: 1px;
   }
-  
+  .btn{
+    background-color: #113438;
+    border-radius: 30px;
+    color: #fff;
+    padding: 10px 30px;
+    margin-left: 7rem;
+  }
   
   
   

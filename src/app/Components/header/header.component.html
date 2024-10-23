@@ -2,7 +2,7 @@
     <div class="container">
       <div><a href="#" class="navbar-brand"><img src="Images/logo.png" alt="Logo" class="logo-img" style="width:80px;">
         Sara.com</a>
-  
+
       <button (click)="toggleNavbar()" class="navbar-toggler collapsed" type="button">
         <span class="menu-icon-bar"></span>
         <span class="menu-icon-bar"></span>
@@ -37,7 +37,7 @@
       <div class="icons" *ngIf="isNavbarCollapsed">
         <a class="position-relative" routerLink="/Cart" id="shopping">
             <i class="fas fa-shopping-cart fh"></i>
-            <div class="cart-no">5</div>
+            <div class="cart-no">{{ cartnumber }}</div>
         </a>
       @if(!isLogging){
         <a class="uiverse" routerLink="Login">
@@ -58,7 +58,6 @@
       </a>
       }
       </div>
-      
+
     </div>
   </nav>
-  
