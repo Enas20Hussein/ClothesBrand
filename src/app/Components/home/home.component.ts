@@ -4,26 +4,24 @@ import { ProductComponent } from "../product/product.component";
 import { OurServicesComponent } from "../our-services/our-services.component";
 import { RouterModule } from '@angular/router';
 import { AboutComponent } from "../about/about.component";
+import { ProductsService } from '../../Services/products.service';
+import { ProductSliderComponent } from '../product-slider/product-slider.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, ProductComponent, OurServicesComponent, RouterModule, AboutComponent],
+  imports: [CommonModule, ProductComponent,RouterModule, OurServicesComponent,ProductSliderComponent, AboutComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  projects = [
-    { img: 'Images/project1.jpg' },
-    { img: 'Images/project2.jpg' },
-    { img: 'Images/project3.jpg' },
-  ];
+  productslider: any[] = []; // Array to hold product data
+ constructor(private productsService:ProductsService ){}
 
   private slideInterval: any;
 
   // OnInit lifecycle hook to start the auto slider
   ngOnInit(): void {
-    this.startAutoSlider();
   }
 
   // OnDestroy lifecycle hook to clear the interval when the component is destroyed
@@ -33,40 +31,13 @@ export class HomeComponent {
     }
   }
 
-  // Start the auto-slider with a 3-second interval
-  startAutoSlider() {
-    this.slideInterval = setInterval(() => {
-      this.nextSlide();
-    }, 2000); // 3000 ms = 3 seconds
-  }
-  currentSlide = 0;
-  displayedProjects = this.projects.slice(0, 3);
+  // loadProducts(): void {
+  //   this.productsService.getAllProducts().subscribe((data: any) => {
+  //     this.productslider = data;
+  //   });
+  // }
 
-  // Move to the next slide
-  nextSlide() {
-    this.currentSlide = (this.currentSlide + 1) % this.projects.length;
-    this.updateDisplayedProjects();
-  }
 
-  // Move to the previous slide
-  prevSlide() {
-    this.currentSlide =
-      (this.currentSlide - 1 + this.projects.length) % this.projects.length;
-    this.updateDisplayedProjects();
-  }
 
-  // Update displayed projects based on the current slide
-  updateDisplayedProjects() {
-    this.displayedProjects = this.projects.slice(
-      this.currentSlide,
-      this.currentSlide + 3
-    );
 
-    // If fewer than 3 items are left, append from the start of the array
-    if (this.displayedProjects.length < 3) {
-      this.displayedProjects = this.displayedProjects.concat(
-        this.projects.slice(0, 3 - this.displayedProjects.length)
-      );
-    }
-  }
 }

@@ -6,9 +6,9 @@
 }
 
 .form-container {
-  background-color: #f8f9fa;
+  background-color: #f7e0e5ee;
   border-radius: 8px;
-  border: 0.25px solid#c6ebe9;
+  border:none;
   margin-left:20px;
   
 }
@@ -22,7 +22,7 @@
 }
 
 .form-control:focus {
-  border-color: #007bff;
+  border-color:#8b3b4cee;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
 }
 
@@ -38,10 +38,10 @@
 }
 
 #card-element {
-  background-color: #f0f0f5;
+  background-color: #f7e0e5ee;
   border-radius: 8px;
   padding: 15px;
-  border: 1px solid #ced4da;
+  border: 1px solid #8b3b4cee;;
   margin-top: 20px;
 }
 
@@ -54,23 +54,29 @@ h3, h5 {
 label {
   font-size: 14px;
   font-weight: 500;
-  color: #495057;
+  color:#8b3b4cee;
 }
 
 input::placeholder {
   color: #adb5bd;
 }
 
+.form-control{
+  border-radius: 30px;
+}
+
 select.form-select {
-  border-radius: 8px;
+  border-radius: 30px;
 }
 
 
 
 .card {
   border-radius: 8px;
-  border: 0.25px solid#c6ebe9;
+  border: none;
   margin-right:25px;
+  background-color: #f7e0e5ee;;
+  color: #57202cee;;
 }
 
 .product-img {
@@ -92,4 +98,11 @@ select.form-select {
   width: 50px;
   height: 50px;
   margin-right: 10px;
+}
+tbody,td,th,table{
+  background-color:#f7e0e5ee;
+  color: #8b3b4cee;
+}
+h3,h5{
+  color: #8b3b4cee;
 }

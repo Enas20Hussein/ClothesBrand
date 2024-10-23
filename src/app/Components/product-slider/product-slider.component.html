@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div *ngFor="let product of products; let i = index" class="carousel-item"
+                 [class.active]="i === activeIndex"
+                 [class.carousel-item-next]="i === (activeIndex + 1) % products.length && direction === 'next'"
+                 [class.carousel-item-prev]="i === (activeIndex - 1 + products.length) % products.length && direction === 'prev'">
+              <div class="row align-items-center bannerImage">
+                <div class="col-lg-4 col-md-5 col-sm-12 text-center details">
+                  <h4 class="product-title">{{ product.name }}</h4>
+                  <p class="product-description">{{ product.description }}</p>
+                  <h5 class="product-price" style="color: #720d0d;">${{ product.price }}</h5>
+                </div>
+                <div class="col-lg-6 col-md-7 col-sm-12 text-center image">
+                  <img [src]="product.imageUrl" alt="{{ product.name }}" class="img-fluid imageSlider">
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="control-box">
+            <a class="carousel-control-prev" role="button" (click)="prevSlide()">
+              <i class="fa-solid fa-chevron-left"></i>
+            </a>
+            <a class="carousel-control-next" role="button" (click)="nextSlide()">
+              <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

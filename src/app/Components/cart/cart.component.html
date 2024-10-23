@@ -1,4 +1,4 @@
-<div class="container-fluid py-5">
+<div class="container py-5">
   <div class="card card-responsive">
     <div class="card-body">
       <table class="table table-responsive-md table-hover">
@@ -15,12 +15,12 @@
         <tbody *ngIf="cartData && cartData.shoppingCartItems && cartData.shoppingCartItems.length > 0">
           <tr *ngFor="let item of cartData.shoppingCartItems">
             <td class="align-middle">
-              <button class="btn btn-outline-danger btn-sm" (click)="deleteToCart(item.productId)">
+              <button class="btn " (click)="deleteToCart(item.productId)">
                 <i class="fa-solid fa-xmark"></i>
               </button>
             </td>
             <td class="align-middle">
-              <img src="{{item.imageUrl}}" alt="{{ item.productName }}" class="img-fluid img-thumbnail" height="80" width="100">
+              <img src="{{item.imageUrl}}" alt="{{ item.productName }}" class="img-fluid"style="width: 70%; height: 120px; border-radius: 10px;">
             </td>
             <td class="align-middle"> {{ item.productName }} </td>
             <td class="align-middle">{{ item.price | currency }}</td>
@@ -32,12 +32,13 @@
 
       <div class="row mt-3 justify-content-between">
         <div class="col-md-3 col-12">
-          <button class="btn checkout-btn w-100 w-md-auto" (click)="goToOrderPage()">Proceed to checkout</button>
-          <button class="btn btn-outline-danger w-100 my-2" (click)="clearcart()">Clear Cart</button>
+          <button class="btn checkout-btn w-100 w-md-auto"><a class="checkout  mt-4" style="color:#FFF" routerLink="/product">All Products</a></button>
+          <button class="btn btn-outline-danger w-100 my-3" (click)="clearcart()">Clear Cart</button>
         </div>
         <div class="col-md-3 col-12 text-md-right">
           <p *ngIf="cartData && cartData.totalPrice" class="total-price"><strong>Total:</strong> {{ cartData.totalPrice | currency }}</p>
-          <p *ngIf="cartData && cartData.totalPrice" class="total-price"><strong>Check Your checkout </strong> </p>
+          <button class="btn checkout-btn w-100 w-md-auto" (click)="goToOrderPage()">Proceed to checkout</button>
+
         </div>
       </div>
     </div>

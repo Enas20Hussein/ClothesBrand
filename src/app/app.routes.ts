@@ -20,6 +20,8 @@ import { CourseDetailsComponent } from './Components/course/courseDetail/course-
 import { CourseCardComponent } from './Components/course/courseCard/course-card/course-card.component';
 import { EnrollmentSuccessComponent } from './Components/enrollment-success/enrollment-success.component';
 import { AlreadyEnrolledComponent } from './Components/already-enrolled/already-enrolled.component';
+import { Component } from '@angular/core';
+import { ShopComponent } from './Components/shop/shop.component';
 
 export const routes: Routes = [
 
@@ -46,7 +48,8 @@ export const routes: Routes = [
     {path:'orders/:orderId',component:CustomOrderComponent},
     { path: 'course/:id', component: CourseDetailsComponent },
     { path: 'enrollment-success/:id', component: EnrollmentSuccessComponent },
-    { path: 'already-enrolled', component: AlreadyEnrolledComponent }
+    { path: 'already-enrolled', component: AlreadyEnrolledComponent },
+    {path:'shop',component:ShopComponent}
 
 
 

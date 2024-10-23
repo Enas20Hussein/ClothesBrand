@@ -1,22 +1,33 @@
 /* General container padding and responsive adjustments */
-.container-fluid {
+
+
+.container {
   padding: 0 1rem;
   margin-top: 5rem ;
-  height: 100vh;
+  
+  
 }
 
 .card-responsive {
   margin: 0 auto;
   max-width: 100%;
+  background-color: #fae7e5;
+  border-radius: 20px;
+  border: none;
+  color: #57202cee;
 }
 
 .table {
   margin-bottom: 20px;
+ 
+  
 }
 
 .table th, .table td {
   text-align: center;
   vertical-align: middle;
+  background-color: #fae7e5;
+  color:  #57202cee;
 }
 
 .img-thumbnail {
@@ -34,6 +45,15 @@
   background-color: #315350;
   border-radius: 35px;
   color: aliceblue;
+  
+}
+
+.checkout a{
+  background-color: #315350;
+  border-radius: 35px;
+  color: aliceblue;
+  padding: 30px 50px;
+
 }
 .btn-outline-danger{
   border-radius: 35px;

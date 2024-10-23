@@ -3,7 +3,7 @@
 
 <!-- Right Side: Order Summary -->
     <div class="col-lg-6 p-0" >
-      <div class="card p-5 bg-white rounded h-100" >
+      <div class="card p-5 rounded h-100" >
         <h5 class="card-title text-center mb-2">YOUR ORDER</h5>
         <table class="table table-borderless">
           <thead>
@@ -17,7 +17,7 @@
           <tbody *ngIf="cartData?.shoppingCartItems?.length > 0">
             <tr *ngFor="let item of cartData.shoppingCartItems">
               <td>
-                <img src="{{item.imageUrl}}" class="product-img" alt="Product Image" />
+                <img src="{{item.imageUrl}}" class="product-img" style="width: 80%; height: 100px;" alt="Product Image" />
               </td>
               <td>{{ item.productName }}</td>
               <td> {{ item.quantity }}</td>
@@ -37,7 +37,7 @@
     <br><br><br>
     <!-- Left Side: Checkout Form -->
     <div class="col-lg-6 p-0">
-      <div class="form-container p-5 rounded-3 bg-white h-100">
+      <div class="form-container p-5 rounded-3 h-100">
         <h3 class="text-center mb-2">Shipping Details</h3>
         <form (submit)="checkout()" class="needs-validation" novalidate>
           <!-- Address Line 1 -->

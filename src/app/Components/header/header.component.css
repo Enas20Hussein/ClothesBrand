@@ -146,18 +146,18 @@
 .icons {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .icons .fh {
   cursor: pointer;
-  font-size: 1.3rem;
+  font-size: 0.6rem;
   color: #af7b62;; /* Light color for icons */
   border-radius: 50%;
   background: #131842; /* Dark background for icons */
-  width: 3rem;
-  height: 3rem;
-  line-height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
   text-align: center;
   transition: background-color 0.3s, color 0.3s; /* Smooth transition for icons */
 }
@@ -185,7 +185,7 @@
 /* Media queries for small devices */
 @media screen and (max-width: 768px) {
   .navbar {
-    padding: 10px;
+    padding: 5px;
   }
   .navbar-brand {
     font-size: 1.8rem;
@@ -247,7 +247,7 @@
 /* Media queries for larger devices */
 @media screen and (min-width: 769px) {
   .navbar {
-    padding: 15px 20px;
+    padding: 3px 15px;
     background-color: transparent;
     transition: background-color 0.6s;
   }

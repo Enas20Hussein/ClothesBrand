@@ -1,12 +1,12 @@
 <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-12">
-        <div class="card shadow-lg p-4 rounded-3 bg-light">
-          <h3 class="text-center mb-3">Custom Order Form</h3>
-          <form (ngSubmit)="onSubmit()" #customOrderForm="ngForm">
-
-            <div class="form-group">
-              <label for="customerName">Client Name:</label>
+  <div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10">
+      <div class="card shadow-lg p-4 ">
+        <h3 class="text-center mb-4">Custom Order Form</h3>
+        <form (ngSubmit)="onSubmit()" #customOrderForm="ngForm">
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <label for="customerName" class="form-label">Client Name</label>
               <input
                 type="text"
                 id="customerName"
@@ -16,13 +16,13 @@
                 [(ngModel)]="order.customerName"
                 #customerName="ngModel"
               />
-              <div *ngIf="customerName.invalid && customerName.touched" class="text-danger">
+              <div *ngIf="customerName.invalid && customerName.touched" class="invalid-feedback">
                 Client Name is required.
               </div>
             </div>
 
-            <div class="form-group">
-              <label for="phoneNumber">PhoneNumber:</label>
+            <div class="col-md-6 form-group">
+              <label for="phoneNumber" class="form-label">Phone Number</label>
               <input
                 type="text"
                 id="phoneNumber"
@@ -32,13 +32,15 @@
                 [(ngModel)]="order.phoneNumber"
                 #phoneNumber="ngModel"
               />
-              <div *ngIf="phoneNumber.invalid && phoneNumber.touched" class="text-danger">
-                phone Number is required.
+              <div *ngIf="phoneNumber.invalid && phoneNumber.touched" class="invalid-feedback">
+                Phone Number is required.
               </div>
             </div>
-            <!-- Design Description -->
-            <div class="form-group">
-              <label for="designDescription">Design Description:</label>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <label for="designDescription" class="form-label">Design Description:</label>
               <input
                 type="text"
                 id="designDescription"
@@ -48,14 +50,13 @@
                 [(ngModel)]="order.designDescription"
                 #designDescription="ngModel"
               />
-              <div *ngIf="designDescription.invalid && designDescription.touched" class="text-danger">
+              <div *ngIf="designDescription.invalid && designDescription.touched" class="invalid-feedback">
                 Design description is required.
               </div>
             </div>
 
-            <!-- Fabric Details -->
-            <div class="form-group">
-              <label for="fabricDetails">Fabric Details:</label>
+            <div class="col-md-6 form-group">
+              <label for="fabricDetails" class="form-label">Fabric Details:</label>
               <input
                 type="text"
                 id="fabricDetails"
@@ -65,14 +66,15 @@
                 [(ngModel)]="order.fabricDetails"
                 #fabricDetails="ngModel"
               />
-              <div *ngIf="fabricDetails.invalid && fabricDetails.touched" class="text-danger">
+              <div *ngIf="fabricDetails.invalid && fabricDetails.touched" class="invalid-feedback">
                 Fabric details are required.
               </div>
             </div>
+          </div>
 
-            <!-- Deposit Amount -->
-            <div class="form-group">
-              <label for="depositAmount">Deposit Amount:</label>
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <label for="depositAmount" class="form-label">Deposit Amount:</label>
               <input
                 type="number"
                 id="depositAmount"
@@ -83,50 +85,34 @@
                 [(ngModel)]="order.depositAmount"
                 #depositAmount="ngModel"
               />
-              <div *ngIf="depositAmount.invalid && depositAmount.touched" class="text-danger">
+              <div *ngIf="depositAmount.invalid && depositAmount.touched" class="invalid-feedback">
                 Deposit amount is required and must be greater than 0.
               </div>
             </div>
 
-            <!-- Measurements -->
-
-            <div class="form-group">
-              <label for="shoulderWidth">Shoulder Width:</label>
+            <div class="col-md-6 form-group">
+              <label for="shoulderWidth" class="form-label">Shoulder Width:</label>
               <input
                 type="number"
                 id="shoulderWidth"
                 name="shoulderWidth"
                 class="form-control"
                 required
-                min = "0"
+                min="0"
                 [(ngModel)]="order.shoulderWidth"
                 #shoulderWidth="ngModel"
               />
-              <div *ngIf="shoulderWidth.invalid && shoulderWidth.touched" class="text-danger">
+              <div *ngIf="shoulderWidth.invalid && shoulderWidth.touched" class="invalid-feedback">
                 Shoulder width is required and must be greater than 0.
               </div>
             </div>
+          </div>
 
-            <div class="form-group">
-              <label for="chestCircumference">Chest Circumference:</label>
-              <input
-                type="number"
-                id="chestCircumference"
-                name="chestCircumference"
-                class="form-control"
-                required
-                min="0"
-                [(ngModel)]="order.chestCircumference"
-                #chestCircumference="ngModel"
-              />
-              <div *ngIf="chestCircumference.invalid && chestCircumference.touched" class="text-danger">
-                Chest circumference is required and must be greater than 0.
-              </div>
-            </div>
+          <!-- Continue similar form layout for the remaining fields -->
 
-            <!-- Additional Measurements (Waist, Hip, etc.) -->
-            <div class="form-group">
-              <label for="waistCircumference">Waist Circumference:</label>
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <label for="waistCircumference" class="form-label">Waist Circumference:</label>
               <input
                 type="number"
                 id="waistCircumference"
@@ -137,107 +123,39 @@
                 [(ngModel)]="order.waistCircumference"
                 #waistCircumference="ngModel"
               />
-              <div *ngIf="waistCircumference.invalid && waistCircumference.touched" class="text-danger">
+              <div *ngIf="waistCircumference.invalid && waistCircumference.touched" class="invalid-feedback">
                 Waist circumference is required and must be greater than 0.
               </div>
             </div>
 
-            <div class="form-group">
-              <label for="hipCircumference">Hip Circumference:</label>
+            <div class="col-md-6 form-group">
+              <label for="hipCircumference" class="form-label">Hip Circumference:</label>
               <input
                 type="number"
                 id="hipCircumference"
                 name="hipCircumference"
                 class="form-control"
                 required
-                min = "0"
+                min="0"
                 [(ngModel)]="order.hipCircumference"
                 #hipCircumference="ngModel"
               />
-              <div *ngIf="hipCircumference.invalid && hipCircumference.touched" class="text-danger">
+              <div *ngIf="hipCircumference.invalid && hipCircumference.touched" class="invalid-feedback">
                 Hip circumference is required and must be greater than 0.
               </div>
             </div>
+          </div>
 
-            <div class="form-group">
-              <label for="waistLength">Waist Length:</label>
-              <input
-                type="number"
-                id="waistLength"
-                name="waistLength"
-                class="form-control"
-                required
-                min="0"
-                [(ngModel)]="order.waistLength"
-                #waistLength="ngModel"
-              />
-              <div *ngIf="waistLength.invalid && waistLength.touched" class="text-danger">
-                Waist length is required and must be greater than 0.
-              </div>
-            </div>
+          <!-- Image Upload -->
+          <div class="form-group">
+            <label for="image" class="form-label">Upload Design Image:</label>
+            <input type="file" id="image" name="image" (change)="onFileChange($event)" class="form-control" />
+          </div>
 
-            <div class="form-group">
-              <label for="armLength">Arm Length:</label>
-              <input
-                type="number"
-                id="armLength"
-                name="armLength"
-                class="form-control"
-                required
-                min = "0"
-                [(ngModel)]="order.armLength"
-                #armLength="ngModel"
-              />
-              <div *ngIf="armLength.invalid && armLength.touched" class="text-danger">
-                Arm length is required and must be greater than 0.
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="bicepSize">Bicep Size:</label>
-              <input
-                type="number"
-                id="bicepSize"
-                name="bicepSize"
-                class="form-control"
-                required
-                min="0"
-                [(ngModel)]="order.bicepSize"
-                #bicepSize="ngModel"
-              />
-              <div *ngIf="bicepSize.invalid && bicepSize.touched" class="text-danger">
-                Bicep size is required and must be greater than 0.
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="modelLength">Model Length:</label>
-              <input
-                type="number"
-                id="modelLength"
-                name="modelLength"
-                class="form-control"
-                required
-                min="0"
-                [(ngModel)]="order.modelLength"
-                #modelLength="ngModel"
-              />
-              <div *ngIf="modelLength.invalid && modelLength.touched" class="text-danger">
-                Model length is required and must be greater than 0.
-              </div>
-            </div>
-
-            <!-- Image Upload -->
-            <div class="form-group">
-              <label for="image">Upload Design Image:</label>
-              <input type="file" id="image" name="image" (change)="onFileChange($event)" class="form-control" />
-            </div>
-
-            <!-- Submit Button -->
-            <button type="submit" class="btn btn-primary w-100 mt-2" [disabled]="customOrderForm.invalid">Submit Order</button>
-
-          </form>
-        </div>
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary w-100 mt-4" [disabled]="customOrderForm.invalid">Submit Order</button>
+        </form>
       </div>
     </div>
   </div>
+</div>

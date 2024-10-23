@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { CartSharedService } from '../../Services/cart-shared.service';
 import { AuthInterceptor } from '../../Models/AuthInterceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ProductsService } from '../../Services/products.service';
 @Component({
   selector: 'app-cart',
   standalone: true,
@@ -132,9 +133,6 @@ export class CartComponent implements OnInit {
   goToOrderPage() {
    this.router.navigate(['/order']);
   }
-
-
-
 
 
 

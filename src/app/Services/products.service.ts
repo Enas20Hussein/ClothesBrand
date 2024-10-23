@@ -22,4 +22,24 @@ export class ProductsService {
     const url = `${this.apiUrl}product/${id}`;
     return this.http.get<any>(url,{headers});
   }
+
+
+  getAllProSlider(){
+    
+      const headers = this.auth.getAuthHeaders(); // Get the authorization header
+  
+      return this.http.get(this.apiUrl+'Product',{headers})
+    
+  }
+
+  getFilteredProducts(category: string, minPrice: number, maxPrice: number, keyword: string): Observable<any> {
+    const params = {
+      CategoryName: category,
+      MinPrice: minPrice,
+      MaxPrice: maxPrice,
+      KeyWord: keyword
+    };
+    return this.http.get<any>(this.apiUrl+'Product/Filtering', { params });
+  }
+
 }

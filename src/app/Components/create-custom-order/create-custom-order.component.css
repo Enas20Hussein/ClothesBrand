@@ -1,25 +1,93 @@
 .container {
-    margin: 7rem ;
-    height: auto;
-  }
-  h3{
-    color: rgba(171, 69, 69, 0.692);
-  }
-  .card {
-    border-radius: 12px;
-    background-color: #f9f9f9;
-  }
+  margin: 5rem auto;
+  max-width: 100%;
+  padding: 0 15px;
+}
+
+.card {
+  border-radius: 30px;
+  background-color: #e4c0c8;
+  border: none;
+
+}
+
+h3 {
+  color: rgba(145, 51, 74, 0.986);
+  font-size: 24px;
+}
+
+.form-label {
+  color: #7a2235;
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  border-radius: 30px;
   
-  .form-label {
-    font-weight: bold;
-  }
+}
+.form-control:focus {
+  border-color: #7a2235;
   
-  .btn-primary {
-    background: linear-gradient(45deg, rgba(128, 69, 69, 0.692), rgba(177, 70, 70, 0.692));
-    border: none;
+}
+
+
+.invalid-feedback {
+  font-size: 0.9rem;
+  color: #fff;
+  background-color: rgba(226, 95, 108, 0.9); /* Bootstrap 'danger' color with transparency */
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for better visibility */
+}
+
+.invalid-feedback::before {
+  content: '\26A0'; /* Warning icon (⚠️) */
+  margin-right: 0.5rem;
+  font-size: 1rem;
+  color: #fff;
+}
+
+input.is-invalid {
+  border-color: rgba(220, 53, 69, 0.8); /* Enhances the invalid input border color */
+  box-shadow: 0 0 5px rgba(220, 53, 69, 0.3); /* Adds a subtle red glow to the input */
+}
+
+input.is-invalid:focus {
+  border-color: rgba(220, 53, 69, 0.8);
+  box-shadow: 0 0 5px rgba(220, 53, 69, 0.5); /* Makes the red glow stronger on focus */
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, rgb(133, 50, 64), rgb(177, 70, 79));
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  cursor: pointer;}
+
+.btn-primary:hover {
+  background: linear-gradient(45deg, rgb(187, 114, 114), rgb(117, 18, 18));
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .container {
+    margin: 2rem 1rem;
   }
-  
-  .btn-primary:hover {
-    background: linear-gradient(45deg, rgba(128, 69, 69, 0.692), rgba(146, 56, 56, 0.616));
+
+  h3 {
+    font-size: 20px;
   }
-  
+}
+
+@media (max-width: 576px) {
+  .container {
+    margin: 1.5rem 1rem;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+}

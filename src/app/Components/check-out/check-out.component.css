@@ -2,10 +2,13 @@
     margin: auto;
     margin: 7rem;
     height: auto;
+    align-items: center;
   }
 
   .credit-card-container {
     perspective: 2000px;
+    
+
   }
 
   .credit-card {
@@ -74,6 +77,21 @@
     margin-top: 20px;
   }
 
+  .form-control , .btn{
+    border-radius: 35px;
+    color: #Fff;
+  }
+label{
+  color:#882f42ee ;
+}
+
+.btn:hover{
+  background-color:#9e5867ee ;
+
+}
+.form-container{
+  background-color: rgba(172, 65, 65, .8);
+}
   @media (max-width: 768px) {
     .row {
       flex-direction: column;

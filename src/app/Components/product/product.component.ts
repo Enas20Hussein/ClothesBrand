@@ -2,13 +2,12 @@ import { Component } from '@angular/core';
 import { ProductsService } from '../../Services/products.service';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import {NgxPaginationModule} from 'ngx-pagination'
 import { ProdDetailsComponent } from '../prod-details/prod-details.component';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [RouterModule, CommonModule,NgxPaginationModule,ProdDetailsComponent],
+  imports: [RouterModule, CommonModule,ProdDetailsComponent],
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
@@ -61,4 +60,3 @@ export class ProductComponent {
   }
   }
   
-
