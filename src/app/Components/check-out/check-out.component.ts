@@ -4,15 +4,18 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { OrderService } from '../../Services/order.service';
 import { HttpClient } from '@angular/common/http';
 import { loadStripe, Stripe, StripeElements, StripeCardNumberElement, StripeCardExpiryElement, StripeCardCvcElement } from '@stripe/stripe-js';
-
-
+import { AuthInterceptor } from '../../Models/AuthInterceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @Component({
   selector: 'app-check-out',
   standalone: true,
   imports: [],
   templateUrl: './check-out.component.html',
-  styleUrl: './check-out.component.css'
+  styleUrl: './check-out.component.css',
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true } // Provide the interceptor here
+  ]
 })
 export class CheckOutComponent implements OnInit {
 constructor(private route: ActivatedRoute,private accserv:AccounteService,private router:Router,private orderService:OrderService,private http:HttpClient){}
@@ -93,7 +96,11 @@ constructor(private route: ActivatedRoute,private accserv:AccounteService,privat
         console.log('Order details:', this.order);
       },
       (error) => {
-        console.error('Error fetching order:', error);
+        if (error.status === 401) {
+          this.router.navigate(['/Login']); // Navigate to login on 401 error
+        } else {
+          console.error('Error fetching data', error);
+        }
       }
     );
   }
@@ -145,7 +152,11 @@ constructor(private route: ActivatedRoute,private accserv:AccounteService,privat
         console.log('Order successful:', response);
       },
       (error) => {
-        console.error('Error during checkout:', error);
+        if (error.status === 401) {
+          this.router.navigate(['/Login']); // Navigate to login on 401 error
+        } else {
+          console.error('Error fetching data', error);
+        }
       }
     );
   }

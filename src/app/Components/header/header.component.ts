@@ -8,29 +8,28 @@ import { CartSharedService } from '../../Services/cart-shared.service';
   selector: 'app-header',
   standalone: true,
   imports: [RouterModule,CommonModule],
-  
+
 templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
 
 export class HeaderComponent implements OnChanges {
-  // cartCount: number = 0;
   cartnumber: number = 0;
 
 
+
    constructor(private _account:AccounteService,private cartSharedService: CartSharedService)  {}
+
+ 
+
   ngOnChanges(changes: SimpleChanges): void {
     throw new Error('Method not implemented.');
   }
 
-
-  // ngOnInit(): void {
-  //   this.cartService.getCartCount().subscribe((count) => {
-  //     this.cartCount = count; // Update cart icon number
-  //   });
-  // }
   isLogging:boolean=false;
   user:string="";
+
+
 
 
 
@@ -42,6 +41,13 @@ export class HeaderComponent implements OnChanges {
   isDropdownOpen = false;
 
   ngOnInit(): void {
+
+    // Subscribe to the cart number updates
+   this.cartSharedService.currentCartNumber.subscribe(
+    (cartnumber) => {
+      this.cartnumber = cartnumber;
+    }
+  );
 
       this._account.isLoggedIn().subscribe({
         next:(res)=>{
@@ -56,12 +62,12 @@ export class HeaderComponent implements OnChanges {
               if(apiResponse.flag){
                 this.user=apiResponse.message;
               }
-      
+
             },
             error:(err)=>{
               console.log(err);
               this.isLogging=false;
-      
+
             }
           });
         }
@@ -80,17 +86,18 @@ export class HeaderComponent implements OnChanges {
               if(apiResponse.flag){
                 this.user=apiResponse.message;
               }
-      
+
             },
             error:(err)=>{
               console.log(err);
               this.isLogging=false;
-      
+
             }
           });
 
         }
       })
+
 // Subscribe to the cart number updates
       this.cartSharedService.currentCartNumber.subscribe(
         (cartnumber) => {
@@ -99,11 +106,9 @@ export class HeaderComponent implements OnChanges {
       );
 
    
-    
-    
+
+
   }
-
-
 
 
   @HostListener('window:scroll', [])

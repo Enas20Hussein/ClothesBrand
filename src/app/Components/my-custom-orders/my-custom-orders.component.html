@@ -1,0 +1,71 @@
+<div class="orders-container">
+  <h2>My Sewing Orders</h2>
+
+  <!-- Show message if no orders -->
+  <div *ngIf="customOrders.length === 0" class="no-orders">
+    <p>No orders found for you.</p>
+  </div>
+
+  <!-- Orders list -->
+  <div *ngIf="customOrders.length > 0" class="orders-list">
+    <div *ngFor="let order of customOrders" class="order-card">
+      <div class="card-header">
+        <p class="order-date">Placed on: {{ order.customOrderDate | date:'longDate' }}</p>
+      </div>
+
+      <div class="card-body">
+        <div class="order-info">
+          <!-- Order details and Image -->
+          <div class="details">
+            <p><strong>Status:</strong> <span class="status-tag">{{ order.customOrderStatus }}</span></p>
+            <p><strong>Design Description:</strong> {{ order.designDescription }}</p>
+            <p><strong>Deposit Amount:</strong> {{ order.depositAmount | currency }}</p>
+            <p><strong>Fabric Details:</strong> {{ order.fabricDetails }}</p>
+          </div>
+
+          <!-- Image -->
+          <div class="order-image">
+            <img [src]="order.imageUrl || 'default-image.jpg'" alt="Design Image" />
+          </div>
+        </div>
+
+        <!-- Measurements Table -->
+        <div class="measurements-section">
+          <h4>Measurements</h4>
+          <table class="measurements-table">
+            <thead>
+              <tr>
+                <th>Measurement</th>
+                <th>Value (cm)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Shoulder Width</td>
+                <td>{{ order.shoulderWidth }}</td>
+              </tr>
+              <tr>
+                <td>Chest Circumference</td>
+                <td>{{ order.chestCircumference }}</td>
+              </tr>
+              <tr>
+                <td>Waist Circumference</td>
+                <td>{{ order.waistCircumference }}</td>
+              </tr>
+              <tr>
+                <td>Hip Circumference</td>
+                <td>{{ order.hipCircumference }}</td>
+              </tr>
+              <tr>
+                <td>Waist Length</td>
+                <td>{{ order.waistLength }}</td>
+              </tr>
+              <tr>
+                <td>Arm Length</td>
+                <td>{{ order.armLength }}</td>
+              </tr>
+              <tr>
+                <td>Bicep Size</td>
+                <td>{{ order.bicepSize }}</td>
+              </tr>
+              

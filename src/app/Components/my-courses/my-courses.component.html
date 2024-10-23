@@ -1,0 +1,16 @@
+<!-- courses.component.html -->
+<div class="courses-container">
+  <h2>My Courses</h2>
+  <div *ngIf="courses.length === 0" class="no-courses-message">No courses found.</div>
+  
+  <ul class="courses-list">
+    <li *ngFor="let course of courses" class="course-item">
+      <h3 class="course-title">{{ course.title }}</h3>
+      <p class="course-description">{{ course.description }}</p>
+      <div class="course-details">
+        <span class="course-price">{{ course.price | currency }}</span>
+        <span class="course-duration">Duration: {{ course.duration }}</span>
+      </div>
+    </li>
+  </ul>
+</div>

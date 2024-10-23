@@ -1,0 +1,80 @@
+.navbar {
+  background-color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  color: #f8f9fa;
+}
+
+.nav-item a {
+  transition: color 0.3s ease;
+}
+
+.nav-item a:hover {
+  color: #ffcb08 !important; /* Example hover color */
+}
+
+.navbar-toggler {
+  border-color: transparent;
+}
+
+.menu-icon-bar {
+  width: 22px;
+  height: 2px;
+  background-color: #fff;
+  display: block;
+  margin: 4px 0;
+}
+
+.dropdown-menu {
+  background-color: #444;
+  border: none;
+}
+
+.dropdown-item:hover {
+  background-color: #ffcb08;
+}
+
+.icons i {
+  font-size: 1.3rem;
+  color: #fff;
+  margin-left: 20px;
+  transition: color 0.3s ease;
+}
+
+.icons i:hover {
+  color: #ffcb08;
+}
+
+.cart-no {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: red;
+  border-radius: 50%;
+  color: white;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+/* New Styles for Professional Look */
+.navbar-nav li {
+  margin-left: 15px;
+}
+
+.navbar .nav-link {
+  padding: 10px 15px;
+}
+
+.navbar .dropdown-menu {
+  border-radius: 0.5rem;
+  padding: 10px;
+}
+
+.nav-item .active {
+  color: #ffcb08 !important;
+}

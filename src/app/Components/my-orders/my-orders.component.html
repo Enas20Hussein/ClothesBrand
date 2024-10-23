@@ -1,0 +1,42 @@
+<!-- orders.component.html -->
+<div class="orders-container">
+  <h2 class="section-title">My Orders</h2>
+  <div *ngIf="orders.length === 0" class="no-orders">
+    <p>No orders found.</p>
+  </div>
+
+  <div *ngFor="let order of orders" class="order-card">
+    <div class="order-header">
+      <h3 class="order-date">Order Date: {{ order.orderDate | date: 'fullDate' }}</h3>
+      <div class="order-summary">
+        <p class="order-total">Total Price: {{ order.totalPrice | currency }}</p>
+        <p class="order-status">Payment Status: <span [ngClass]="getPaymentStatusClass(order.paymentStatus)">{{ order.paymentStatus }}</span></p>
+        <p class="order-status">Order Status: <span [ngClass]="getOrderStatusClass(order.orderStatus)">{{ order.orderStatus }}</span></p>
+      </div>
+    </div>
+
+    <div class="shipping-details">
+      <p>{{ order.addressLine1 }}</p>
+      <p *ngIf="order.addressLine2">{{ order.addressLine2 }}</p>
+      <p>{{ order.city }}, {{ order.state }} {{ order.postalCode }}</p>
+      <p>{{ order.country }}</p>
+    </div>
+
+    <table class="order-items-table">
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of order.orderItems">
+          <td>{{ item.productName }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.price | currency }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

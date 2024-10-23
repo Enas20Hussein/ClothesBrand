@@ -3,24 +3,24 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, map, Observable, tap } from 'rxjs';
 import { User } from '../Models/user';
 import { Router } from '@angular/router';
-import {jwtDecode} from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 @Injectable({
   providedIn: 'root'
 })
 export class AccounteService {
- 
 
-  private apiUrl = 'https://localhost:7108/api/Account/identity/'; 
+
+  private apiUrl = 'https://localhost:7108/api/Account/identity/';
   private refreshTokenEndpoint =this.apiUrl+"refresh-token";
   private accessToken:string|null=null;
   private tokenExpiry:number | null = null;
 
   private CurrentUserSource =new BehaviorSubject<User|null>(null);
-  
+
 
   private loggedIn = new BehaviorSubject<boolean>(this.checkTokenValidity());
   CurrentUser$= this.CurrentUserSource.asObservable();
-  
+
   userId:string | null=null
   constructor(private http: HttpClient,private router:Router) {}
 
@@ -70,7 +70,7 @@ export class AccounteService {
       })
     );
   }
-  
+
 
 // Shaban@123
 
@@ -82,19 +82,18 @@ isLoggedIn(): Observable<boolean> {
 private checkTokenValidity(): boolean {
   const token = this.getAccessToken();
   if (token) {
-    
+
     return true;
   }
   return false;
 }
 
 
-    getAuthHeaders(): HttpHeaders 
+    getAuthHeaders(): HttpHeaders
     {
       if(this.isTokenExpired()){
         this.refreshToken().subscribe();
       }
-     
 
     const token = this.getAccessToken();
      // Ensure the token is stored in localStorage or another secure place
@@ -118,7 +117,7 @@ setUserId(id: string) {
     return this.http.post<User>(this.apiUrl+'create',values).pipe(
       map(user=>{
         this.CurrentUserSource.next(user);
-        
+
       })
     )
 
@@ -131,32 +130,32 @@ setUserId(id: string) {
         this.setUserId(user.userId);
         this.CurrentUserSource.next(user);
         this.loggedIn.next(true);
-      
+
         return user;
       })
     )
-    
+
   }
 
   logout(){
-    localStorage.removeItem('userId'); 
+    localStorage.removeItem('userId');
     localStorage.removeItem('token');
     this.loggedIn.next(false);
     this.CurrentUserSource.next(null);
     this.http.get(this.apiUrl+"LogOut");
     this.router.navigateByUrl('Login');
-    
+
 
   }
- 
 
-  
+
+
  ResetPassword(methodName:string,QueryUrl:any){
   const headers = new HttpHeaders({
     'Content-Type': 'application/json'
   });
   return this.http.post(this.apiUrl+methodName,QueryUrl,{ headers })
-    
+
  }
   checkEmailExists(email:string){
     return this.http.get<boolean>(this.apiUrl+'EmailExists?email='+email)
@@ -165,7 +164,7 @@ setUserId(id: string) {
   ForgetPassword(url:string){
     return this.http.get(this.apiUrl+url)
   }
- 
+
 
   ChangePassword(methodName:string,QueryUrl:any){
     const headers = new HttpHeaders({

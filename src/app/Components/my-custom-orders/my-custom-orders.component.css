@@ -1,0 +1,143 @@
+/* Main container */
+.orders-container {
+  padding: 80px;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+/* No Orders Section */
+.no-orders {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #888;
+}
+
+/* Orders list */
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Individual order card */
+.order-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.order-card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Card header */
+.card-header h3 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  color: #111;
+}
+
+.card-header .order-date {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Card body */
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Order information */
+.order-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.details {
+  flex: 1;
+}
+
+.details p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Status Tag */
+.status-tag {
+  padding: 6px 14px;
+  background: #28a745;
+  color: #fff;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* Image styling */
+.order-image img {
+  width: 220px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Measurements Section */
+.measurements-section {
+  margin-top: 25px;
+}
+
+.measurements-section h4 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+/* Measurements table */
+.measurements-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.measurements-table thead {
+  background-color: #f4f4f4;
+}
+
+.measurements-table th, .measurements-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.measurements-table th {
+  color: #444;
+}
+
+.measurements-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .order-info {
+    flex-direction: column;
+  }
+  
+  .order-image {
+    margin-top: 15px;
+  }
+}

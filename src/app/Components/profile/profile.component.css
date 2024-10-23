@@ -1,137 +1,76 @@
-
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;&display=swap");
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+/* profile-dashboard.component.css */
+body {
+  font-family: Arial, sans-serif;
 }
-img {
+
+.dashboard {
+  max-width: fit-content;
+  
   width: 100%;
-  height: 200px;
-  border-radius: 10px;
+  height: 100vh;
+  padding-top: 100px;
   
 }
-a {
-  text-decoration: none;
-  color: black;
-}
-.container {
-  padding: 7rem 3%;
-  margin: auto;
-}
-.flex {
-  display: flex;
-  flex-wrap: wrap;
-}
-.content,
-.card {
-  
-  padding: 30px 0;
-}
-.content h1 {
-  color: #2f2f2f;
-  margin-bottom: 24px;
-}
-.content h5 {
-  color: #6a6a6a;
-  font-weight: 400;
-  line-height: 1.5rem;
-  margin-bottom: 24px;
-}
-.content button {
-  padding: 12px 30px;
-  font-weight: 600;
-  border-radius: 30px;
-  background-color: #2f2f2f;
-  border: 2px solid #2f2f2f;
-  cursor: pointer;
-  color: #fff;
-}
-.content button:hover {
-  background-color: #1f1f1f;
-}
+.dashboard {
+  width: 20px;
+  float: left;
+  overflow-x: clip;
 
-.card {
-  position: relative;
-  height: 400px;
-  margin: 20px 5px;
 }
-.card:hover img {
-  top: 0px;
-  cursor: pointer;
-}
-.card img {
-  top: 40px;
-  transition: 0.3s all;
-  position: absolute;
-  transform: translateX(0%);
-  transition: 0.4s all;
-}
-.card-overlay {
-  position: absolute;
-  top: 65%;
-  left: 50%;
+.dashboard:hover {
+  /* transition: width 0.3s ease-in-out; */
   width: 250px;
-  transform: translateX(-50%);
 }
-.card .name {
-  font-size: 16px;
-  text-align: center;
-  font-weight: 600;
-  padding: 5px;
+
+.header {
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column;
+
 }
-.card .description{
-  font-size: 16px;
-  text-align: center;
-  font-weight: 500;
+
+.sidebar {
+  width: inherit;
+  background-color: #f4f4f4;
+  padding: 15px;
+  height: 100vh;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
-.card .price {
-  font-size: 18px;
-  text-align: center;
-  font-weight: 800;
-  padding: 5px;
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
 }
-.plus {
-  position: absolute;
-  top: 26px;
-  background-color: #2f2f2f;
-  color: white;
-  height: 0;
-  font-size: 0;
-  width: 35px;
-  border-radius: 30px;
-  border: 0 solid red;
-  left: 50%;
-  font-weight: bold;
-  display: grid;
-  margin-left:-8% ;
-  transition: 0.2s all;
-  
+
+.sidebar nav ul li {
+  margin: 10px 0;
 }
-.card:before {
-  content: "";
-  position: absolute;
-  bottom: 0%;
-  height: 0%;
-  width: 100%;
-  border: none;
-  border-radius: 10px;
-  transition: 0.3s;
-  background-color: #e3c0b0;;
+
+.sidebar nav ul li a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px;
+  display: block;
+  border-radius: 5px;
 }
-.card:hover:before {
-  height: 80%;
+
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a.active {
+  background-color: #ddd;
 }
-.card:hover .plus {
-  visibility: visible;
-  top: 36px;
-  font-size: 35px;
-  height: 35px;
-  margin-left:-8% ;  
-}
-.card:hover .bi {
- margin-top:4px;
- margin-left:7px ; 
- font-weight: 500; 
- font-size: 20px;
+
+/* .main-content {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #fff;
+} */
+
+
+.main-content {
+  margin-left: 250px;
+  padding: 20px;
 }

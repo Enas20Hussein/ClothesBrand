@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { AccounteService } from './Account.service';
+import { returnOrder } from '../Models/returnorder';
 
 
 
@@ -17,6 +18,12 @@ export class OrderService {
     const headers = this.auth.getAuthHeaders(); // Get the authorization header
 
     return this.http.get<any>(`${this.apiUrl}${OrderId}`,{headers});
+  }
+
+
+  getUserOrders(userId : string | null) : Observable<returnOrder[]>{
+    const headers = this.auth.getAuthHeaders();
+    return this.http.get<returnOrder[]>(`${this.apiUrl}user/${userId}`,{headers});
   }
 
 }

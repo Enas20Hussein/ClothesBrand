@@ -5,13 +5,17 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 import { AccounteService } from '../../Services/Account.service';
 import { Router } from '@angular/router';
 import { CartSharedService } from '../../Services/cart-shared.service';
-
+import { AuthInterceptor } from '../../Models/AuthInterceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 @Component({
   selector: 'app-cart',
   standalone: true,
   imports: [RouterModule, CommonModule,],
   templateUrl: './cart.component.html',
-  styleUrl: './cart.component.css'
+  styleUrl: './cart.component.css',
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true } // Provide the interceptor here
+  ]
 })
 export class CartComponent implements OnInit {
   cartData: any;
@@ -50,7 +54,11 @@ export class CartComponent implements OnInit {
 
       },
       (error) => {
-        console.error('Error retrieving cart data', error);
+        if (error.status === 401) {
+          this.router.navigate(['/Login']); // Navigate to login on 401 error
+        } else {
+          console.error('Error fetching data', error);
+        }
       }
     );
 
@@ -87,7 +95,11 @@ export class CartComponent implements OnInit {
           );
         },
         (error) => {
-          console.error('Error deleting product from cart', error);
+          if (error.status === 401) {
+            this.router.navigate(['/Login']); // Navigate to login on 401 error
+          } else {
+            console.error('Error fetching data', error);
+          }
         }
       );
     }
@@ -108,7 +120,11 @@ export class CartComponent implements OnInit {
           );
         },
         (error) => {
-          console.error('Error deleting product from cart', error); // Handle any errors that occur
+          if (error.status === 401) {
+            this.router.navigate(['/Login']); // Navigate to login on 401 error
+          } else {
+            console.error('Error fetching data', error);
+          }
         }
       );
   }

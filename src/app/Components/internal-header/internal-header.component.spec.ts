@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InternalHomeComponent } from './internal-home.component';
+import { InternalHeaderComponent } from './internal-header.component';
 
-describe('InternalHomeComponent', () => {
-  let component: InternalHomeComponent;
-  let fixture: ComponentFixture<InternalHomeComponent>;
+describe('InternalHeaderComponent', () => {
+  let component: InternalHeaderComponent;
+  let fixture: ComponentFixture<InternalHeaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [InternalHomeComponent]
+      imports: [InternalHeaderComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(InternalHomeComponent);
+    fixture = TestBed.createComponent(InternalHeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

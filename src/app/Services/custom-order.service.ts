@@ -38,11 +38,11 @@ export class CustomOrderService {
     return this.http.delete<void>(`${this.apiUrl}/${id}`,{headers});
   }
 
-  getUserOrders(userId: string): Observable<CustomClothingOrder[]> {
+  getUserOrders(userId: string | null): Observable<returnCustomClothingOrder[]> {
     const headers = this.auth.getAuthHeaders(); // Get the authorization header
 
-    const url = `${this.apiUrl}/user-orders/${userId}`;
-    return this.http.get<CustomClothingOrder[]>(url,{headers})
+    const url = `${this.apiUrl}user-orders/${userId}`;
+    return this.http.get<returnCustomClothingOrder[]>(url,{headers})
 
   }
 }
