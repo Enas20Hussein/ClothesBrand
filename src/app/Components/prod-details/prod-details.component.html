@@ -1,6 +1,6 @@
 
   <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center ">
       <div class="col-md-4">
         <div *ngIf="product" class="product-detail-card">
           <img [src]="product?.imageUrl"  alt="Product Image" style="border-radius: 20px 0 0 20px; width:100%;">
@@ -10,7 +10,7 @@
       <div class="col-md-7">
         <div class="card-body py-5 ">
           <h3 class="card-title mb-3">{{ product?.name }}</h3>
-          <h4 style="color: #315350;">Price: ${{ product?.price }}</h4>
+          <h4 style="color: #a34949e5; ">Price: ${{ product?.price }}</h4>
           <p class="card-text">{{ product?.description }}</p>
           <div class="mt-4">
             <a routerLink="/Cart">

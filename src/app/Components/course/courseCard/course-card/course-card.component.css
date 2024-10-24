@@ -1,126 +1,131 @@
-/* Ensure body has a margin to avoid overlap with navbar */
-body {
-  font-family: 'Roboto', sans-serif; /* Use a modern font */
-  background-color: #f0f4f8; /* Soft light background for contrast */
-}
 
-/* Container to hold all course cards */
+
+/* Course container */
 .course-container {
-
-  display: flex;
-  flex-wrap: wrap; /* Allow cards to wrap into rows */
-  justify-content: start; /* Center cards in the container */
-  padding: 150px 20px; /* Increased padding for a spacious feel */
-  max-width: 1800px; /* Set a max-width for larger screens */
-  margin: 0 auto; /* Center the container */
+  padding: 60px 15px;
+  margin-top: 5rem;
 }
 
-/* Header styling */
-.header {
-  font-size: 2.5rem; /* Larger header */
-  margin-bottom: 40px; /* More space below the header */
-  text-align: center;
-  color: #34495e; /* Darker text for better readability */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-/* Card styling */
+/* Card styles */
 .course-card {
-  background: #ffffff; /* Solid white background */
-  border-radius: 15px; /* Rounded corners for a softer look */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-  width: 350px; /* Fixed width for cards */
-  height: 400px;
-  margin: 25px; /* Space between cards */
-  padding: 25px; /* Padding for content */
-  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
-  cursor: pointer; /* Pointer cursor on hover */
-  overflow: hidden; /* Prevent overflow for contents */
-  position: relative; /* For positioning elements inside */
-}
-
-/* Card hover effect */
-.course-card:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
-}
-
-/* Header within card */
-.course-card-header {
-  margin-bottom: 15px;
-}
-
-/* Course title styling */
-.course-title {
-  font-size: 1.5rem; /* Title size */
-  margin: 0;
-  color: #2c3e50; /* Dark color for title */
-  font-weight: 600; /* Medium weight for visibility */
-  text-align: center; /* Center align the title */
-}
-
-/* Course duration styling */
-.course-duration {
-  font-size: 0.9rem; /* Smaller font size for duration */
-  color: #7f8c8d; /* Softer color for duration */
-  text-align: center; /* Center align duration */
-  margin: 5px 0; /* Margins for spacing */
-}
-
-/* Content within card */
-.course-card-content {
-  margin-bottom: 20px; /* Space for better readability */
-}
-
-/* Description styling */
-.course-description {
-  color: #555; /* Soft dark color for description */
-  font-size: 0.95rem; /* Standard font size for description */
-  margin: 10px 0; /* Space around description */
-}
-
-/* Price styling */
-.price {
-  font-weight: bold; /* Bold for visibility */
-  font-size: 1.3rem; /* Slightly larger price font */
-  color: #e74c3c; /* Standout color for price */
-  text-align: center; /* Center align the price */
-}
-
-/* Action button styling */
-.course-card-actions {
-  text-align: center; /* Center the actions */
-}
-
-/* Enroll button styling */
-.enroll-button {
-  background-color: #3498db; /* Calm blue for the button */
-  color: white;
-  border: none;
-  border-radius: 30px; /* Fully rounded button */
-  padding: 12px 24px; /* Padding for the button */
-  font-size: 1rem; /* Font size for button text */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+  height: 350px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Smooth transitions */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for button */
+  max-width: 90%;
+}
+
+.course-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Card header styles */
+.course-card-header {
+  padding: 20px;
+  text-align: center;
+  background-color: #a34949e5;
+  color: white;
+
+}
+
+.course-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.course-duration {
+  font-size: 1rem;
+  margin-top: 5px;
+  color: #ecf0f1;
+}
+
+/* Card content styles */
+.course-card-content {
+  padding: 30px;
+  text-align: center;
+}
+
+.course-card-content p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #666868;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #e74c3c;
+}
+
+/* Enroll button styles */
+.enroll-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  max-width: max-content;
+  background: linear-gradient(
+    90deg,
+    rgb(33, 28, 94) 0%, 
+    rgb(115, 105, 172)40%,
+    rgb(219, 196, 174) 50%,
+    #b15858f8 70%,
+    #a34949e5 100%
+  );
+  background-size: 200%;
+  background-position: left;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: 0;
+  padding: 12px 16px;
+  border-radius: 30px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5),
+    inset 0px 2px 2px rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease-in;
 }
 
 .enroll-button:hover {
-  background-color: #2980b9; /* Darker blue on hover */
-  transform: translateY(-2px); /* Slight lift on hover */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  background-position: right;
 }
 
-/* Read more link */
-.read-more {
-  color: #2980b9; /* Calm blue for links */
-  text-decoration: none; /* No underline */
-  font-size: 0.9rem; /* Smaller font size for links */
-  margin-top: 10px; /* Space above the link */
-  display: block; /* Block display for margin */
-  transition: color 0.3s; /* Smooth transition for color */
+.course-card-actions {
+            
+  justify-content: center;     
+  align-items: center;         
+  height: 100%;                
+}
+.course-card-actions {
+  position: absolute;
+  bottom: -120px; 
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 5rem; /* Space between buttons */
+  padding: 1rem 7rem;
+}
+/* Responsive grid using Bootstrap */
+@media (max-width: 992px) {
+  .course-card {
+    margin-bottom: 20px;
+  }
 }
 
-.read-more:hover {
-  color: #1f639b; /* Darker blue on hover */
+@media (max-width: 768px) {
+  .course-card-header {
+    padding: 15px;
+  }
+
+  .course-card-content {
+    padding: 15px;
+  }
 }

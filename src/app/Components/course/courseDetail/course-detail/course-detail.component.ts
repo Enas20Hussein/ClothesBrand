@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CourseService } from '../../../../Services/course.service';
 import { Course } from '../../../../Models/Course'; // Adjust the import path as necessary
 import { ReactiveFormsModule } from '@angular/forms';
@@ -11,7 +11,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 @Component({
   selector: 'app-course-details',
   standalone: true,
-  imports:[ReactiveFormsModule , CommonModule],
+  imports:[ReactiveFormsModule ,RouterModule, CommonModule],
   templateUrl: './course-detail.component.html',
   styleUrls: ['./course-detail.component.css'],
   providers: [

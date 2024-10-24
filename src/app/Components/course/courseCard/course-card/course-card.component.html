@@ -1,17 +1,22 @@
 
 
- <div class="course-container">
-  <div class="course-card" *ngFor="let course of courses" (click)="navigateToDetails(course.id)">
-    <div class="course-card-header">
-      <h3 class="course-title">{{ course.title }}</h3>
-      <p class="course-duration">{{ course.duration }}</p>
-    </div>
-    <div class="course-card-content">
-      <p>{{ course.description }}</p>
-      <p class="price">Price: ${{ course.price.toFixed(2) }}</p>
-    </div>
-    <div class="course-card-actions">
-      <button class="enroll-button">Enroll Now</button>
+<div class="container course-container">
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let course of courses">
+      <div class="course-card" (click)="navigateToDetails(course.id)">
+        <div class="course-card-header">
+          <h3 class="course-title">{{ course.title }}</h3>
+          <p class="course-duration">{{ course.duration }}</p>
+        </div>
+        <div class="course-card-content">
+          <p>{{ course.description }}</p>
+          <p class="price">Price: ${{ course.price.toFixed(2) }}</p>
+        </div>
+        <div class="course-card-actions" style="text-align: center;">
+          <button class="btn enroll-button"><i class="fa-solid fa-right-to-bracket"></i></button>
+          <button class="btn enroll-button"><i class="fa-solid fa-circle-info"></i></button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

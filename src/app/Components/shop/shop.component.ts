@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class ShopComponent {
   products: any[] = [];
-  categories: string[] = ['Women Clothes', 'Kids Clothes', 'Sportswear', "Men Clothes"];
+  categories: string[] = [];
   selectedCategory: string = 'Women Clothes';
   minPrice: number = 0;
   maxPrice: number = 100;

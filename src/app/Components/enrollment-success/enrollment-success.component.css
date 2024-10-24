@@ -4,13 +4,13 @@
   justify-content: center;
   align-items: center;
   min-height: 70vh;
-  background: linear-gradient(135deg, #f0f4f8, #e1e8f0);
   padding: 80px;
+  margin-top: 3rem;
 }
 
 /* Message box styling */
 .success-message-box {
-  background: #ffffff;
+  background: #a34949d2;
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   padding: 70px;
@@ -28,7 +28,7 @@
 
 .success-subtitle {
   font-size: 1.2rem;
-  color: #34495e;
+  color: #d4d9dd;
   margin-bottom: 20px;
 }
 
@@ -43,12 +43,12 @@
 
 .course-title {
   font-size: 1.5rem;
-  color: #2980b9;
+  color: #9c5454e5;
 }
 
 .course-start,
 .course-duration {
-  color: #7f8c8d;
+  color: #272d2e;
   font-size: 1.1rem;
 }
 
@@ -60,7 +60,7 @@
 
 .next-steps h3 {
   font-size: 1.3rem;
-  color: #2980b9;
+  color: #e6dfdfe5;
 }
 
 .next-steps ul {
@@ -70,7 +70,7 @@
 
 .next-steps li {
   margin: 10px 0;
-  color: #34495e;
+  color: #2f3944;
 }
 
 /* WhatsApp contact section styling */
@@ -82,7 +82,7 @@
 }
 
 .whatsapp-contact h3 {
-  color: #2980b9;
+  color: #a34949e5;
   margin-bottom: 10px;
 }
 
@@ -90,8 +90,8 @@
   background-color: #25d366; /* WhatsApp green */
   color: white;
   text-decoration: none;
-  padding: 12px 20px;
-  border-radius: 5px;
+  padding: 15px;
+  border-radius:50%;
   display: inline-block;
   transition: background-color 0.3s, transform 0.2s;
 }
@@ -116,7 +116,7 @@
 }
 
 .primary-btn {
-  background-color: #3498db; /* Blue */
+  background-color: #a34949e5; /* Blue */
 }
 
 .secondary-btn {

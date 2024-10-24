@@ -16,6 +16,7 @@
   position: fixed;
   animation: navbar-animation 0.6s;
   background-color: rgba(0, 0, 0, 0.767);
+  color: #fff;
 }
 
 
@@ -86,19 +87,23 @@
   font-size: 1rem;
   font-weight: 500;
 }
-.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+.navbar-dark .navbar-nav .nav-link:focus {
+  color: #221111e5;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover{
   color: #fff;
 }
 .navbar .dropdown-menu {
   padding: 0;
-  background-color: rgba(0, 0, 0, 0.562);
+  background-color: rgba(0, 0, 0, 0.856);
 }
 .navbar .dropdown-menu .dropdown-item {
   position: relative;
   padding: 10px 20px;
-  color:#af7b62;
+  color:#fffcfb;
   font-size: 1.4rem;
-  border-bottom: 1px solid rgba(255, 255, 255, .1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
   transition: color 0.2s ease-in;
 }
 .navbar .dropdown-menu .dropdown-item:last-child {
@@ -128,10 +133,11 @@
   animation: navbar-animation 0.6s;
   background-color: rgba(0, 0, 0, 0.541);
 }
-.navbar.fixed-top.navbar-dark .navbar-nav .nav-link.active {
-  color: #fff;
+.navbar.fixed-top.navbar-dark.navbar-nav.nav-link.active {
+  color: #911818e5;
 }
-.navbar.fixed-top.navbar-dark .navbar-nav .nav-link::after {
+
+.navbar.fixed-top.navbar-dark.navbar-nav.nav-link::after {
   background-color: #af7b62;
 }
 .content {
@@ -152,7 +158,7 @@
 .icons .fh {
   cursor: pointer;
   font-size: 0.6rem;
-  color: #af7b62;; /* Light color for icons */
+  color: #ffffff;; /* Light color for icons */
   border-radius: 50%;
   background: #131842; /* Dark background for icons */
   width: 2.5rem;
@@ -163,7 +169,7 @@
 }
 
 .icons .fh:hover {
-  background-color: #593818;; /* Change icon background on hover */
+  background-color:  #a34949e5; /* Change icon background on hover */
   color: #fff; /* Change icon color on hover */
   transform: rotate(360deg); /* Rotate effect on hover */
 }
@@ -251,9 +257,14 @@
     background-color: transparent;
     transition: background-color 0.6s;
   }
-  .navbar.fixed-top {
-    background-color: rgba(129, 75, 75, 0.8);
+  .navbar.fixed-top{
+    background-color:#a34949e5;
+    color: #fff;
   }
+.navbar.fixed-top.nav-link{
+  color: #fff;
+}
+ 
   .navbar .navbar-nav .nav-link {
     font-size: 1.6rem;
     padding: 15px 20px;
@@ -264,6 +275,7 @@
   }
   .navbar .dropdown-menu {
     min-width: 220px;
+    color: #fff;
   }
   .icons {
     gap: 15px;
@@ -288,5 +300,9 @@
   }
   .navbar-dark .navbar-nav .nav-link:hover::after {
     transform: scaleX(1);
+  }
+
+  .navbar-nav .nav-link.active{
+    color:  #a34949e5;
   }
 }

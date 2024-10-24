@@ -16,13 +16,25 @@ templateUrl: './header.component.html',
 export class HeaderComponent implements OnChanges {
   cartnumber: number = 0;
 
-   constructor(private _account:AccounteService , private cartSharedService: CartSharedService)  {}
+
+
+   constructor(private _account:AccounteService,private cartSharedService: CartSharedService)  {}
+
+ 
+
   ngOnChanges(changes: SimpleChanges): void {
     throw new Error('Method not implemented.');
   }
 
   isLogging:boolean=false;
   user:string="";
+
+
+
+
+
+
+
 
   isScrolled = false;
   isNavbarCollapsed = true;
@@ -85,6 +97,16 @@ export class HeaderComponent implements OnChanges {
 
         }
       })
+
+// Subscribe to the cart number updates
+      this.cartSharedService.currentCartNumber.subscribe(
+        (cartnumber) => {
+          this.cartnumber = cartnumber;
+        }
+      );
+
+   
+
 
   }
 

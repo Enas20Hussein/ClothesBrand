@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router , RouterModule } from '@angular/router';
+import { Router , RouterModule, RouterOutlet } from '@angular/router';
 import { AccounteService } from '../../Services/Account.service';
 import { CustomOrderComponent } from "../custom-order/custom-order.component";
 import { DashboardComponent } from "../dashboard/dashboard.component";
@@ -7,7 +7,7 @@ import { DashboardComponent } from "../dashboard/dashboard.component";
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [RouterModule, CustomOrderComponent, DashboardComponent],
+  imports: [RouterModule, CustomOrderComponent, DashboardComponent,RouterOutlet],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })

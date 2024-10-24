@@ -1,103 +1,92 @@
-/* Main page container */
-.course-details-page {
-  font-family: 'Poppins', sans-serif; /* Modern font for readability and style */
-  color: #2c3e50; /* Slightly darker for better contrast */
-  max-width: 1100px; /* Limit the width of the container */
-  margin: 0 auto; /* Center the content on the page */
-  padding: 200px 20px;
-  border-radius: 15px;
-
-}
-
-/* Header section styling */
-.course-header {
-  background: linear-gradient(120deg, #4f93ff, #2d84d6); /* Gradient for magic feel */
-  color: white; /* White text */
-  padding: 100px;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Add shadow for lift effect */
-  transition: transform 0.3s ease; /* Smooth interaction */
-}
-
-.course-header:hover {
-  transform: translateY(-5px); /* Lift the header on hover */
-}
-
-.course-title {
-  font-size: 3rem; /* Large, engaging title */
-  font-weight: bold;
-  margin: 0;
-  line-height: 1.2;
-}
-
-.course-duration {
-  font-size: 1.5rem; /* Subtle font size for duration */
-  color: #bdc3c7; /* Light grey to contrast against the dark background */
-  margin: 10px 0;
-}
-
-.course-price {
-  font-size: 2rem; /* Larger font for price to stand out */
-  color: #ffd700; /* Golden color for a magical, premium feel */
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-/* Content section styling */
-.course-content {
+.course-card {
+  max-width: 70%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   display: flex;
-  flex-direction: column; /* Stack content vertically */
-  gap: 40px;
-  padding: 40px;
-  background-color: white; /* Clean background for readability */
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for content */
-  transition: box-shadow 0.3s ease;
+  flex-direction: row;
+  height: 350px;
+  margin: auto;
+  
 }
+.container{
+  height: 100vh;
+  
+  margin-top: 7rem;
 
-.course-content:hover {
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
 }
-
-/* Course description section */
-.course-description-section {
+.left-section {
+  background-color: #a34949e5;
   display: flex;
   flex-direction: column;
-}
-
-.course-description-section h2 {
-  font-size: 2rem; /* Engaging section title */
-  margin-bottom: 20px;
-  color: #2c3e50;
-}
-
-.course-description-section p {
-  font-size: 1.2rem; /* Clear and readable */
-  line-height: 1.8;
-  color: #34495e; /* Dark grey for better readability */
-}
-
-/* Action section */
-.course-action-section {
-  display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: center;
 }
 
-.enroll-button {
-  background-color: #2d84d6; /* Bright green for call-to-action */
+.right-section {
+  background-color: #ffffff;
+  align-items: center;
+  margin-top: 1.25rem;
+  justify-content: center;
+}
+
+.course-card h4, .course-card h5 {
+  font-weight: bold;
+}
+
+.course-card .pargraph{
+  font-size: 1rem;
+  font-weight: 600;
+  color: #8a8080;
+}
+
+.course-card .course-title {
+  font-size: 1.5rem;
+}
+
+.course-card .chapter-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #292323;
+}
+
+.view-chapters {
+  color: #a34949e5;
+  text-decoration: none;
+  margin-top: 10px;
+  display: block;
+}
+
+.view-chapters:hover {
+  text-decoration: underline;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+
+.continue-btn {
+  background-color: #a34949e5;
   color: white;
   border: none;
-  border-radius: 30px; /* Rounded for a modern look */
-  padding: 15px 30px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  border-radius: 5px;
+  display: block;
 }
 
-.enroll-button:hover {
-  background-color: rgb(15, 128, 226); /* Darker green on hover */
-  border: solid #2d84d6 1px;
-  transform: scale(1.09); /* Slightly enlarge the button on hover */
+.continue-btn:hover {
+  background-color: #a83b3be5;
+}
+
+@media (max-width: 767px) {
+  .course-card {
+    flex-direction: column;
+  }
+
+  .left-section, .right-section {
+    text-align: center;
+  }
 }
