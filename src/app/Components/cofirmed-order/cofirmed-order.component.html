@@ -16,13 +16,16 @@
       <ul>
         <li *ngFor="let item of order.orderItems">
           <img *ngIf="item.imageUrl" [src]="item.imageUrl" alt="{{item.productName}}" class="product-image">
-          <div>
+          <div class="product-details">
             <p><strong>Product Name:</strong> {{ item.productName }}</p>
             <p><strong>Quantity:</strong> {{ item.quantity }}</p>
             <p><strong>Price:</strong> {{ item.price > 0 ? '$' + item.price : 'Free' }}</p>
           </div>
         </li>
       </ul>
+      <div class="confirmation-actions">
+        <button class="btn btn-primary">Continue Shopping</button>
+      </div>
     </div>
     <div *ngIf="!order">
       <p>Loading order details...</p>

@@ -36,11 +36,12 @@
   .img-thumbnail {
     border-radius: 5px;
     max-width: 100%;
+    max-height: 200px;
   }
   
   .measurements-section .col-sm-12 {
     padding: 15px;
-    background-color: #ffffff;
+    background-color: #a34949e5;
     margin: 10px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -52,10 +53,12 @@
   }
   
   .measurements-section strong {
-    color: #495057;
+    color: #fdfeff;
   }
   
   .text-muted {
-    color: #6c757d !important;
+    color: #feffff !important;
   }
-  
+ .col-md-6{
+    background-color: a34949e5;
+  }
