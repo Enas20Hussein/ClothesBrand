@@ -1,131 +1,98 @@
-
-
-/* Course container */
+/* Container and card styles */
 .course-container {
-  padding: 60px 15px;
+  min-height: 100vh;
   margin-top: 5rem;
 }
 
-/* Card styles */
-.course-card {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out;
-  margin-bottom: 30px;
-  position: relative;
+.ecosyscard {
+  border-radius: 20px;
   overflow: hidden;
-  height: 350px;
-  cursor: pointer;
-  max-width: 90%;
-}
-
-.course-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Card header styles */
-.course-card-header {
-  padding: 20px;
-  text-align: center;
-  background-color: #a34949e5;
-  color: white;
-
-}
-
-.course-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin: 0;
-}
-
-.course-duration {
-  font-size: 1rem;
-  margin-top: 5px;
-  color: #ecf0f1;
-}
-
-/* Card content styles */
-.course-card-content {
-  padding: 30px;
-  text-align: center;
-}
-
-.course-card-content p {
-  margin-bottom: 15px;
-  font-size: 1rem;
-  color: #666868;
-}
-
-.price {
-  font-weight: bold;
-  font-size: 1.4rem;
-  color: #e74c3c;
-}
-
-/* Enroll button styles */
-.enroll-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 3px;
-  max-width: max-content;
-  background: linear-gradient(
-    90deg,
-    rgb(33, 28, 94) 0%, 
-    rgb(115, 105, 172)40%,
-    rgb(219, 196, 174) 50%,
-    #b15858f8 70%,
-    #a34949e5 100%
-  );
-  background-size: 200%;
-  background-position: left;
-  color: #fff;
-  font-size: 1.2rem;
-  font-weight: 500;
   border: 0;
-  padding: 12px 16px;
-  border-radius: 30px;
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5),
-    inset 0px 2px 2px rgba(255, 255, 255, 0.2);
-  cursor: pointer;
-  transition: all 0.3s ease-in;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.07);
+  transition: all 0.15s ease;
+  margin-bottom: 20px;
 }
 
-.enroll-button:hover {
-  background-position: right;
+.card-body {
+  text-align: center;
+  max-height: 250px;
+  padding: 1rem;
+  color: #a34949e5;
+}
+.card-body .price{
+  color: green;
+  font-weight: 500;
 }
 
-.course-card-actions {
-            
-  justify-content: center;     
-  align-items: center;         
-  height: 100%;                
-}
-.course-card-actions {
-  position: absolute;
-  bottom: -120px; 
-  left: 0;
-  right: 0;
+.ecosyscontainer {
+  width: 88%;
+  background: #ffffff;
+  border-radius: 20px;
+  height: 140px;
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 5rem; /* Space between buttons */
-  padding: 1rem 7rem;
 }
-/* Responsive grid using Bootstrap */
-@media (max-width: 992px) {
-  .course-card {
-    margin-bottom: 20px;
+
+.ecosyscontainer img {
+  width: 100%;
+  max-height: 100%;
+  transition: 0.4s ease;
+  border-radius: 20px;
+}
+
+.ecosyscontainer:hover img {
+  transform: scale(1.1);
+}
+
+/* Button and responsive styles */
+.ecosysbtn {
+  background: #f7edec;
+  border: 0;
+  color: #a34949e5;
+  width: 100%;
+  font-weight: bold;
+  border-radius: 20px;
+  height: 40px;
+  transition: all 0.2s ease;
+}
+
+.ecosysbtn:hover {
+  background: #a34949e5;
+  color: #FFF;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) { /* Matches Bootstrap 'md' breakpoint */
+  .ecosyscard-body .ecosyscard-title {
+    font-size: 1.4rem;
+  }
+  .ecosyscard-text, .card-body .price {
+    font-size: 0.9rem;
   }
 }
 
-@media (max-width: 768px) {
-  .course-card-header {
-    padding: 15px;
+@media (max-width: 768px) { /* Matches Bootstrap 'sm' breakpoint */
+  .ecosyscard-body .ecosyscard-title {
+    font-size: 1.2rem;
   }
+  .ecosyscard-text, .card-body .price {
+    font-size: 0.8rem;
+  }
+  .ecosysbtn {
+    height: 35px;
+  }
+}
 
-  .course-card-content {
-    padding: 15px;
+@media (max-width: 576px) { /* Matches Bootstrap 'xs' breakpoint */
+  .ecosyscard-body .ecosyscard-title {
+    font-size: 1.1rem;
+  }
+  .ecosyscard-text, .card-body .price {
+    font-size: 0.75rem;
+  }
+  .ecosysbtn {
+    font-size: 0.9rem;
+    padding: 0.4rem 1rem;
   }
 }

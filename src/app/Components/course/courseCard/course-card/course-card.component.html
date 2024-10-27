@@ -1,5 +1,5 @@
 
-
+<!-- 
 <div class="container course-container">
   <div class="row">
     <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let course of courses">
@@ -20,3 +20,38 @@
     </div>
   </div>
 </div>
+ -->
+
+
+
+
+ <div class="container-fluid course-container">
+  <div class="row justify-content-center">
+    <!-- Set the column width according to screen size -->
+    <div
+      class="col-lg-3 col-md-4 col-sm-6 col-12 m-2"
+      *ngFor="let course of courses"
+    >
+      <div class="animate__animated animate bounce card ecosyscard">
+        <div class="ecosyscontainer container mt-3">
+          <img src="Images/sewing.jpg" class="card-img-top" alt="Course Image" />
+        </div>
+        <div class="ecosyscard-body card-body">
+          <h5 class="ecosyscard-title card-title ms-1">{{ course.title }}</h5>
+          <p class="ecosyscard-text card-text mb-3 ms-1">
+            {{ course.duration }}
+          </p>
+          <p class="price">{{ course.price.toFixed(2) | currency }}</p>
+
+          <a
+            class="ecosysbtn btn btn-primary mb-1 mt-1"
+            (click)="navigateToDetails(course.id)"
+            >More Details</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  

@@ -1,23 +1,27 @@
 .container {
-  margin: 5rem auto;
+  margin-top: 4rem;
   max-width: 100%;
-  padding: 0 15px;
+  padding: 35px;
+  min-height: auto;
 }
 
 .card {
   border-radius: 30px;
-  background-color: #aa5959e5;
+  background-color: #f8f8f8c2;
+  box-shadow: 4px 15px 25px #faeaeea1;
   border: none;
 
 }
 
+
 h3 {
-  color: rgba(255, 255, 255, 0.986);
+  color: #131842;
   font-size: 24px;
 }
 
 .form-label {
-  color: #ffffff;
+  color: #131842;
+  font-weight:600;
   margin-bottom: 0.5rem;
 }
 
@@ -65,7 +69,8 @@ input.is-invalid:focus {
   border: none;
   padding: 0.8rem 1.5rem;
   border-radius: 30px;
-  cursor: pointer;}
+  cursor: pointer;
+}
 
 .btn-primary:hover {
   background: linear-gradient(45deg, rgb(187, 114, 114), rgb(117, 18, 18));

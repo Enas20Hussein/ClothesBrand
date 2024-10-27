@@ -169,8 +169,8 @@
 }
 
 .icons .fh:hover {
-  background-color:  #a34949e5; /* Change icon background on hover */
-  color: #fff; /* Change icon color on hover */
+  background-color:  #ffffff; /* Change icon background on hover */
+  color: #131842; /* Change icon color on hover */
   transform: rotate(360deg); /* Rotate effect on hover */
 }
 
@@ -258,7 +258,7 @@
     transition: background-color 0.6s;
   }
   .navbar.fixed-top{
-    background-color:#a34949e5;
+    background-color:#a34949b9;
     color: #fff;
   }
 .navbar.fixed-top.nav-link{

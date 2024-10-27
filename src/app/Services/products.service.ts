@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AccounteService } from './Account.service';
 
@@ -32,14 +32,29 @@ export class ProductsService {
     
   }
 
-  getFilteredProducts(category: string, minPrice: number, maxPrice: number, keyword: string): Observable<any> {
-    const params = {
-      CategoryName: category,
-      MinPrice: minPrice,
-      MaxPrice: maxPrice,
-      KeyWord: keyword
-    };
-    return this.http.get<any>(this.apiUrl+'Product/Filtering', { params });
+  getFilteredProducts(
+    category: string,
+    minPrice: number | null,
+    maxPrice: number | null,
+    keyword: string
+  ): Observable<any> {
+    const headers = this.auth.getAuthHeaders();
+    
+    // Create HttpParams to append query parameters
+    let params = new HttpParams()
+      .set('CategoryName', category)
+      .set('KeyWord', keyword);
+
+    if (minPrice !== null) {
+      params = params.set('MinPrice', minPrice.toString());
+    }
+    if (maxPrice !== null) {
+      params = params.set('MaxPrice', maxPrice.toString());
+    }
+
+    return this.http.get<any>(this.apiUrl + 'Product/Filtering', { headers, params });
   }
+  
+  
 
 }

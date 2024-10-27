@@ -6,12 +6,15 @@
 }
 
 .form-container {
-  background-color: #f7e0e5ee;
+  background-color: #e6e6e6ee;
   border-radius: 8px;
   border:none;
   margin-left:20px;
+  box-shadow: 4px 12px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease; 
   
 }
+
 
 
 
@@ -27,14 +30,16 @@
 }
 
 .btn-primary {
-  background-color:  #315350;
-  padding: 12px;
-  border-radius: 50px;
+  background-color: #a34949e5;;
+  border-radius: 35px;
+  border-color: #a34949e5;
+  font-weight: bold;
   transition: background-color 0.3s ease-in-out;
 }
 
 .btn-primary:hover {
-  background-color:  #243d3b;
+  background-color: #a34949fd;
+  border-color: #a34949e5;
 }
 
 #card-element {
@@ -72,11 +77,14 @@ select.form-select {
 
 
 .card {
+  background-color: #e6e6e6ee;
   border-radius: 8px;
-  border: none;
-  margin-right:25px;
-  background-color: #f7e0e5ee;;
-  color: #57202cee;;
+  border:none;
+  margin-left:20px;
+  box-shadow: 4px 12px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease; 
+  width: 90%;
+  
 }
 
 .product-img {
@@ -91,7 +99,7 @@ select.form-select {
 }
 
 .form-container, .card {
-  width: 100%; /* Ensure both form and card take full column width */
+  width: 90%; /* Ensure both form and card take full column width */
 }
 
 .product-img {
@@ -100,7 +108,7 @@ select.form-select {
   margin-right: 10px;
 }
 tbody,td,th,table{
-  background-color:#f7e0e5ee;
+  background-color: #e6e6e6ee;
   color: #8b3b4cee;
 }
 h3,h5{

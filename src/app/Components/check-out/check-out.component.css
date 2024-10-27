@@ -19,14 +19,14 @@
     color: white; /* Text color */
     transition: transform 0.6s; /* Smooth transformation */
     transform-style: preserve-3d; /* 3D effect */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Adjust shadow for a soft look */
+    box-shadow: 0 15px 30px rgba(31, 30, 30, 0.5); /* Adjust shadow for a soft look */
     padding: 20px; /* Padding for spacing */
 }
 
 /* Additional hover effect */
 .credit-card:hover {
     transform: rotateY(10deg) rotateX(5deg); /* Slight rotation on hover */
-    box-shadow: 0 10px 50px rgba(0, 0, 255, 0.6); /* Intense shadow effect on hover */
+    box-shadow: 0 20px 50px rgba(0, 0, 255, 0.6); /* Intense shadow effect on hover */
 }
 
 
@@ -71,15 +71,22 @@
 
   .stripe-input {
     margin-top: 10px;
+
   }
 
   button {
     margin-top: 20px;
   }
 
+  .form-container{
+    box-shadow: 0 12px 20px rgba(187, 129, 129, 0.5); 
+    transition: transform 0.3s ease; 
+  }
   .form-control , .btn{
     border-radius: 35px;
     color: #Fff;
+    font-size: 600;
+
   }
 label{
   color:#882f42ee ;

@@ -7,6 +7,7 @@ import { AboutComponent } from "../about/about.component";
 import { ProductsService } from '../../Services/products.service';
 import { ProductSliderComponent } from '../product-slider/product-slider.component';
 
+
 @Component({
   selector: 'app-home',
   standalone: true,

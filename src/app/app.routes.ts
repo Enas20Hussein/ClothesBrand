@@ -26,8 +26,8 @@ import { MyCoursesComponent } from './Components/my-courses/my-courses.component
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { MyCustomOrdersComponent } from './Components/my-custom-orders/my-custom-orders.component';
 import { authGuard } from './Guard/auth.guard';
-import { Component } from '@angular/core';
-import { ShopComponent } from './Components/shop/shop.component';
+import { ProductSliderComponent } from './Components/product-slider/product-slider.component';
+import { LoaderComponent } from './Components/loader/loader.component';
 
 export const routes: Routes = [
     {path:'ccc',component:ProfileComponent,canActivate:[authGuard]},
@@ -79,14 +79,11 @@ export const routes: Routes = [
     {path: 'create-order',component:CreateCustomOrderComponent,canActivate:[authGuard]},
     {path:'orders/:orderId',component:CustomOrderComponent,canActivate:[authGuard]},
     {path:'custom-orders',component:MyCustomOrdersComponent,canActivate:[authGuard]},
-    
-
-
-
-
     { path: 'enrollment-success/:id', component: EnrollmentSuccessComponent },
     { path: 'already-enrolled', component: AlreadyEnrolledComponent },
-    {path:'shop',component:ShopComponent}
+    {path:'productslider',component:ProductSliderComponent},
+    {path:'Loader',component:LoaderComponent}
+
 
 
 

@@ -1,0 +1,10 @@
+<div class="pagination">
+    <ul>
+      <li *ngIf="currentPage > 1" (click)="goToPage(currentPage - 1)" class="page-item">Prev</li>
+      <li *ngFor="let page of createPagination()" [class.active]="page === currentPage" (click)="goToPage(page)" class="page-item">
+        {{ page }}
+      </li>
+      <li *ngIf="currentPage < totalPages" (click)="goToPage(currentPage + 1)" class="page-item">Next</li>
+    </ul>
+  </div>
+  
