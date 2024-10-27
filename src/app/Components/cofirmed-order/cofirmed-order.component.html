@@ -1,13 +1,14 @@
 <div class="container">
   <div class="order-confirmation-card">
-    <div class="row">
+    <div class="row"*ngIf="order">
       <h2>Order Confirmation</h2>
-      <div class="col-lg-3 col-md-6 col-sm-12">
+      <div class="col-lg-4 col-md-6 col-sm-12"*ngFor="let item of order.orderItems">
         
-        <div *ngIf="order">
+        <div>
           <h3>Order Items</h3>
           <ul>
-            <li *ngFor="let item of order.orderItems">
+            <div class="row">
+            <li>
               <img *ngIf="item.imageUrl" [src]="item.imageUrl" alt="{{item.productName}}" class="product-image">
               <div class="product-details">
                 <p><strong>Product Name:</strong> {{ item.productName }}</p>
@@ -15,6 +16,7 @@
                 <p><strong>Price:</strong> {{ item.price > 0 ? '$' + item.price : 'Free' }}</p>
               </div>
             </li>
+          </div>
           </ul>
           
         </div>
@@ -48,33 +50,3 @@
 
 
 
-<!--=================================================================-->
-
-<div class="order-details" *ngIf="order">
-  <h2>Order Details</h2>
-  
-  <div class="order-summary">
-    <h3>Order ID: {{ order.orderId }}</h3>
-    <p>Order Date: {{ order.orderDate | date:'medium' }}</p>
-    <p>Total Price: ${{ order.totalPrice.toFixed(2) }}</p>
-    <p>Payment Status: {{ order.paymentStatus }}</p>
-    <p>Order Status: {{ order.orderStatus }}</p>
-  </div>
-
-  <div class="shipping-details">
-    <h3>Shipping Details</h3>
-    <p *ngIf="order.addressLine2">Address: {{ order.addressLine2 }}</p>
-    <p>City: {{ order.city }}</p>
-    <p>State: {{ order.state }}</p>
-    <p>Zip: {{ order.postalCode }}</p>
-  </div>
-
-  <div class="order-items">
-    <h3>Order Items</h3>
-    <ul>
-      <!-- <li *ngFor="let item of order.items">
-        {{ item.productName }} - Quantity: {{ item.quantity }} - Price: ${{ item.price.toFixed(2) }}
-      </li> -->
-    </ul>
-  </div>
-</div>
