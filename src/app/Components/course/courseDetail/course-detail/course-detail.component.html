@@ -1,21 +1,4 @@
-<!-- <div class="course-details-page" *ngIf="course">
-  <div class="course-header">
-    <h1 class="course-title">{{ course.title }}</h1>
-    <p class="course-duration"></p>
-    <div class="course-price">Price: ${{ course.price.toFixed(2) }}</div>
-  </div>
 
-  <div class="course-content">
-    <section class="course-description-section">
-      <h2>Course Description</h2>
-      <p>{{ course.description }}</p>
-    </section>
-
-    <section class="course-action-section">
-      <button class="enroll-button" (click)="enrollInCourse()">Enroll Now</button>
-    </section>
-  </div>
-</div> -->
 
 <div class="container">
 <div class="course-card"*ngIf="course">
@@ -23,13 +6,13 @@
     <div class="col-lg-6 col-md-6 p-4 left-section">
       
       <h4 class="course-title">{{ course.title }}</h4>
-      <p class="pargraph text-white"><i class="fa-solid fa-clock"></i> {{ course.duration }}</p>
+      <p class="pargraph text-white py-3"> Price {{ course.price.toFixed(2) | currency }}</p>
     </div>
-    <div class="col-lg-6 col-md-6 p-4 bg-white right-section ">
-      <h5 class="chapter-title">Price: ${{ course.price.toFixed(2) }}</h5>
-      <p class="pargraph">{{ course.description }}</p>
-      <a routerLink="/Courses" class="view-chapters">View all Courses </a>
+    <div class="col-lg-6 col-md-6 p-5 bg-white right-section ">
+      <h5 class="chapter-title">{{ course.description }}</h5>
+      <p class="pargraph py-2"><i class="fa-solid fa-clock"></i> {{ course.duration }}</p>
       <button class="btn btn-primary continue-btn mt-3"(click)="enrollInCourse()">Enroll Now</button> 
+      <a routerLink="/Courses" class="view-chapters">View all Courses </a>
 
     </div>
   </div>

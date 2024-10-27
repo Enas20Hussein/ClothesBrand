@@ -1,9 +1,9 @@
 <div class="container py-5">
  
 <div class="container my-5">
-  <div class="cart bg-light p-4 rounded shadow">
+  <div class="cart bg-light p-4 rounded ">
     <div class="d-flex justify-content-between align-items-center mb-3">
-      <h4>Shopping Cart</h4>
+      <h4 ><a style="color: rgb(16, 16, 71);"routerLink="/product">Shopping Cart</a></h4>
       <a routerLink="/Cart" class="text-danger text-decoration-none" (click)="clearcart()">Remove all</a>
     </div>
 
@@ -39,7 +39,7 @@
           <td>
             <div class="product-actions">
               <h6>{{ (item.price * item.quantity) | currency }}</h6>
-              <a href="#" class="text-danger text-decoration-none d-block">Remove</a>
+              <a routerLink="/Cart" (click)="deleteToCart(item.productId)" class="text-danger text-decoration-none d-block">Remove</a>
             </div>
           </td>
         </tr>

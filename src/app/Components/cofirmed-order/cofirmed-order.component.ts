@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { OrderService } from '../../Services/order.service';  // OrderService to fetch order details
 import { ReactiveFormsModule , FormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-cofirmed-order',
   standalone: true,
-  imports: [ReactiveFormsModule,CommonModule,FormsModule,LoaderComponent],
+  imports: [ReactiveFormsModule,CommonModule,FormsModule,LoaderComponent,RouterModule],
   templateUrl: './cofirmed-order.component.html',
   styleUrl: './cofirmed-order.component.css',
   providers: [

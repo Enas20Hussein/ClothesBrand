@@ -1,13 +1,16 @@
 <div class="container">
   <div class="order-confirmation-card">
-    <div class="row"*ngIf="order">
-      <h2>Order Confirmation</h2>
-      <div class="col-lg-4 col-md-6 col-sm-12"*ngFor="let item of order.orderItems">
-        
-        <div>
-          <h3>Order Items</h3>
+    <div class="row justify-content-center"*ngIf="order">
+      <div class="col-md-6"><h4>Successful Order</h4></div>
+      
+      <div class="col-md-6"style="text-align: right;"><a style="font-weight: 700;color:#a34949e5;" routerLink="/product"><i class="fa-solid mx-2 fa-tag"></i>Continue Shopping</a></div>
+      
+      <div class="hr"></div>
+      <h3><i class="fa-solid mx-2 fa-bag-shopping"></i> Order Items</h3>
+      <div class="col-lg-5 col-md-5 col-12 item" *ngFor="let item of order.orderItems">
+          
           <ul>
-            <div class="row">
+           
             <li>
               <img *ngIf="item.imageUrl" [src]="item.imageUrl" alt="{{item.productName}}" class="product-image">
               <div class="product-details">
@@ -16,22 +19,21 @@
                 <p><strong>Price:</strong> {{ item.price > 0 ? '$' + item.price : 'Free' }}</p>
               </div>
             </li>
-          </div>
           </ul>
-          
-        </div>
+    
       </div>
 
-      <div class="row">
-        <div class="col-md-6" *ngIf="order">
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-12 details" *ngIf="order">
+          <h3><i class="fa-solid mx-2 fa-circle-check"></i>Order Confirmation</h3>
           <p><strong>Date:</strong> {{ order.orderDate | date:'medium' }}</p>
           <p><strong>Total Price:</strong> {{ order.totalPrice > 0 ? '$' + order.totalPrice : 'Free' }}</p>
           <p><strong>Payment Status:</strong> {{ order.paymentStatus }}</p>
           <p><strong>Order Status:</strong> {{ order.orderStatus }}</p>
         </div>
 
-        <div class="col-md-6" *ngIf="order">
-          <h3>Shipping Details</h3>
+        <div class="col-md-6 col-12 details" *ngIf="order">
+          <h3><i class="fa-solid mx-1 fa-truck-fast"></i> Shipping Details</h3>
           <p>{{ order.addressLine1 }}</p>
           <p *ngIf="order.addressLine2">{{ order.addressLine2 }}</p>
           <p>{{ order.city }}, {{ order.state }}, {{ order.country }} - {{ order.postalCode }}</p>
@@ -39,9 +41,7 @@
         </div>
       </div>
     </div>
-    <div class="confirmation-actions">
-      <a routerLink="/product"><button class="btn btn-primary">Continue Shopping</button></a>
-    </div>
+   
     <div *ngIf="!order">
       <app-loader></app-loader>
     </div>
