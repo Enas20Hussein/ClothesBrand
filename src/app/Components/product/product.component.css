@@ -119,7 +119,6 @@ a{
     left: 0;
 }
 .card:hover .card__img{
-    transform: rotate(30deg);
     margin-left: 3.5rem;
 }
 .card:hover .card__precis{
