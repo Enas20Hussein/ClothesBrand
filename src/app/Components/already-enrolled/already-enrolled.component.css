@@ -14,25 +14,26 @@
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
   animation: fadeIn 0.8s ease-in-out;
   text-align: center;
-  background-color: #a34949c7;
+  background-color: #fafafa;
+  box-shadow: 2px 5px 20px #613636a6;
 
 }
 
 .enrolled-header {
   font-size: 2.2rem;
   font-weight: bold;
-  color: #fff;
+  color: #a34949c7;
   margin-bottom: 20px;
 }
 
 .enrolled-info {
   font-size: 1.3rem;
-  color: #3a4041;
+  color: #1e3a55;
   margin-bottom: 30px;
 }
 
 .course-details-section {
-  background-color: #f0f4f7;
+  background-color:#a34949c7; 
   border-radius: 15px;
   padding: 20px;
   margin-bottom: 20px;
@@ -40,13 +41,13 @@
 
 .course-title {
   font-size: 1.6rem;
-  color: #2c3e50;
+  color: #1e3a55;
   font-weight: bold;
 }
 
 .course-info {
   font-size: 1.2rem;
-  color: #34495e;
+  color: #1e3a55;
 }
 
 .action-options {
@@ -56,7 +57,7 @@
 
 .action-options h3 {
   font-size: 1.5rem;
-  color: #1e2227;
+  color: #1e3a55;
   margin-bottom: 15px;
 }
 
@@ -68,11 +69,11 @@ ul {
 ul li {
   font-size: 1.2rem;
   margin: 10px 0;
-  color: #1e2a36;
+  color: #1e3a55;
 }
 
 .dashboard-link, .courses-link {
-  color: #fff;
+  color: #a34949c7; 
   text-decoration: none;
   font-weight: bold;
 }

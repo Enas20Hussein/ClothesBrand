@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { OrderService } from '../../Services/order.service';  // OrderService to fetch order details
 import { ReactiveFormsModule , FormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -7,7 +7,7 @@ import { returnOrder } from '../../Models/returnorder';
 import { AuthInterceptor } from '../../Models/AuthInterceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoaderComponent } from '../loader/loader.component';
-import { Router ,RouterModule } from '@angular/router';
+import { Router} from '@angular/router';
 @Component({
   selector: 'app-cofirmed-order',
   standalone: true,

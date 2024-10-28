@@ -2,7 +2,7 @@
   max-width: 70%;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 8px 20px rgba(104, 57, 57, 0.315);
   display: flex;
   flex-direction: row;
   height: 350px;
@@ -37,17 +37,18 @@
 .course-card .pargraph{
   font-size: 1rem;
   font-weight: 600;
-  color: #8a8080;
+  color: #1e3a55;
 }
 
 .course-card .course-title {
   font-size: 1.5rem;
+  color: #FFF;
 }
 
 .course-card .chapter-title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #292323;
+  color: #1e3a55;
 }
 
 .view-chapters {
@@ -73,7 +74,8 @@
   background-color: #a34949e5;
   color: white;
   border: none;
-  border-radius: 5px;
+  padding: 8px 20px;
+  border-radius: 20px;
   display: block;
 }
 
