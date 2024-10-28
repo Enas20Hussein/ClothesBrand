@@ -55,6 +55,10 @@ export class ProductsService {
     return this.http.get<any>(this.apiUrl + 'Product/Filtering', { headers, params });
   }
   
+  getCategories(): Observable<any> {
+    const headers = this.auth.getAuthHeaders();
+    return this.http.get<any>(this.apiUrl+'Category', { headers });
+  }
   
 
 }

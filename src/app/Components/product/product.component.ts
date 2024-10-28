@@ -17,7 +17,9 @@ export class ProductComponent {
   products: any[] = [];
   isFilterApplied = false;
 
-  // Filter criteria
+  //categories = ['Womens Clothes', 'Mens Clothes', 'Kids Clothes']; // Example categories
+  categories: string[] = [];
+
   filterCriteria = {
     category: '',
     minPrice: null,
@@ -33,6 +35,7 @@ export class ProductComponent {
 
   ngOnInit(): void {
     this.loadProducts();
+    this.loadCategories()
   }
 
   loadProducts(): void {
@@ -64,17 +67,16 @@ export class ProductComponent {
     const { category, minPrice, maxPrice, keyword } = this.filterCriteria;
     this.productsService.getFilteredProducts(category, minPrice, maxPrice, keyword)
       .subscribe((data: any) => {
-        console.log('Filtered Products Response:', data); // Check API response
-        this.products = data.items || [];  // Assign products based on response
+        console.log('Filtered Data:', data); // Debugging line
+        this.products = data || [];
         this.totalPages = Math.ceil((data.totalItems || this.products.length) / this.itemsPerPage);
-        this.cdr.detectChanges();  // Trigger change detection
+        this.cdr.detectChanges();
       });
   }
-
+  
   // Apply filter and reload products
   applyFilter(): void {
-    this.isFilterApplied = true;
-    this.currentPage = 1; // Reset to the first page for filtered results
+    this.currentPage = 1;
     this.loadFilteredProducts();
   }
 
@@ -84,5 +86,22 @@ export class ProductComponent {
     this.filterCriteria = { category: '', minPrice: null, maxPrice: null, keyword: '' };
     this.currentPage = 1;
     this.loadProducts();
+  }
+
+  loadCategories(): void {
+    this.productsService.getCategories().subscribe(
+      (data: any) => {
+        data.forEach((element:any) => {
+          console.log(element.name)
+          this.categories.push(element.name)
+
+        });
+          // Assume response contains categories array
+        
+      },
+      (error) => {
+        console.error('Error loading categories:', error);
+      }
+    );
   }
 }
