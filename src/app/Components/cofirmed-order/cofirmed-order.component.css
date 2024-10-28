@@ -1,7 +1,7 @@
 .container {
   margin-top: 5rem;
   padding:15px;
-  height: auto;
+  min-height: 100vh;
 }
 
 .order-confirmation-card {
@@ -82,10 +82,6 @@
   font-size: 15px;
 }
 
-.product-details p strong {
-  font-size: 16px;
-  color: #333;
-}
 
 .confirmation-actions {
   margin-top: 20px;
@@ -122,6 +118,24 @@ button:hover {
   border-radius: 15px;
   margin-top:5px;
 }
+.fa-solid{
+  margin-right:15px ;
+}
+.details p{
+  color: #1e3a55;
+  font-weight: 600;
+}
+
+.details strong,.product-details strong{
+  color: #1e3a55;
+  font-weight: 700;
+}
+.details span,.product-details span{
+  color: #a34949e5;
+  font-weight: 500;
+  font-size: medium;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .order-confirmation-card {
@@ -150,6 +164,7 @@ button:hover {
   .product-details p {
     font-size: 14px;
   }
+
 }
 
 @media (max-width: 576px) {

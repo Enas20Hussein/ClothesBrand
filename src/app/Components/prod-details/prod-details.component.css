@@ -1,21 +1,13 @@
 .container{
   margin: 7rem;
-  height: auto;
+  min-height: auto;
 }
-
-
-
-
- @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
 
 *{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     font-family: 'Open Sans', sans-serif;
-}
-body{
-    line-height: 1.5;
 }
 
 .card-wrapper{
@@ -70,9 +62,7 @@ img{
 .product-link:hover{
     opacity: 0.9;
 }
-.product-rating{
-    color: #ffc107;
-}
+
 .product-rating span{
     font-weight: 600;
     color: #252525;
@@ -109,7 +99,6 @@ img{
 .product-detail ul li{
     margin: 0;
     list-style: none;
-    background: url(https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/checked.png) left center no-repeat;
     background-size: 18px;
     padding-left: 1.7rem;
     margin: 0.4rem 0;
@@ -143,7 +132,7 @@ img{
     background: #256eff;
 }
 .purchase-info .btn:last-of-type{
-    background: #f64749;
+    background: #a34949e5;
 }
 .purchase-info .btn:hover{
     opacity: 0.9;
@@ -152,19 +141,18 @@ img{
     display: flex;
     align-items: center;
 }
-.social-links a {
+.social-links a{
     display: flex;
     align-items: center;
     justify-content: center;
     width: 32px;
     height: 32px;
-    color: #000;
+    color: #504646;
     border: 1px solid #000;
     margin: 0 0.2rem;
     border-radius: 50%;
     text-decoration: none;
     font-size: 0.8rem;
-    transition: all 0.5s ease;
 }
 .social-links a:hover{
     background: #000;

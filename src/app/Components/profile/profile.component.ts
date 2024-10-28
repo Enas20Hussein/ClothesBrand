@@ -13,10 +13,7 @@ import { DashboardComponent } from "../dashboard/dashboard.component";
 })
 export class ProfileComponent {
 
-
     constructor(private router: Router , private auth : AccounteService) {}
-
-
 
     logout() {
       // Implement your logout logic here (e.g., clearing tokens, redirecting to login)

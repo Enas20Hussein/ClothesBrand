@@ -1,6 +1,6 @@
 .container {
   margin-top: 4rem;
-  height: auto;
+  min-height: auto;
   padding: 2rem;
   border-radius: 35px;
 }
