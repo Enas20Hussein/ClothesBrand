@@ -35,14 +35,24 @@ export class ProdDetailsComponent implements OnInit {
   
     addToCart() {
       const productId: any = this.route.snapshot.paramMap.get('id');
-      this.cartService.addToCart(this.accserv.getUserId(),productId,1).subscribe(
-        (cartResponse) => {
+      this.cartService.addToCart(this.accserv.getUserId(),productId,1).subscribe({
+        next:(cartResponse)=>{
           this.cartService.updateCartData(cartResponse); // Notify that cart data has been updated
+console.log("shaban added To Card");
+
         },
-        (error) => {
-          console.error('Error adding product to cart', error); // Handle any errors that occur
-          //this.router.navigate(['/Login'])
-        }
+        error:(error)=>{
+            console.error('Error adding product to cart', error); // Handle any errors that occur
+            
+          }
+      }
+        // (cartResponse) => {
+        //   this.cartService.updateCartData(cartResponse); // Notify that cart data has been updated
+        // },
+        // (error) => {
+        //   console.error('Error adding product to cart', error); // Handle any errors that occur
+        //   //this.router.navigate(['/Login'])
+        // }
       );
     }
 }

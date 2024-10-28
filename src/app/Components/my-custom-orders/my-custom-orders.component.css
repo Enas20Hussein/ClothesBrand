@@ -1,17 +1,19 @@
 /* Main container */
 .orders-container {
-  padding: 80px;
+  margin-top: 4.7rem;
+  padding: 30px;
   max-width: 1000px;
-  margin: 0 auto;
   font-family: 'Poppins', sans-serif;
 }
 
-h2 {
-  text-align: center;
-  color: #333;
-  margin-bottom: 30px;
-  font-weight: bold;
+h1{
+  text-align: left;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  color: #a34949e5; 
 }
+
 
 /* No Orders Section */
 .no-orders {
@@ -48,9 +50,10 @@ h2 {
 }
 
 .card-header .order-date {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 20px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color:#1e3a55;
+  margin-bottom: 1.5rem;
 }
 
 /* Card body */
@@ -68,21 +71,22 @@ h2 {
 
 .details {
   flex: 1;
+  padding: 1.5rem 3rem;
 }
 
 .details p {
   font-size: 1.1rem;
-  color: #333;
+  color: #1e3a55;;
   margin-bottom: 10px;
 }
-
+.details p span{
+  color: #a34949e5;
+}
 /* Status Tag */
 .status-tag {
   padding: 6px 14px;
-  background: #28a745;
-  color: #fff;
-  border-radius: 12px;
-  font-size: 0.9rem;
+  color: #28a745;
+  font-size: .9rem;
   font-weight: bold;
 }
 
@@ -103,7 +107,9 @@ h2 {
 .measurements-section h4 {
   font-size: 1.4rem;
   margin-bottom: 10px;
-  color: #222;
+  color: #a34949e5;
+  text-align: center;
+  font-weight: 700;
 }
 
 /* Measurements table */
@@ -124,7 +130,14 @@ h2 {
 }
 
 .measurements-table th {
-  color: #444;
+  color: #1e3a55;
+  font-weight: 600;
+
+}
+.measurements-table td {
+  color: #a34949e5;
+  font-weight: 600;
+  font-size: small;
 }
 
 .measurements-table tbody tr:hover {

@@ -1,16 +1,19 @@
 .dashboard-container {
-  padding: 100px;
+  margin-top: 4.7rem;
   background-color: #f8f9fa; /* Light background color */
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(163, 93, 93, 0.644);
+  height: auto;
+  padding: 2rem;
 }
 
 .dashboard-title {
-  text-align: center;
-  font-size: 2.5em;
-  padding: 70px;
-  margin-bottom: 20px;
-  color: #343a40; /* Darker text color */
+  text-align: left;
+  font-size: 2rem;
+  font-weight: 700;
+  padding-left:2rem ;
+  margin-bottom: 2.5rem;
+  color: #a34949e5; 
 }
 
 .statistics {
@@ -23,43 +26,46 @@
   background-color: #ffffff;
   border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(148, 84, 84, 0.753);
   text-align: center;
   width: 20%;
 }
 
 .stat-card h2 {
   font-size: 1.5em;
-  margin: 0;
-  color: #495057; /* Darker text for headers */
+  margin: 5px;
+  color: #1e3a55; /* Darker text for headers */
 }
 
 .stat-value {
-  font-size: 2em;
-  color: #007bff; /* Primary color for the value */
+  font-size: 1.6rem;
+  color: #a34949e5 /* Primary color for the value */
 }
 
 .charts {
   display: flex;
   justify-content: space-around;
   margin-top: 30px;
+  
 }
 
 .chart-container {
   background-color: #ffffff;
   border-radius: 10px;
-  padding: 20px;
-  height: 400px; /* Adjust the height as needed */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  min-height: 400px; /* Adjust the height as needed */
+  box-shadow: 0 2px 5px  rgba(148, 84, 84, 0.753);
   width: 45%; /* Adjust width as necessary */
 }
 
 .chart-container h3 {
   text-align: center;
   margin-bottom: 15px;
-  color: #495057; /* Darker text for chart titles */
+  color: #1e3a55; /* Darker text for chart titles */
 }
-
+.fa-solid{
+  margin-right: 10px;
+}
 /* Responsive styles */
 @media (max-width: 768px) {
   .statistics {

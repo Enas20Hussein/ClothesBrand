@@ -46,7 +46,7 @@ export class LoginComponent {
        
       },
       error: (error) => {
-        console.log(error.status)
+        // console.log(error.status)
         console.log(error);
         if(error.status==400){
           this.errorMessage = error.error;

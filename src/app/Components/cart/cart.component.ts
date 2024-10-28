@@ -35,48 +35,60 @@ export class CartComponent implements OnInit {
       console.error('User ID is missing');
       return;
     }
-
-    this.loadCartData(this.userId);
+    let id=this.userId
+setTimeout(()=>{ this.loadCartData(id);},100);
+   
 
     // Subscribe to cart updates
     this.cartService.getCartData().subscribe((cartData) => {
+      console.log("called getCartData");
       if (cartData) {
+        console.log("enter conditions CArd");
+
         this.cartData = cartData;
         console.log(this.cartData)
+      }
+      else{
+        console.log(cartData)
+        console.log("skjfjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj")
       }
     });
 
     // Initial load of cart data
-    this.cartService.getCartByUserId(this.userId).subscribe(
-      (response) => {
+    this.cartService.getCartByUserId(this.userId).subscribe({
+      next:(response) => {
+        console.log("enter to getCartByUserId");
+        console.log(response);
+
         this.cartData = response;
         this.cartnumber = this.cartData.shoppingCartItems.length;
         console.log(this.cartnumber);
         this.cartSharedService.updateCartNumber(this.cartnumber); // Update shared cart number
 
       },
-      (error) => {
+     error: (error) => {
         if (error.status === 401) {
           this.router.navigate(['/Login']); // Navigate to login on 401 error
         } else {
           console.error('Error fetching data', error);
         }
       }
-    );
+  });
 
   }
 
   loadCartData(userid : string) {
-    this.cartService.getCartByUserId(userid).subscribe(
-      (response) => {
+    this.cartService.getCartByUserId(userid).subscribe({
+     next: (response) => {
+      console.log("after Logging 3 s");
         this.cartData = response;
         this.cartnumber = this.cartData.shoppingCartItems.length; // Assuming cartData is an array of items
         this.cartSharedService.updateCartNumber(this.cartnumber);  // Update shared cart number
       },
-      (error) => {
+     error: (error) => {
         console.error('Error retrieving cart data', error);
       }
-    );
+  });
   }
 
 
@@ -89,6 +101,8 @@ export class CartComponent implements OnInit {
           // Update cart after deletion
           this.cartService.getCartByUserId(this.userId!).subscribe(
             (cartResponse) => {
+              this.cartData=cartResponse;
+              console.log("Shaban Delete this item")
               this.cartService.updateCartData(cartResponse);
               this.cartnumber = this.cartData.shoppingCartItems.length;
               this.cartSharedService.updateCartNumber(this.cartnumber);  // Update shared service
@@ -110,25 +124,28 @@ export class CartComponent implements OnInit {
 
   clearcart(){
     const UserId = this.accserv.getUserId() || ''; // Fallback to empty string if null
-      this.cartService.clearCart(UserId).subscribe(
-        (response) => {
+      this.cartService.clearCart(UserId).subscribe({
+      next:  (response) => {
           console.log('Cart cleared successfully:', response);
           this.cartService.getCartByUserId(this.userId!).subscribe(
             (cartResponse) => {
+              console.log("Shaban Clear this card")
+              console.log(cartResponse);
+              this.cartData=null;
               this.cartService.updateCartData(cartResponse);
               this.cartnumber = 0; // Reset cart number after clearing
               this.cartSharedService.updateCartNumber(this.cartnumber);
             }
           );
         },
-        (error) => {
+       error: (error) => {
           if (error.status === 401) {
             this.router.navigate(['/Login']); // Navigate to login on 401 error
           } else {
             console.error('Error fetching data', error);
           }
         }
-      );
+  });
   }
 
   goToOrderPage() {

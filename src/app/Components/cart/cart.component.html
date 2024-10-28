@@ -8,6 +8,7 @@
     </div>
 
     <!-- Table for Cart Items -->
+     @if(cartData){
     <table class="table bg-light align-middle" style="min-width: max-content; text-align: center;">
 
       <thead>
@@ -47,6 +48,10 @@
      
       </tbody>
     </table>
+  }
+  @else{
+    
+  }
 
     <!-- Total Section -->
     <div class="d-flex justify-content-between align-items-center">
