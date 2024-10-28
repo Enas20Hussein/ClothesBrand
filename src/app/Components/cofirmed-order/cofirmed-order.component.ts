@@ -11,7 +11,9 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-cofirmed-order',
   standalone: true,
+
   imports: [ReactiveFormsModule,CommonModule,FormsModule,LoaderComponent,RouterModule],
+
   templateUrl: './cofirmed-order.component.html',
   styleUrl: './cofirmed-order.component.css',
   providers: [
