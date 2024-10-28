@@ -43,21 +43,20 @@ setTimeout(()=>{ this.loadCartData(id);},100);
     this.cartService.getCartData().subscribe((cartData) => {
       console.log("called getCartData");
       if (cartData) {
-        console.log("enter conditions CArd");
-
+       
         this.cartData = cartData;
         console.log(this.cartData)
       }
       else{
         console.log(cartData)
-        console.log("skjfjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj")
+        
       }
     });
 
     // Initial load of cart data
     this.cartService.getCartByUserId(this.userId).subscribe({
       next:(response) => {
-        console.log("enter to getCartByUserId");
+        
         console.log(response);
 
         this.cartData = response;
@@ -109,7 +108,7 @@ setTimeout(()=>{ this.loadCartData(id);},100);
           this.cartService.getCartByUserId(this.userId!).subscribe(
             (cartResponse) => {
               this.cartData=cartResponse;
-              console.log("Shaban Delete this item")
+            
               this.cartService.updateCartData(cartResponse);
               this.cartnumber = this.cartData.shoppingCartItems.length;
               this.cartSharedService.updateCartNumber(this.cartnumber);  // Update shared service
