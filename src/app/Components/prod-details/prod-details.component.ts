@@ -24,17 +24,17 @@ export class ProdDetailsComponent implements OnInit {
       const productId: any = this.route.snapshot.paramMap.get('id');
       this.productService.getProductById(productId).subscribe(
         (product) => {
-          this.product = product; 
+          this.product = product;
         },
         (error) => {
           console.error('Error fetching product', error); // Handle any errors that occur
         }
-        
+
       );
 
       
     }
-  
+
     addToCart() {
       const productId: any = this.route.snapshot.paramMap.get('id');
       this.cartService.addToCart(this.accserv.getUserId(),productId,this.quantity).subscribe({
