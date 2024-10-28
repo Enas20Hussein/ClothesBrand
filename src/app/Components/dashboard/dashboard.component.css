@@ -5,6 +5,7 @@
   box-shadow: 0 4px 10px rgba(163, 93, 93, 0.644);
   height: auto;
   padding: 2rem;
+  min-height: 100vh;
 }
 
 .dashboard-title {

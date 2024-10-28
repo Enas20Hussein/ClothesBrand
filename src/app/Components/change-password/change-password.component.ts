@@ -66,7 +66,8 @@ export class ChangePasswordComponent {
     this.accountService.ChangePassword(this.url,this.resetObj).subscribe({
       next: (x) => {
         console.log(x);
-        this.loading = false;  // Hide loading indicator
+        this.loading = false;
+        this.accountService.logout()  // Hide loading indicator
         this.router.navigate(['/Login']); // Redirect after successful login
       },
       error: (error) => {

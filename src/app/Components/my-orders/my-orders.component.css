@@ -5,6 +5,7 @@
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(163, 93, 93, 0.644);
   height: auto;
+  min-height: 100vh;
   padding: 2rem;
 }
 
