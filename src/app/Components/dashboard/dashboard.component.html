@@ -1,10 +1,10 @@
 <div class="dashboard-container">
-  <h1 class="dashboard-title"> Dashboard</h1>
+  <h1 class="dashboard-title"><i class="fa-solid fa-chart-line"></i> Dashboard</h1>
 
   <div class="statistics">
     <div class="stat-card">
       <h2>Total Revenue</h2>
-      <p class="stat-value">${{ totalRevenue.toFixed(2) }}</p>
+      <p class="stat-value">{{ totalRevenue.toFixed(2) | currency}}</p>
     </div>
     <div class="stat-card">
       <h2>Total Orders</h2>
@@ -15,7 +15,7 @@
       <p class="stat-value">{{ totalCourses }}</p>
     </div>
     <div class="stat-card">
-      <h2>Total Order Items</h2>
+      <h2>Total Items</h2>
       <p class="stat-value">{{ orderItemsCount }}</p>
     </div>
   </div>

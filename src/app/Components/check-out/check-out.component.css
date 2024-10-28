@@ -1,7 +1,7 @@
 .container {
     margin: auto;
     margin: 7rem;
-    height: auto;
+    min-height: 100vh;
     align-items: center;
   }
 

@@ -7,11 +7,11 @@ import { returnOrder } from '../../Models/returnorder';
 import { AuthInterceptor } from '../../Models/AuthInterceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoaderComponent } from '../loader/loader.component';
-import { Router} from '@angular/router';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-cofirmed-order',
   standalone: true,
-  imports: [ReactiveFormsModule,CommonModule,FormsModule,LoaderComponent , RouterModule],
+  imports: [ReactiveFormsModule,CommonModule,FormsModule,LoaderComponent,RouterModule],
   templateUrl: './cofirmed-order.component.html',
   styleUrl: './cofirmed-order.component.css',
   providers: [

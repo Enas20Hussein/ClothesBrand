@@ -1,5 +1,5 @@
 <div class="orders-container">
-  <h2>My Sewing Orders</h2>
+  <h1>My Sewing Orders</h1>
 
   <!-- Show message if no orders -->
   <div *ngIf="customOrders.length === 0" class="no-orders">
@@ -10,17 +10,17 @@
   <div *ngIf="customOrders.length > 0" class="orders-list">
     <div *ngFor="let order of customOrders" class="order-card">
       <div class="card-header">
-        <p class="order-date">Placed on: {{ order.customOrderDate | date:'longDate' }}</p>
+        <p class="order-date"><i class="fa-solid fa-calendar-days"></i> Placed on: {{ order.customOrderDate | date:'longDate' }}</p>
       </div>
 
       <div class="card-body">
         <div class="order-info">
           <!-- Order details and Image -->
           <div class="details">
-            <p><strong>Status:</strong> <span class="status-tag">{{ order.customOrderStatus }}</span></p>
-            <p><strong>Design Description:</strong> {{ order.designDescription }}</p>
-            <p><strong>Deposit Amount:</strong> {{ order.depositAmount | currency }}</p>
-            <p><strong>Fabric Details:</strong> {{ order.fabricDetails }}</p>
+            <p><strong>Status:</strong><span class="status-tag">{{ order.customOrderStatus }}</span></p>
+            <p><strong>Design Description:</strong> <span> {{ order.designDescription }}</span></p>
+            <p><strong>Deposit Amount:</strong><span> {{ order.depositAmount | currency }}</span></p>
+            <p><strong>Fabric Details:</strong><span> {{ order.fabricDetails }}</span></p>
           </div>
 
           <!-- Image -->

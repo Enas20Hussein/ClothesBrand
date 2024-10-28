@@ -11,26 +11,17 @@ body {
 }
 
 .dashboard {
-  max-width: fit-content;
-
+  max-width: 260px;
   width: 100%;
-  height: 100vh;
-  padding-top: 100px;
-
-}
-.dashboard {
-  width: 20px;
+  height: 150vh;
   float: left;
-  overflow-x: clip;
+  
+}
 
-}
-.dashboard:hover {
-  /* transition: width 0.3s ease-in-out; */
-  width: 250px;
-}
+
 
 .header {
-  background-color: #333;
+  background-color: #a04659ee;
   color: #fff;
   padding: 15px;
   flex-wrap: wrap;
@@ -59,15 +50,16 @@ body {
 
 .sidebar nav ul li a {
   text-decoration: none;
-  color: #333;
+  color: #1e3a55;
   padding: 10px;
+  font-weight: 600;
   display: block;
   border-radius: 5px;
 }
 
 .sidebar nav ul li a:hover,
 .sidebar nav ul li a.active {
-  background-color: #ddd;
+  background-color: #cab0b0;
 }
 
 /* .main-content {
@@ -78,6 +70,6 @@ body {
 
 
 .main-content {
-  margin-left: 250px;
-  padding: 20px;
+  margin-left: 260px;
+ 
 }
