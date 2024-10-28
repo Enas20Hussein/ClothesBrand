@@ -3,11 +3,13 @@
 <div class="container my-5">
   <div class="cart bg-light p-4 rounded ">
     <div class="d-flex justify-content-between align-items-center mb-3">
-      <h4 ><a style="color: rgb(16, 16, 71);"routerLink="/product">Shopping Cart</a></h4>
+      <h4 ><a style="color: rgb(16, 16, 71);"routerLink="/product"><i class="fa-solid mx-1 fa-tag"></i>Continue Shopping</a></h4>
       <a routerLink="/Cart" class="text-danger text-decoration-none" (click)="clearcart()">Remove all</a>
+      
     </div>
 
     <!-- Table for Cart Items -->
+     @if(cartData){
     <table class="table bg-light align-middle" style="min-width: max-content; text-align: center;">
 
       <thead>
@@ -30,12 +32,12 @@
           </td>
           <td>
             <div class="product-quantity d-flex justify-content-center align-items-center">
-              <button class="btn btn-outline-secondary butt"><i class="fa-solid fa-plus"></i></button>
+              <!-- <button class="btn btn-outline-secondary butt"><i class="fa-solid fa-plus"></i></button> -->
               <span class="mx-3">{{item.quantity}}</span>
-              <button class="btn btn-outline-secondary butt"><i class="fa-solid fa-minus"></i></button>
+              <!-- <button class="btn btn-outline-secondary butt"><i class="fa-solid fa-minus"></i></button> -->
             </div>
           </td>
-          <td class="product-price">{{ (item.price * item.quantity) | currency }}</td>
+          <td class="product-price">{{ (item.price) | currency }}</td>
           <td>
             <div class="product-actions">
               <h6>{{ (item.price * item.quantity) | currency }}</h6>
@@ -47,6 +49,10 @@
      
       </tbody>
     </table>
+  }
+  @else{
+    
+  }
 
     <!-- Total Section -->
     <div class="d-flex justify-content-between align-items-center">

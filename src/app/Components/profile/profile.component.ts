@@ -27,8 +27,8 @@ ngOnInit(): void {
     next:(res)=>{
       console.log(res);
       const apiResponse = res as { flag: boolean; message: string };
-      console.log(typeof(res));
-     console.log(apiResponse.flag);
+      // console.log(typeof(res));
+    //  console.log(apiResponse.flag);
      this.isLogging=apiResponse.flag;
       if(apiResponse.flag){
         this.UserName=apiResponse.message;
@@ -43,10 +43,12 @@ ngOnInit(): void {
   });
 }
 
+
+
     logout() {
       // Implement your logout logic here (e.g., clearing tokens, redirecting to login)
       this.auth.logout();
-      console.log('User logged out');
+      // console.log('User logged out');
 
     }
 

@@ -14,11 +14,15 @@
         <h2 class = "product-title">{{ product?.name }}</h2>
         <a routerLink="/product" class = "product-link">visit Sara store</a>
        
-        <div class = "product-price">
+        <div class = "product-price" *ngIf="product.discount && (product.price - product.discount) !== 0">
           <p class = "last-price">Old Price: <span>${{ product?.price }}</span></p>
           <p class = "new-price">New Price: <span>${{ product?.price -product?.discount }}</span></p>
         </div>
-  
+        <div class = "product-price" *ngIf="product.discount && (product.price - product.discount) === 0">
+          <p class = "last-price">Price: <span>${{ product?.price }}</span></p>
+        </div>
+
+
         <div class = "product-detail">
           <h2>about this item: </h2>
           <p>{{product?.description}}</p>
@@ -32,7 +36,7 @@
         </div>
   
         <div class = "purchase-info">
-          <input type = "number" min = "0" value = "1">
+          <input type="number" min="1" [(ngModel)]="quantity" />
           <a routerLink="/Cart">
           <button type = "button" class = "btn" (click)="addToCart()">
             Add to Cart <i class="fa-solid fa-cart-shopping"></i>

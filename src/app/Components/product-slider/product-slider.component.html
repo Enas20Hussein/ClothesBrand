@@ -47,10 +47,17 @@
               <img [src]="product.imageUrl" style="height: 250px;" class="card-img-top" alt="{{ product.name }}">
               <div class="card-body">
                 <h5 class="card-title">{{ product.name }}</h5>
-                <p class="card-text">
+                <p class="card-text"*ngIf="product.discount && (product.price - product.discount) === 0">
+                  <span class="text-muted">Price <s>{{ product.price }}$</s></span><br>
+                </p>
+
+
+                <p class="card-text" *ngIf="product.discount && (product.price - product.discount) !== 0">
                   <span class="text-muted">Price <s>{{ product.price }}$</s></span><br>
                   <span class="text-success">Offer Price {{ product.price - product.discount }}$</span>
                 </p>
+
+
                 <a [routerLink]="['/product', product.id]">
                 <button class="btn btn-slider">
                   <i class="fas fa-cart-plus"></i> Add to Cart

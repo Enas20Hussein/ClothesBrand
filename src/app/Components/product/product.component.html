@@ -1,61 +1,62 @@
 <div class="container">
-  <!-- Filter Form -->
-  <form (ngSubmit)="applyFilter()" class="filter-form mb-4">
-    <div class="form-group">
-      <label for="category">Category</label>
-      <select
-        id="category"
-        [(ngModel)]="filterCriteria.category"
-        name="category"
-        class="form-control"
-      >
-        <option value="">All</option>
-        <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
-      </select>
-    </div>
-  
-    <div class="form-group">
-      <label for="minPrice">Min Price</label>
-      <input
-        type="number"
-        id="minPrice"
-        [(ngModel)]="filterCriteria.minPrice"
-        name="minPrice"
-        class="form-control"
-        placeholder="Enter minimum price"
-      />
-    </div>
-  
-    <div class="form-group">
-      <label for="maxPrice">Max Price</label>
-      <input
-        type="number"
-        id="maxPrice"
-        [(ngModel)]="filterCriteria.maxPrice"
-        name="maxPrice"
-        class="form-control"
-        placeholder="Enter maximum price"
-      />
-    </div>
-  
-    <div class="form-group">
-      <label for="keyword">Keyword</label>
-      <input
-        type="text"
-        id="keyword"
-        [(ngModel)]="filterCriteria.keyword"
-        name="keyword"
-        class="form-control"
-        placeholder="Search by keyword"
-      />
-    </div>
-  
-    <button type="submit" class="btn btn-primary">Apply Filter</button>
-    <button type="button" (click)="clearFilter()" class="btn btn-secondary">Clear Filter</button>
-  </form>
-  
 
-  <h1 class="title-shop">SHOP</h1>
+  <div class="container form">
+    <form (ngSubmit)="applyFilter()" class="filter-form d-flex flex-column align-items-center">
+      
+      <div class="input-group mb-3 search-bar">
+        <input
+          type="text"
+          id="keyword"
+          [(ngModel)]="filterCriteria.keyword"
+          name="keyword"
+          class="form-control search-input"
+          placeholder="Search products here..."
+          (ngModelChange)="applyFilter()"
+        />
+        <button type="submit" class="btn search-button">Search</button>
+      </div>
+  
+      <div class="filter-options d-flex align-items-center gap-3 mb-3">
+        
+        <div class="form-group">
+          <select
+            id="category"
+            [(ngModel)]="filterCriteria.category"
+            name="category"
+            class="form-control category-dropdown"
+          >
+            <option value="">All Categories</option>
+            <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+          </select>
+        </div>
+  
+        <div class="form-group">
+          <input
+            type="number"
+            id="minPrice"
+            [(ngModel)]="filterCriteria.minPrice"
+            name="minPrice"
+            class="form-control price-input"
+            placeholder="Min Price"
+          />
+        </div>
+  
+        <div class="form-group">
+          <input
+            type="number"
+            id="maxPrice"
+            [(ngModel)]="filterCriteria.maxPrice"
+            name="maxPrice"
+            class="form-control price-input"
+            placeholder="Max Price"
+          />
+        </div>
+        
+      </div>
+    </form>
+  </div>
+  
+  
   <main class="main bd-grid">
     <article class="card" *ngFor="let product of getCurrentProducts()">
       <div class="card__img">
@@ -65,12 +66,12 @@
         <p>{{ product.name }}</p>
       </div>
       <div class="card__precis">
-        <a [routerLink]="['/product', product.id]" class="card__icon"><i class="fa-solid fa-heart"></i></a>
+        <a [routerLink]="['/product', product.id]" class="card__icon"><i class="fa-solid fa-circle-info"></i></a>
         <div>
           <s style="color: #FF5151;"><span class="card__preci card__preci--before" *ngIf="product.discount && (product.price - product.discount) !== 0">{{ product.price | currency }}</span></s>
           <span class="card__preci card__preci--now">{{ product.price - product.discount | currency }}</span>
         </div>
-        <a href="" class="card__icon"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a routerLink="/Cart" class="card__icon"><i class="fa-solid fa-cart-shopping"></i></a>
       </div>
     </article>
 

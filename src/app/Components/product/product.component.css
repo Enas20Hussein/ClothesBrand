@@ -61,6 +61,7 @@ a{
     border-radius: 1rem;
     overflow: hidden;
     background-color: #ffffffbd;
+    max-width: fit-content;
 }
 
 .card__img{
@@ -73,7 +74,7 @@ a{
     position: absolute;
     left: -35%;
     top: 0;
-    width: 3.5rem;
+    max-width: fit-content;
     height: 100%;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
@@ -125,12 +126,79 @@ a{
     margin-left: 3.5rem;
     padding: 0 1.5rem;
 }
+/* Container and Layout */
+.filter-form {
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Search Bar */
+  .search-bar {
+    display: flex;
+    width: 100%;
+  }
+  
+  .search-input {
+    border-radius: 25px 0 0 25px;
+    border: 1px solid #b48484;
+    padding: 0.5rem;
+  }
+  
+  .search-button {
+    background-color: rgb(197, 102, 102);
+    color: white;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .search-button:hover {
+    background-color: rgb(197, 102, 102);
+  }
+  
+  /* Filter Options */
+  .filter-options {
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  /* Category Dropdown */
+  .category-dropdown {
+    border-radius: 25px;
+    border: 1px solid 1px solid #b48484;
+    padding: 0.5rem 1rem;
+    color: rgb(184, 111, 111);
+    background-color: white;
+    transition: background-color 0.3s;
+  }
+  
+  .category-dropdown:focus {
+    outline: none;
+    border-color:rgb(197, 102, 102);
+  }
+  
+  /* Price Inputs */
+  .price-input {
+    border-radius: 25px;
+    border: 1px solid #b48484;
+    padding: 0.5rem 1rem;
+    color: rgb(197, 102, 102);
+    width: 120px;
+  }
+  
+  .price-input:focus {
+    outline: none;
+    border-color: rgb(197, 102, 102);
+  }
 
-/*-- FOOTER --*/
+  .container .form{
+    text-align: center;
+    width: 75%;
+  }
 
-footer{
-  text-align: center;
-}
 
 /*-- MEDIA QUERIES --*/
 @media screen and (min-width: 1200px){

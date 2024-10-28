@@ -31,9 +31,9 @@ export class AccounteService {
     // Decode the token to get the expiration time (JWT specific)
     const decodedToken: any = jwtDecode(token);
     this.tokenExpiry = decodedToken.exp * 1000; // `exp` is in seconds, convert to milliseconds
-    console.log(Date.now());
-    console.log("setAccessToken");
-    console.log(this.tokenExpiry);
+    // console.log(Date.now());
+   
+    // console.log(this.tokenExpiry);
 
 
     // Optionally store in session storage
@@ -51,8 +51,8 @@ export class AccounteService {
 
   isTokenExpired(): boolean {
     const expiry = this.getTokenExpiry();
-    console.log("isTokenExpired");
-    console.log(expiry)
+    
+    // console.log(expiry)
     if (!expiry) return true; // If no expiry date, assume token is expired
     return Date.now() > expiry;
   }
@@ -60,10 +60,10 @@ export class AccounteService {
   refreshToken(): Observable<any> {
     return this.http.post(this.refreshTokenEndpoint, {}, { withCredentials: true }).pipe(
       tap((response: any) => {
-        console.log("enter refresh",response)
+        
 
         if (response.token) {
-          console.log("changed Token")
+      
           this.setAccessToken(response.token)
           //localStorage.setItem('token',response.accessToken);
         }

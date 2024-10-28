@@ -24,12 +24,12 @@ export const authGuard: CanActivateFn = (route, state) => {
       rt.navigateByUrl("/Login");
       return false;
     }
-      console.log("jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj");
-      console.log(user)
+     
+      // console.log(user)
       return true;
   },
   error:()=>{
-    console.log("ssssssssssssssssssssssssssssss");
+   
     rt.navigateByUrl("/Login");
 return false;
   }

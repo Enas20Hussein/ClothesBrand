@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, Output } from '@angular/core';
 import { ProductsService } from '../../Services/products.service';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 export class ProductComponent {
   products: any[] = [];
   isFilterApplied = false;
+  
 
   //categories = ['Womens Clothes', 'Mens Clothes', 'Kids Clothes']; // Example categories
   categories: string[] = [];
@@ -96,7 +97,6 @@ export class ProductComponent {
           this.categories.push(element.name)
 
         });
-          // Assume response contains categories array
         
       },
       (error) => {
