@@ -1,59 +1,97 @@
-.container{
-  margin-top: 7rem;
-  height: 100vh;
+.container {
+  margin-top: 4rem;
+  min-height: auto;
+  padding: 2rem;
+  border-radius: 35px;
 }
+
 .order-card {
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
-  .card-header {
-    background-image: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
+  border-radius: 50px;
+  border: none;
+  box-shadow: 4px 10px 30px #4e3d3e;
+}
+
+.card-header {
+  background-image: linear-gradient(135deg, #af5653e0 0%, #a34949e5 100%);
+  padding: 1.2rem;
+  color: #fff;
+}
+
+.card-body {
+  background-color: #f8f9fa;
+}
+
+.table th {
+  width: 40%;
+  font-weight: 600;
+}
+
+.badge-success {
+  background-color: #28a745;
+}
+
+.badge-warning {
+  background-color: #ffc107;
+}
+
+.img-thumbnail {
+  border-radius: 5px;
+}
+
+.measurements-section .table th,
+.measurements-section .table td {
+  font-size: 0.95rem;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(45deg, rgb(133, 50, 64), rgb(156, 51, 59));
+  border: none;
+  padding: 0.4rem 1.5rem;
+  border-radius: 30px;
+}
+
+.btn:hover {
+  background: linear-gradient(45deg, rgb(165, 75, 75), rgb(117, 18, 18));
+}
+
+.contain {
+  background-color: #f5f5f5e5;
+  box-shadow: 4px 15px 30px #3f0c26a8;
+  padding: 15px 30px;
+  border-radius: 15px;
+  margin: 5px;
+}
+.table th {
+  font-weight: 600;
+  background: none;
+  color: #19114b;
+}
+.table, .table td {
+  color: #a34949e5;
+  font-weight: 500;
+  background: none;
+}
+
+
+@media (max-width: 768px) {
   .card-body {
-    background-color: #f8f9fa;
-    padding: 20px;
+    padding: 10px;
   }
-  
-  .list-group-item {
-    border: none;
+
+  .measurements-section .table th,
+  .measurements-section .table td {
+    font-size: 0.8rem;
+  }
+
+  .btn {
+    padding: 0.3rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .contain {
+    margin: 8px 0;
     padding: 10px 15px;
   }
-  
-  .list-group-item strong {
-    color: #343a40;
-  }
-  
-  .list-group-item .badge {
-    font-size: 14px;
-    padding: 5px 10px;
-  }
-  
-  .img-thumbnail {
-    border-radius: 5px;
-    max-width: 100%;
-  }
-  
-  .measurements-section .col-sm-3 {
-    padding: 15px;
-    background-color: #ffffff;
-    margin: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .measurements-section p {
-    margin: 0;
-    font-size: 16px;
-  }
-  
-  .measurements-section strong {
-    color: #495057;
-  }
-  
-  .text-muted {
-    color: #6c757d !important;
-  }
-  
+}

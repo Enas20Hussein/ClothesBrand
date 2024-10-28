@@ -1,73 +1,80 @@
-/* General container padding and responsive adjustments */
-.container-fluid {
-  padding: 0 1rem;
-  margin-top: 5rem ;
-  height: 100vh;
-}
 
-.card-responsive {
-  margin: 0 auto;
+
+/*==================================================================*/
+/* Styling for the cart */
+
+.container{
+  margin-top: 7rem;
+  min-height: 100vh;
+}
+.cart {
   max-width: 100%;
+  margin: auto;
+  box-shadow: 4px 10px 20px #35121d;
 }
 
-.table {
-  margin-bottom: 20px;
+.product-image-cell {
+  width: 80px;
 }
 
-.table th, .table td {
-  text-align: center;
-  vertical-align: middle;
+.product-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
 }
 
-.img-thumbnail {
-  border-radius: 8px;
-  max-width: 100px;
+.product-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.product-size {
+  font-size: 0.85rem;
+}
+
+.product-quantity button {
+  width: 30px;
+  height: 30px;
+  font-size: 1rem;
+}
+
+.product-price {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.product-actions a {
+  font-size: 0.9rem;
 }
 
 .total-price {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+  color: #28a745;
 }
 
-/* Checkout button styling */
-.checkout-btn {
-  background-color: #315350;
+
+.btn-outline-secondary{
+  text-align: center;
+  font-weight: 700;
+}
+.butt .fa-solid{
+ padding-bottom: 10px;
+margin-left: -4px; 
+margin-bottom: 35px;
+}
+
+
+.btn-primary {
+  background-color: #a34949e5;;
   border-radius: 35px;
-  color: aliceblue;
-}
-.btn-outline-danger{
-  border-radius: 35px;
-
-}
-.checkout-btn:hover {
-  background-color: #243d3b;
+  border-color: #a34949e5;
+  font-weight: bold;
 }
 
-/* Responsive design for mobile screens */
-@media (max-width: 768px) {
-  .table-responsive-md {
-      display: block;
-      width: 100%;
-      overflow-x: auto;
-  }
-
-  .checkout-btn {
-      width: 100%; /* Full width on mobile */
-      margin-top: 10px;
-  }
-
-  .total-price {
-      text-align: left;
-  }
-
-  .btn-outline-danger {
-      width: 100%;
-  }
+.btn-primary:hover {
+  background-color: #a34949fd;
+  border-color: #a34949e5;
 }
-
-/* Additional adjustments for larger screens */
-@media (min-width: 768px) {
-  .text-md-right {
-      text-align: right;
-  }
+tbody,td,th,table{
+  background-color: rgb(248, 248, 248);
+  border: none;
 }

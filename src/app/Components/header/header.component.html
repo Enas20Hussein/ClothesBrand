@@ -1,8 +1,8 @@
-<nav class="navbar navbar-expand-md navbar-dark" [ngClass]="{'fixed-top': isScrolled}">
+<nav class="navbar navbar-expand-md navbar-dark" style=" box-shadow: 0px 4px 3px #9e45429a;" [ngClass]="{'fixed-top': isScrolled}">
     <div class="container">
-      <div><a href="#" class="navbar-brand"><img src="Images/logo.png" alt="Logo" class="logo-img" style="width:80px;">
+      <div><a href="#" class="navbar-brand"><img src="Images/logo.png" alt="Logo" class="logo-img" style="width:70px;">
         Sara.com</a>
-  
+
       <button (click)="toggleNavbar()" class="navbar-toggler collapsed" type="button">
         <span class="menu-icon-bar"></span>
         <span class="menu-icon-bar"></span>
@@ -11,7 +11,7 @@
     </div>
       <div id="main-nav" class="collapse navbar-collapse" [ngClass]="{'show': !isNavbarCollapsed}">
         <ul class="navbar-nav ml-auto">
-          <li><a routerLink="Home" class="nav-item nav-link active" style="font-size:larger;">Home</a></li>
+          <li><a routerLink="Home" class="nav-item nav-link" style="font-size:larger;">Home</a></li>
           <li><a routerLink="About" class="nav-item nav-link" style="font-size:larger;">About Us</a></li>
           <li class="nav-item dropdown"  [ngClass]="{'show': isDropdownOpen}" (mouseenter)="toggleDropdown(true)" (mouseleave)="toggleDropdown(false)">
             <a class="nav-link dropdown-toggle" role="button" aria-haspopup="true" attr.aria-expanded="{{ isDropdownOpen }}" style="font-size:larger;">Services</a>
@@ -21,32 +21,35 @@
               <a class="dropdown-item" style="font-size:medium;" routerLink="create-order">Custom Order</a>
             </div>
           </li>
-          <li class="dropdown">
-            <a href="#" class="nav-item nav-link" data-toggle="dropdown" style="font-size:larger;">Portfolio</a>
-            <div class="dropdown-menu" style="font-size:larger;">
-              <a href="#" class="dropdown-item">Dropdown Item 1</a>
-              <a href="#" class="dropdown-item">Dropdown Item 2</a>
-              <a href="#" class="dropdown-item">Dropdown Item 3</a>
-              <a href="#" class="dropdown-item">Dropdown Item 4</a>
-              <a href="#" class="dropdown-item">Dropdown Item 5</a>
-            </div>
-          </li>
+         
           <li><a routerLink="Contact" class="nav-item nav-link" style="font-size:larger;">Contact</a></li>
         </ul>
       </div>
       <div class="icons" *ngIf="isNavbarCollapsed">
-        <a class="position-relative" routerLink="/Cart" id="shopping">
-            <i class="fas fa-shopping-cart fh"></i>
-            <div class="cart-no">5</div>
-        </a>
+        
+      @if(!isLogging){
         <a class="uiverse" routerLink="Login">
-            <i class="fas fa-user fh"></i>
-        </a>
-        <a class="position-relative" routerLink="register" id="signup">
-            <i class="fa-solid fa-user-plus fh"></i>
-        </a>
+          <i class="fas fa-user fh"></i>
+      </a>
+      <a class="position-relative" routerLink="register" id="signup">
+          <i class="fa-solid fa-user-plus fh"></i>
+      </a>
+      }
+      @else{
+        <a class="nav-item nav-link active" id="user" routerLink="profile">
+          <span class="icon-link-hover">{{user}}</span>
+          <!-- <i class="fas fa-user fh"></i> -->
+      </a>
+      <a class="position-relative" routerLink="/Cart" id="shopping">
+        <i class="fas fa-shopping-cart fh"></i>
+        <div class="cart-no">{{ cartnumber }}</div>
+    </a>
+      <a class="position-relative" (click)="logout()" id="signup">
+          <i class="fa-solid fa-right-from-bracket fh"></i>
+          
+      </a>
+      }
       </div>
-      
+
     </div>
   </nav>
-  

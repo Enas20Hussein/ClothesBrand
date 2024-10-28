@@ -1,0 +1,62 @@
+<!-- orders.component.html -->
+<div class="orders-container">
+  <h2 class="section-title"><i class="fa-solid fa-bag-shopping"></i>My Orders</h2>
+  <div *ngIf="orders.length === 0" class="no-orders">
+    <p>No orders found.</p>
+  </div>
+
+  <div *ngFor="let order of orders" class="order-card">
+    <div class="order-header">
+      <h3 class="order-date"><i class="fa-solid fa-calendar-days"></i> {{ order.orderDate | date: 'fullDate' }}</h3>
+      <div class="order-summary">
+        <p class="order-total">Total Price: <span>{{ order.totalPrice | currency }}</span></p>
+        <p class="order-status">Payment Status: <span [ngClass]="getPaymentStatusClass(order.paymentStatus)">{{ order.paymentStatus }}</span></p>
+        <p class="order-status">Order Status: <span [ngClass]="getOrderStatusClass(order.orderStatus)">{{ order.orderStatus }}</span></p>
+      </div>
+    </div>
+
+    <div class="shipping-details py-5">
+      <div class="row justify-content-around py-3">
+        <div class="col-lg-3">Address Line1: 
+          <span> {{ order.addressLine1 }}</span>
+        
+        </div>
+        <div class="col-lg-3"*ngIf="order.addressLine2">Address Line2: 
+          <span>{{ order.addressLine2 }}</span>
+        </div>
+      <div class="col-lg-3">City: 
+        <span>{{ order.city }}</span>
+      </div>
+    </div>
+
+    <div class="row justify-content-around py-3">
+      <div class="col-lg-3">State: 
+        <span>{{ order.state }}</span>
+      </div>
+      <div class="col-lg-3">Posatal Code: 
+        <span>{{ order.postalCode }}</span>
+      </div>
+      <div class="col-lg-3">Country:
+        <span> {{ order.country}}</span>
+      </div>
+    </div>
+    </div>
+
+    <table class="order-items-table">
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of order.orderItems">
+          <td>{{ item.productName }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.price | currency }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -15,7 +15,9 @@
 .navbar.fixed-top {
   position: fixed;
   animation: navbar-animation 0.6s;
-  background-color: rgba(0, 0, 0, .9);
+  background-color: rgba(0, 0, 0, 0.767);
+  color: #fff;
+  box-shadow: 0px 7px 8px #9e4542d8;
 }
 
 
@@ -48,7 +50,7 @@
   left: 15px;
   right: 15px;
   height: 2px;
-  background-color: #fff;
+  background-color: #050505;
   opacity: 0;
   -webkit-transform: translateY(-1px);
   -ms-transform: translateY(-1px);
@@ -85,20 +87,25 @@
   color: #131842;
   font-size: 1rem;
   font-weight: 500;
+ 
 }
-.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+.navbar-dark .navbar-nav .nav-link:focus {
+  color: #221111e5;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover{
   color: #fff;
 }
 .navbar .dropdown-menu {
   padding: 0;
-  background-color: rgba(0, 0, 0, .9);
+  background-color: rgba(0, 0, 0, 0.856);
 }
 .navbar .dropdown-menu .dropdown-item {
   position: relative;
   padding: 10px 20px;
-  color:#af7b62;
+  color:#fffcfb;
   font-size: 1.4rem;
-  border-bottom: 1px solid rgba(255, 255, 255, .1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
   transition: color 0.2s ease-in;
 }
 .navbar .dropdown-menu .dropdown-item:last-child {
@@ -128,11 +135,12 @@
   animation: navbar-animation 0.6s;
   background-color: rgba(0, 0, 0, 0.541);
 }
-.navbar.fixed-top.navbar-dark .navbar-nav .nav-link.active {
-  color: #fff;
+.navbar.fixed-top.navbar-dark.navbar-nav.nav-link.active {
+  color: #911818e5;
 }
-.navbar.fixed-top.navbar-dark .navbar-nav .nav-link::after {
-  background-color: #fff;
+
+.navbar.fixed-top.navbar-dark.navbar-nav.nav-link::after {
+  background-color: #af7b62;
 }
 .content {
   padding: 120px 0;
@@ -146,25 +154,25 @@
 .icons {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .icons .fh {
   cursor: pointer;
-  font-size: 1.3rem;
-  color: #af7b62;; /* Light color for icons */
+  font-size: 0.6rem;
+  color: #ffffff;; /* Light color for icons */
   border-radius: 50%;
   background: #131842; /* Dark background for icons */
-  width: 3rem;
-  height: 3rem;
-  line-height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
   text-align: center;
   transition: background-color 0.3s, color 0.3s; /* Smooth transition for icons */
 }
 
 .icons .fh:hover {
-  background-color: #593818;; /* Change icon background on hover */
-  color: #fff; /* Change icon color on hover */
+  background-color:  #ffffff; /* Change icon background on hover */
+  color: #131842; /* Change icon color on hover */
   transform: rotate(360deg); /* Rotate effect on hover */
 }
 
@@ -185,7 +193,7 @@
 /* Media queries for small devices */
 @media screen and (max-width: 768px) {
   .navbar {
-    padding: 10px;
+    padding: 5px;
   }
   .navbar-brand {
     font-size: 1.8rem;
@@ -247,23 +255,29 @@
 /* Media queries for larger devices */
 @media screen and (min-width: 769px) {
   .navbar {
-    padding: 15px 20px;
+    padding: 3px 15px;
     background-color: transparent;
     transition: background-color 0.6s;
   }
-  .navbar.fixed-top {
-    background-color: rgba(0, 0, 0, 0.8);
+  .navbar.fixed-top{
+    background-color:#a34949b9;
+    color: #fff;
   }
+.navbar.fixed-top.nav-link{
+  color: #fff;
+}
+ 
   .navbar .navbar-nav .nav-link {
     font-size: 1.6rem;
     padding: 15px 20px;
     transition: all 0.2s ease-in;
   }
   .navbar .navbar-nav .nav-link:hover {
-    color: #af7b62;;
+    color: #af7b62;
   }
   .navbar .dropdown-menu {
     min-width: 220px;
+    color: #fff;
   }
   .icons {
     gap: 15px;
@@ -282,11 +296,15 @@
     left: 20%;
     right: 20%;
     height: 2px;
-    background-color: #131842;
+    background-color: #af7b62;
     transform: scaleX(0);
     transition: transform 0.2s ease-in;
   }
   .navbar-dark .navbar-nav .nav-link:hover::after {
     transform: scaleX(1);
+  }
+
+  .navbar-nav .nav-link.active{
+    color:  #a34949e5;
   }
 }

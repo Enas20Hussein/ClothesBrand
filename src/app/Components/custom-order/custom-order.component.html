@@ -1,92 +1,112 @@
-<div class="container">
-  <div class="card shadow-lg order-card">
+<div class="container col-lg-12">
+  <div class="card shadow-lg order-card text-center">
     <!-- Order Header -->
-    <div class="card-header bg-primary text-white text-center">
+    <div class="card-header text-white text-center">
       <h3 class="mb-0">Order Details</h3>
     </div>
 
     <!-- Order Body -->
     <div class="card-body">
-      <div class="row">
+      <div class="row justify-content-center">
         <!-- Left Column: Customer Information -->
-        <div class="col-md-6 border-right">
-          <h5 class="text-secondary mb-4">Customer Information</h5>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-              <strong>Deposit Amount:</strong> ${{ order?.depositAmount }}
-            </li>
-            <li class="list-group-item">
-              <strong>Order Status:</strong>
-              <span class="badge"
-                    [ngClass]="order?.customOrderStatus === 'Confirmed' ? 'badge-success' : 'badge-warning'">
-                {{ order?.customOrderStatus }}
-              </span>
-            </li>
-          </ul>
+        <div class="col-lg-5 col-md-6 col-sm-12 contain mb-4">
+          <h5 class="mb-3 text-muted" style="font-weight: 700;">Customer Information</h5>
+          <table class="table table-borderless table-sm">
+            <tbody>
+              <tr>
+                <th scope="row">Client Name</th>
+                <td>{{ order?.customerName }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Phone Number</th>
+                <td>{{ order?.phoneNumber }}</td>
+              </tr>
+              <tr>
+                <th scope="row" >Deposit Amount</th>
+                <td>${{ order?.depositAmount }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Order Status</th>
+                <td>
+                  <span class="badge" [ngClass]="order?.customOrderStatus === 'Confirmed' ? 'badge-success' : 'badge-warning'">
+                    {{ order?.customOrderStatus }}
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
         <!-- Right Column: Order Information -->
-        <div class="col-md-6">
-          <h5 class="text-secondary mb-4">Order Information</h5>
-          <ul class="list-group list-group-flush">
+        <div class="col-lg-5 col-md-6 col-sm-12 contain mb-4">
+          <h5 class=" mb-3 text-muted" style="font-weight: 700;">Order Information</h5>
+          <table class="table table-borderless table-sm">
+            <tbody>
+              <tr>
+                <th scope="row">Order Date</th>
+                <td>{{ order?.customOrderDate }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Design Description</th>
+                <td>{{ order?.designDescription }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Fabric Details</th>
+                <td>{{ order?.fabricDetails }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-            <li class="list-group-item">
-              <strong>Design Description:</strong> {{ order?.designDescription }}
-            </li>
-            <li class="list-group-item">
-              <strong>Fabric Details:</strong> {{ order?.fabricDetails }}
-            </li>
-            <li class="list-group-item text-center">
-              <img [src]="order?.imageUrl"
-                   alt="Custom Design Image"
-                   class="img-fluid img-thumbnail shadow-sm"
-                   style="max-width: 180px;">
-            </li>
-          </ul>
+      <!-- Image Section -->
+      <div class="image row justify-content-center my-2">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <img [src]="order?.imageUrl" alt="Custom Design Image" style="height: 300px;" class="img-fluid img-thumbnail">
         </div>
       </div>
 
       <!-- Divider -->
-      <hr class="my-4">
+      <hr class="my-5">
 
       <!-- Measurements Section -->
       <div class="measurements-section">
-        <h5 class="text-secondary mb-4 text-center">Measurements</h5>
-        <div class="row text-center">
-          <div class="col-sm-3">
-            <p><strong>Shoulder Width:</strong></p>
-            <p class="text-muted">{{ order?.shoulderWidth }} cm</p>
-          </div>
-          <div class="col-sm-3">
-            <p><strong>Chest Circumference:</strong></p>
-            <p class="text-muted">{{ order?.chestCircumference }} cm</p>
-          </div>
-          <div class="col-sm-3">
-            <p><strong>Waist Circumference:</strong></p>
-            <p class="text-muted">{{ order?.waistCircumference }} cm</p>
-          </div>
-          <div class="col-sm-3">
-            <p><strong>Hip Circumference:</strong></p>
-            <p class="text-muted">{{ order?.hipCircumference }} cm</p>
-          </div>
+        <h5 class="text-muted" style="font-weight: 700;">Measurements</h5>
+        <div class="table-responsive">
+          <table class="table table-borderless table-sm text-center">
+            <tbody>
+              <tr>
+                <th scope="row" >Shoulder Width</th>
+                <td>{{ order?.shoulderWidth }} cm</td>
+                <th scope="row">Chest Circumference</th>
+                <td>{{ order?.chestCircumference }} cm</td>
+              </tr>
+              <tr>
+                <th scope="row" >Waist Circumference</th>
+                <td>{{ order?.waistCircumference }} cm</td>
+                <th scope="row" >Hip Circumference</th>
+                <td>{{ order?.hipCircumference }} cm</td>
+              </tr>
+              <tr>
+                <th scope="row">Waist Length</th>
+                <td>{{ order?.waistLength }} cm</td>
+                <th scope="row">Arm Length</th>
+                <td>{{ order?.armLength }} cm</td>
+              </tr>
+              <tr>
+                <th scope="row">Bicep Size</th>
+                <td>{{ order?.bicepSize }} cm</td>
+                <th scope="row" >Model Length</th>
+                <td>{{ order?.modelLength }} cm</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="row text-center">
-          <div class="col-sm-3">
-            <p><strong>Waist Length:</strong></p>
-            <p class="text-muted">{{ order?.waistLength }} cm</p>
-          </div>
-          <div class="col-sm-3">
-            <p><strong>Arm Length:</strong></p>
-            <p class="text-muted">{{ order?.armLength }} cm</p>
-          </div>
-          <div class="col-sm-3">
-            <p><strong>Bicep Size:</strong></p>
-            <p class="text-muted">{{ order?.bicepSize }} cm</p>
-          </div>
-          <div class="col-sm-3">
-            <p><strong>Model Length:</strong></p>
-            <p class="text-muted">{{ order?.modelLength }} cm</p>
-          </div>
+
+        <!-- Buttons Section -->
+        <div class="d-flex justify-content-center mt-4">
+          <a routerLink="/dashboard" class="btn btn-success btn-lg mx-2">Go To Dashboard</a>
+          <a routerLink="/product" class="btn btn-success btn-lg mx-2">Go To Products</a>
         </div>
       </div>
     </div>

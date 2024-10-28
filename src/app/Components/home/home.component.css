@@ -1,4 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap");
 
+/* Now you can define your styles below the @import statement */
+.hero-section {
+    /* Your existing styles for .hero-section */
+    font-family: 'Nunito', sans-serif;
+    /* Other styles... */
+}
 .hero-section {
   background-size: cover;
   height: 100vh;
@@ -92,8 +99,369 @@ font-weight:800 ;
     box-sizing: border-box;
 
 }
+
+
+
+/* test section*/
+
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  width: 100%;
+  pointer-events: none;
+  user-select: none;
+}
+
+
+/*carousel*/
+/* Recent Post Title */
+.title_bx h3.title {
+  font-size: 22px;
+  text-transform: capitalize;
+  position: relative;
+  color: #fd7f34;
+  font-weight: 700;
+  line-height: 1.2em;
+}
+.title_bx h3.title:before {
+  content: "";
+  height: 2px;
+  width: 20%;
+  position: absolute;
+  left: 0px;
+  z-index: 1;
+  top: 40px;
+  background-color: #fd7f34;
+}
+.title_bx h3.title:after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  top: 40px;
+  background-color: #ffc107;
+}
+
+/* Carousel Navigation */
+.common_wd .owl-nav .owl-prev, .common_wd .owl-nav .owl-next {
+  background-color: #fd7f34 !important;
+  display: block;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  border-radius: 0px !important;
+}
+.owl-nav .owl-next {
+  right: -10px;
+}
+.owl-nav .owl-prev, .owl-nav .owl-next {
+  top: 50%;
+  position: absolute;
+}
+.common_wd .owl-nav .owl-prev i, .common_wd .owl-nav .owl-next i {
+  color: #fff;
+  font-size: 14px !important;
+  position: relative;
+  top: -1px;
+}
+.common_wd .owl-nav {
+  position: absolute;
+  top: -21%;
+  right: 4px;
+  width: 65px;
+}
+.owl-nav .owl-prev i, .owl-nav .owl-next i {
+  left: 0px;
+}
+
+/* Product Box */
+.sq_box {
+  padding-bottom: 5px;
+  border-bottom: solid 2px #fd7f34;
+  background-color: #fff;
+  text-align: center;
+  padding: 15px 10px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+.item .sq_box span.wishlist {
+  right: 5px !important;
+}
+.sq_box span.wishlist {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+.sq_box span {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0px 10px;
+}
+.sq_box span.wishlist i {
+  color: #adb5bd;
+  font-size: 20px;
+}
+.sq_box h4 {
+  font-size: 18px;
+  text-align: center;
+  font-weight: 500;
+  color: #343a40;
+  margin-top: 10px;
+  margin-bottom: 10px !important;
+}
+.sq_box .price-box {
+  margin-bottom: 15px !important;
+}
+.sq_box .btn {
+  border-radius: 50px;
+  padding: 5px 13px;
+  font-size: 15px;
+  color: #fff;
+  background-color: #fd7f34;
+  font-weight: 600;
+}
+.sq_box .price-box span.price {
+  text-decoration: line-through;
+  color: #6c757d;
+}
+.sq_box span {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0px 10px;
+}
+.sq_box .price-box span.offer-price {
+  color: #28a745;
+}
+.sq_box img {
+  object-fit: cover;
+  height: 150px !important;
+  margin-top: 20px;
+}
+.sq_box span.wishlist i:hover {
+  color: #fd7f34;
+}
+
+
+
+
+
+
+
+
+
+
+/* SECTION - HOME */
+
+.home {
+  display: grid;
+  grid-template-columns: 45% 50%;
+  place-items: center;
+  gap: 50px;
+  background: #493628;
+  background: radial-gradient(
+    circle,
+    #c05c5ccb 3%,
+    #f7dee4 60%
+     
+  );
+  background-size: cover;
+  overflow: hidden;
+  padding: 130px 80px;
+}
+
+.description {
+  color: #fff;
+  padding: 0 50px;
+}
+
+.description h1 {
+  font-family: "Tilt Neon", sans-serif;
+  font-size: clamp(3rem, 5vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+
+.gradient-text {
+  font-family: "Tilt Neon", sans-serif;
+  background-image: linear-gradient(
+    90deg,
+    #692525f8 0%,
+    #c26464f8 40%,
+    rgb(185, 142, 142) 50%,
+    rgb(95, 88, 136) 70%,
+    rgb(60, 52, 145) 100%
+  );
+  color: transparent;
+  background-size: contain;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.description p {
+  font-family: "Nunito", sans-serif;
+  font-size: clamp(0.9rem, 3vw, 1.1rem);
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+#form {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+input {
+  padding-inline-end: 10px;
+  padding-inline-start: 10px;
+  background-color: transparent;
+  outline: transparent;
+  border: 0;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  margin-right: 10px;
+  transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+}
+.paragraph{
+  color: #242b6d;;
+}
+
+
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  max-width: max-content;
+  background: linear-gradient(
+    90deg,
+    #641f1ff8 0%, 
+    #b15858f8 40%,
+    rgb(219, 196, 174) 50%,
+    rgb(115, 105, 172) 70%,
+    rgb(33, 28, 94)  100%
+  );
+  background-size: 200%;
+  background-position: left;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: 0;
+  padding: 12px 16px;
+  border-radius: 30px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5),
+    inset 0px 2px 2px rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.btn:hover {
+  background-position: right;
+}
+
+.users-color-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.item {
+  max-width: 200px;
+  aspect-ratio: 1/1;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5),
+    inset 0px 2px 2px rgba(255, 255, 255, 0.2);
+  animation: fadeIn 0.5s linear 1 forwards;
+  animation-delay: calc(0.2s * var(--i));
+  opacity: 0;
+}
+
+.item:nth-child(1) {
+  background-color: #67d7e1;
+  border-radius: 50% 50% 0 50%;
+}
+
+.item:nth-child(2) {
+  border-radius: 50% 50% 0 0;
+}
+
+.item:nth-child(3) {
+  background-color: #6cc164;
+  border-radius: 50%;
+}
+
+.item:nth-child(4) {
+  border-radius: 0 0 0 50%;
+}
+
+.item:nth-child(5) {
+  border-radius: 0 50% 50% 0;
+}
+
+.item:nth-child(6) {
+  background-color: #8071a8;
+  border-radius: 0 50% 50% 50%;
+}
+
+.item:nth-child(7) {
+  border-radius: 50% 50% 0 50%;
+}
+
+.item:nth-child(8) {
+  background-color: #fe7519;
+  border-radius: 50% 0 0 50%;
+}
+
+.item:nth-child(9) {
+  background-color: #f5bec3;
+  border-radius: 0 50% 50% 0;
+}
+
+.item:nth-child(10) {
+  border-radius: 50%;
+}
+
+.item:nth-child(11) {
+  background-color: #fcd659;
+  border-radius: 50% 0 50% 50%;
+}
+
+.item:nth-child(12) {
+  border-radius: 50% 0 0 0;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
 /*
-st-course section
+static-course section
 */
 
 
@@ -111,7 +479,11 @@ background-color:#335353;
   padding: 1rem 0rem;
 }
 
-
+.quiz-section .btn{
+background-color:  rgba(177, 70, 70, 0.692);
+border-radius: 35px;
+border-color:rgba(177, 70, 70, 0.692);
+}
 .quiz-images img {
   width: 300px;
   border-radius: 8px;
@@ -167,3 +539,11 @@ p.lead{
     width: 100%;
   }
 }
+
+
+
+
+
+
+/*slider*/
+

@@ -1,64 +1,107 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, Output } from '@angular/core';
 import { ProductsService } from '../../Services/products.service';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import {NgxPaginationModule} from 'ngx-pagination'
 import { ProdDetailsComponent } from '../prod-details/prod-details.component';
+import { PaginationComponent } from '../pagination/pagination.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [RouterModule, CommonModule,NgxPaginationModule,ProdDetailsComponent],
+  imports: [RouterModule, FormsModule, CommonModule, ProdDetailsComponent, PaginationComponent],
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent {
+  products: any[] = [];
+  isFilterApplied = false;
+  
 
-  products: any[] = []; // Array to hold product data
-  currentIndex = 0; // Track the current page of products
-  slidesPerView = 3; // Number of slides to show per view
-  totalPages!: number; // Total pages based on the number of products
+  //categories = ['Womens Clothes', 'Mens Clothes', 'Kids Clothes']; // Example categories
+  categories: string[] = [];
 
-  constructor(private productsService: ProductsService) {}
+  filterCriteria = {
+    category: '',
+    minPrice: null,
+    maxPrice: null,
+    keyword: ''
+  };
+
+  currentPage = 1;
+  totalPages = 1;
+  itemsPerPage = 4;
+
+  constructor(private productsService: ProductsService,private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    //this.products;
-    this.loadProducts(); // Fetch product data
+    this.loadProducts();
+    this.loadCategories()
   }
 
   loadProducts(): void {
-    this.productsService.getAllProducts().subscribe((data: any) => {
-      this.products = data;
-      // this.totalPages = Math.ceil(this.products.length / this.slidesPerView)-1;
-    });
+    this.productsService.getAllProducts().subscribe(
+      (data: any) => {
+        this.products = data; // Assign response correctly
+        this.totalPages = Math.ceil((data.totalItems || this.products.length) / this.itemsPerPage);
+      },
+      (error) => {
+        console.error('Error loading products:', error);
+      }
+    );
   }
 
-  // Get the products for the current slide
   getCurrentProducts(): any[] {
-    const start = this.currentIndex * this.slidesPerView;
-    const end = start + this.slidesPerView;
-    return this.products.slice(start, end+2);
-  }
-
-  // Move to the next set of slides
-  nextSlide(): void {
-    if (this.currentIndex < this.totalPages - 1) {
-      this.currentIndex++;
+    if (!this.products || this.products.length === 0) {
+      return []; // Return an empty array if products is not set
     }
-
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    return this.products.slice(startIndex, startIndex + this.itemsPerPage);
   }
 
-  // Move to the previous set of slides
-  prevSlide(): void {
-    if (this.currentIndex > 0) {
-      this.currentIndex--;
-    }
+  goToSlide(page: number): void {
+    this.currentPage = page;
   }
 
-  // Navigate to a specific slide using pagination dots
-  goToSlide(index: number): void {
-    this.currentIndex = index;
-  }
+  // Load filtered products
+  loadFilteredProducts(): void {
+    const { category, minPrice, maxPrice, keyword } = this.filterCriteria;
+    this.productsService.getFilteredProducts(category, minPrice, maxPrice, keyword)
+      .subscribe((data: any) => {
+        console.log('Filtered Data:', data); // Debugging line
+        this.products = data || [];
+        this.totalPages = Math.ceil((data.totalItems || this.products.length) / this.itemsPerPage);
+        this.cdr.detectChanges();
+      });
   }
   
+  // Apply filter and reload products
+  applyFilter(): void {
+    this.currentPage = 1;
+    this.loadFilteredProducts();
+  }
 
+  // Clear filter and reset product listing
+  clearFilter(): void {
+    this.isFilterApplied = false;
+    this.filterCriteria = { category: '', minPrice: null, maxPrice: null, keyword: '' };
+    this.currentPage = 1;
+    this.loadProducts();
+  }
+
+  loadCategories(): void {
+    this.productsService.getCategories().subscribe(
+      (data: any) => {
+        data.forEach((element:any) => {
+          console.log(element.name)
+          this.categories.push(element.name)
+
+        });
+        
+      },
+      (error) => {
+        console.error('Error loading categories:', error);
+      }
+    );
+  }
+}

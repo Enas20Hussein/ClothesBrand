@@ -4,13 +4,17 @@ import { CustomClothingOrder } from '../../Models/CustomClothingOrder';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { AuthInterceptor } from '../../Models/AuthInterceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 @Component({
   selector: 'app-create-custom-order',
   standalone: true,
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './create-custom-order.component.html',
-  styleUrls: ['./create-custom-order.component.css']
+  styleUrls: ['./create-custom-order.component.css'],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true } // Provide the interceptor here
+  ]
 })
 export class CreateCustomOrderComponent {
 
@@ -28,6 +32,8 @@ export class CreateCustomOrderComponent {
     waistLength: 0,
     armLength: 0,
     bicepSize: 0,
+    customerName: '',
+    phoneNumber: '',
     modelLength: 0,
     image: null,
     userId: this.userId
@@ -45,7 +51,8 @@ export class CreateCustomOrderComponent {
   // Submit order form
   onSubmit() {
     const formData = new FormData();
-
+    formData.append('customerName' , this.order.customerName);
+    formData.append('phoneNumber' , this.order.phoneNumber);
     formData.append('designDescription', this.order.designDescription);
     formData.append('fabricDetails', this.order.fabricDetails);
     formData.append('depositAmount', this.order.depositAmount.toString());
@@ -73,7 +80,11 @@ export class CreateCustomOrderComponent {
         this.router.navigate(['/orders',createdOrderId]);
       },
       error: (error) => {
-        console.error('Error creating order:', error);
+        if (error.status === 401) {
+          this.router.navigate(['/Login']); // Navigate to login on 401 error
+        } else {
+          console.error('Error fetching data', error);
+        }
       }
     });
   }

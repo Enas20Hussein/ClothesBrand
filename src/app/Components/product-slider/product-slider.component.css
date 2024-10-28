@@ -1,0 +1,21 @@
+
+.card {
+  margin:4rem .25rem;
+  justify-content: center;
+
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 50%;
+}
+.btn-slider{
+  padding: 10px 20px;
+  border-radius: 25px;
+  background-color: #a34949e5;
+  color: #fff;
+}
+.card-title{
+  color: #a34949e5;
+}

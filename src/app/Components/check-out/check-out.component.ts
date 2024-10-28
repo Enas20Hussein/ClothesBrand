@@ -4,20 +4,23 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { OrderService } from '../../Services/order.service';
 import { HttpClient } from '@angular/common/http';
 import { loadStripe, Stripe, StripeElements, StripeCardNumberElement, StripeCardExpiryElement, StripeCardCvcElement } from '@stripe/stripe-js';
-
-
+import { AuthInterceptor } from '../../Models/AuthInterceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @Component({
   selector: 'app-check-out',
   standalone: true,
   imports: [],
   templateUrl: './check-out.component.html',
-  styleUrl: './check-out.component.css'
+  styleUrl: './check-out.component.css',
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true } // Provide the interceptor here
+  ]
 })
 export class CheckOutComponent implements OnInit {
 constructor(private route: ActivatedRoute,private accserv:AccounteService,private router:Router,private orderService:OrderService,private http:HttpClient){}
 
-  
+
   userId: string|null = null;
   order: any;
   orderId: number = 0;
@@ -55,7 +58,7 @@ constructor(private route: ActivatedRoute,private accserv:AccounteService,privat
         cardNumberDisplay!.innerText = 'Invalid Card Number';
       }
     });
-  
+
     this.cardExpiryElement.on('change', event => {
       const cardExpiryDisplay = document.getElementById('display-card-expiry');
       if (event.complete) {
@@ -93,7 +96,11 @@ constructor(private route: ActivatedRoute,private accserv:AccounteService,privat
         console.log('Order details:', this.order);
       },
       (error) => {
-        console.error('Error fetching order:', error);
+        if (error.status === 401) {
+          this.router.navigate(['/Login']); // Navigate to login on 401 error
+        } else {
+          console.error('Error fetching data', error);
+        }
       }
     );
   }
@@ -116,7 +123,7 @@ constructor(private route: ActivatedRoute,private accserv:AccounteService,privat
       console.log('Payment successful:', paymentMethod);
       // Proceed with further steps, e.g., send paymentMethod.id to your backend
     }
-    
+
 
     if (error) {
       console.error('Error creating payment method:', error);
@@ -125,6 +132,9 @@ constructor(private route: ActivatedRoute,private accserv:AccounteService,privat
       console.log('Payment method created:', paymentMethod);
       // Proceed with the backend API call
       this.ProceedToPayment(paymentMethod.id);
+
+      this.router.navigate(["/Confirm-Order",this.orderId])
+
     }
   }
 
@@ -142,7 +152,11 @@ constructor(private route: ActivatedRoute,private accserv:AccounteService,privat
         console.log('Order successful:', response);
       },
       (error) => {
-        console.error('Error during checkout:', error);
+        if (error.status === 401) {
+          this.router.navigate(['/Login']); // Navigate to login on 401 error
+        } else {
+          console.error('Error fetching data', error);
+        }
       }
     );
   }

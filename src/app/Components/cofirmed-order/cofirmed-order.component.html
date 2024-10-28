@@ -1,1 +1,53 @@
-<p>cofirmed-order works!</p>
+<div class="container">
+  <div class="order-confirmation-card">
+    <div class="row justify-content-center"*ngIf="order">
+      <div class="col-md-6"><h4>Successful Order</h4></div>
+      
+      <div class="col-md-6"style="text-align: right;"><a style="font-weight: 700;color:#a34949e5;" routerLink="/product"><i class="fa-solid fa-tag"></i>Continue Shopping</a></div>
+      
+      <div class="hr"></div>
+      <h3><i class="fa-solid fa-bag-shopping"></i> Order Items</h3>
+      <div class="col-lg-5 col-md-5 col-12 item" *ngFor="let item of order.orderItems">
+          
+          <ul>
+           
+            <li>
+              <img *ngIf="item.imageUrl" [src]="item.imageUrl" alt="{{item.productName}}" class="product-image">
+              <div class="product-details">
+                <p><strong>Product Name:</strong><span> {{item.productName}}</span></p>
+                <p><strong>Quantity:</strong><span>  {{ item.quantity }}</span></p>
+                <p><strong>Price:</strong><span>  {{ item.price > 0 ? '$' + item.price : 'Free'}}</span></p>
+              </div>
+            </li>
+          </ul>
+    
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-12 details" *ngIf="order">
+          <h3><i class="fa-solid fa-circle-check"></i>Order Confirmation</h3>
+          <p><strong>Date:</strong> <span>  {{ order.orderDate | date:'medium' }}</span></p>
+          <p><strong>Total Price:</strong> <span>  {{ order.totalPrice > 0 ? '$' + order.totalPrice : 'Free' }}</span></p>
+          <p><strong>Payment Status:</strong> <span>  {{ order.paymentStatus }}</span></p>
+          <p><strong>Order Status:</strong><span>  {{ order.orderStatus }}</span></p>
+        </div>
+
+        <div class="col-md-6 col-12 details" *ngIf="order">
+          <h3><i class="fa-solid fa-truck-fast"></i> Shipping Details</h3>
+          <p>{{ order.addressLine1 }}</p>
+          <p *ngIf="order.addressLine2">{{ order.addressLine2 }}</p>
+          <p>{{ order.city }}  - {{ order.state }} </p>
+          <p>{{ order.country }}  -  {{ order.postalCode }}</p>
+    
+        </div>
+      </div>
+    </div>
+   
+    <div *ngIf="!order">
+      <app-loader></app-loader>
+    </div>
+  </div>
+</div>
+
+
+

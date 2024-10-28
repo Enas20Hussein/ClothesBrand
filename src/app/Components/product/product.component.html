@@ -1,22 +1,81 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"><div class="container slider-container">
-  
-  <div class="container">
-    <div class="row">
-      
-      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" *ngFor="let product of products">
-        <div class="card"  >
-          <img [src]="product.imageUrl" alt="">
-          <div class="card-overlay">
-            <h3 class="name">{{ product.name }}</h3>
-            <p class="price">${{ product.price }}</p>
-            <div style="position: relative;">
-              <a class="plus" [routerLink]="['/product', product.id]"><i class="bi bi-info-circle"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-    
-    </div>
-  </div>
+<div class="container">
 
+  <div class="container form">
+    <form (ngSubmit)="applyFilter()" class="filter-form d-flex flex-column align-items-center">
+      
+      <div class="input-group mb-3 search-bar">
+        <input
+          type="text"
+          id="keyword"
+          [(ngModel)]="filterCriteria.keyword"
+          name="keyword"
+          class="form-control search-input"
+          placeholder="Search products here..."
+          (ngModelChange)="applyFilter()"
+        />
+        <button type="submit" class="btn search-button">Search</button>
+      </div>
+  
+      <div class="filter-options d-flex align-items-center gap-3 mb-3">
+        
+        <div class="form-group">
+          <select
+            id="category"
+            [(ngModel)]="filterCriteria.category"
+            name="category"
+            class="form-control category-dropdown"
+          >
+            <option value="">All Categories</option>
+            <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+          </select>
+        </div>
+  
+        <div class="form-group">
+          <input
+            type="number"
+            id="minPrice"
+            [(ngModel)]="filterCriteria.minPrice"
+            name="minPrice"
+            class="form-control price-input"
+            placeholder="Min Price"
+          />
+        </div>
+  
+        <div class="form-group">
+          <input
+            type="number"
+            id="maxPrice"
+            [(ngModel)]="filterCriteria.maxPrice"
+            name="maxPrice"
+            class="form-control price-input"
+            placeholder="Max Price"
+          />
+        </div>
+        
+      </div>
+    </form>
+  </div>
+  
+  
+  <main class="main bd-grid">
+    <article class="card" *ngFor="let product of getCurrentProducts()">
+      <div class="card__img">
+        <img [src]="product.imageUrl" style="height: 180px; width: 180px;border-radius: 20px;" alt="">
+      </div>
+      <div class="card__name">
+        <p>{{ product.name }}</p>
+      </div>
+      <div class="card__precis">
+        <a [routerLink]="['/product', product.id]" class="card__icon"><i class="fa-solid fa-circle-info"></i></a>
+        <div>
+          <s style="color: #FF5151;"><span class="card__preci card__preci--before" *ngIf="product.discount && (product.price - product.discount) !== 0">{{ product.price | currency }}</span></s>
+          <span class="card__preci card__preci--now">{{ product.price - product.discount | currency }}</span>
+        </div>
+        <a routerLink="/Cart" class="card__icon"><i class="fa-solid fa-cart-shopping"></i></a>
+      </div>
+    </article>
+
+  </main>
+
+  <app-pagination [totalPages]="totalPages" [currentPage]="currentPage" (pageChange)="goToSlide($event)"></app-pagination>
+</div>

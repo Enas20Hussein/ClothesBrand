@@ -8,7 +8,7 @@ export interface Order {
     shippingDetails: ShippingDto;
     orderItems: OrderItemDto[];
   }
-  
+
   export interface ShippingDto {
     addressLine1: string;
     addressLine2?: string;
@@ -17,11 +17,10 @@ export interface Order {
     postalCode: string;
     country: string;
   }
-  
+
   export interface OrderItemDto {
     productId: number;
     productName: string;
     quantity: number;
-    unitPrice: number;
+    price: number;
   }
-  

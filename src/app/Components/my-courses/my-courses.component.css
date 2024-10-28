@@ -1,0 +1,77 @@
+/* courses.component.css */
+.courses-container {
+  padding: 30px;
+  background-color: #f3f4f6; 
+  border-radius: 8px;
+  margin-top: 4.7rem;
+  min-height:100vh ;
+  box-shadow: 0 4px 15px rgba(163, 93, 93, 0.644);
+}
+
+h1 {
+  text-align: left;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  color: #a34949e5; 
+}
+.fa-solid{
+  margin-right: 10px;
+}
+.no-courses-message {
+  text-align: center;
+  font-size: 18px;
+  color: #777;
+  margin: 20px 0;
+}
+
+.courses-list {
+  list-style: none;
+  padding: 0;
+}
+
+.course-item {
+  background: white;
+  border-radius: 12px;
+  padding: 20px 25px;
+  margin-bottom: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.course-item:hover {
+  transform: translateY(-3px); 
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.course-title {
+  font-size: 24px; 
+  color: #1e3a55;
+  margin-bottom: 10px; 
+  font-family: 'Arial', sans-serif; 
+}
+
+.course-description {
+  color: #a34949e5;
+  font-size: 16px; 
+  line-height: 1.6; 
+  margin-bottom: 10px; }
+
+.course-details {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+}
+
+.course-price {
+  font-size: 20px;
+  color: #a34949e5;
+ 
+}
+
+.course-duration {
+  font-size: 16px; 
+  color: #666;
+  font-style: italic; 
+}

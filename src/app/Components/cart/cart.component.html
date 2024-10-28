@@ -1,45 +1,67 @@
-<div class="container-fluid py-5">
-  <div class="card card-responsive">
-    <div class="card-body">
-      <table class="table table-responsive-md table-hover">
-        <thead>
-          <tr>
-            <th></th>
-            <th scope="col">Product</th>
-            <th scope="col">Product Name</th>
-            <th scope="col">Price</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Subtotal</th>
-          </tr>
-        </thead>
-        <tbody *ngIf="cartData && cartData.shoppingCartItems && cartData.shoppingCartItems.length > 0">
-          <tr *ngFor="let item of cartData.shoppingCartItems">
-            <td class="align-middle">
-              <button class="btn btn-outline-danger btn-sm" (click)="deleteToCart(item.productId)">
-                <i class="fa-solid fa-xmark"></i>
-              </button>
-            </td>
-            <td class="align-middle">
-              <img src="{{item.imageUrl}}" alt="{{ item.productName }}" class="img-fluid img-thumbnail" height="80" width="100">
-            </td>
-            <td class="align-middle"> {{ item.productName }} </td>
-            <td class="align-middle">{{ item.price | currency }}</td>
-            <td class="align-middle">{{ item.quantity }}</td>
-            <td class="align-middle">{{ (item.price * item.quantity) | currency }}</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="row mt-3 justify-content-between">
-        <div class="col-md-3 col-12">
-          <button class="btn checkout-btn w-100 w-md-auto" (click)="goToOrderPage()">Proceed to checkout</button>
-          <button class="btn btn-outline-danger w-100 my-2" (click)="clearcart()">Clear Cart</button>
-        </div>
-        <div class="col-md-3 col-12 text-md-right">
-          <p *ngIf="cartData && cartData.totalPrice" class="total-price"><strong>Total:</strong> {{ cartData.totalPrice | currency }}</p>
-          <p *ngIf="cartData && cartData.totalPrice" class="total-price"><strong>Check Your checkout </strong> </p>
-        </div>
-      </div>
+<div class="container py-5">
+ 
+<div class="container my-5">
+  <div class="cart bg-light p-4 rounded ">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h4 ><a style="color: rgb(16, 16, 71);"routerLink="/product"><i class="fa-solid mx-1 fa-tag"></i>Continue Shopping</a></h4>
+      <a routerLink="/Cart" class="text-danger text-decoration-none" (click)="clearcart()">Remove all</a>
+      
     </div>
+
+    <!-- Table for Cart Items -->
+     @if(cartData){
+    <table class="table bg-light align-middle" style="min-width: max-content; text-align: center;">
+
+      <thead>
+        <tr class="bg-light">
+          
+          <th scope="col">Product</th>
+          <th scope="col">Product Name</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Price</th>
+          <th scope="col">Subtotal</th>
+        </tr>
+      </thead>
+      <tbody  *ngIf="cartData && cartData.shoppingCartItems && cartData.shoppingCartItems.length > 0">
+        <tr class="bg-light" *ngFor="let item of cartData.shoppingCartItems">
+          <td class="product-image-cell">
+            <img src="{{item.imageUrl}}" alt="{{ item.productName }}" class="product-image">
+          </td>
+          <td>
+            <h5 class="product-name mb-1">{{ item.productName }} </h5>
+          </td>
+          <td>
+            <div class="product-quantity d-flex justify-content-center align-items-center">
+              <!-- <button class="btn btn-outline-secondary butt"><i class="fa-solid fa-plus"></i></button> -->
+              <span class="mx-3">{{item.quantity}}</span>
+              <!-- <button class="btn btn-outline-secondary butt"><i class="fa-solid fa-minus"></i></button> -->
+            </div>
+          </td>
+          <td class="product-price">{{ (item.price) | currency }}</td>
+          <td>
+            <div class="product-actions">
+              <h6>{{ (item.price * item.quantity) | currency }}</h6>
+              <a routerLink="/Cart" (click)="deleteToCart(item.productId)" class="text-danger text-decoration-none d-block">Remove</a>
+            </div>
+          </td>
+        </tr>
+
+     
+      </tbody>
+    </table>
+  }
+  @else{
+    
+  }
+
+    <!-- Total Section -->
+    <div class="d-flex justify-content-between align-items-center">
+      <div>
+        <p *ngIf="cartData && cartData.totalPrice" class="mb-0"><strong>Sub-Total</strong></p>
+        <small class="text-muted">{{cartData.shoppingCartItems.length }} item</small>
+      </div>
+      <h5 class="total-price"> {{ cartData.totalPrice | currency }}</h5>
+    </div>
+    <button class="btn btn-primary w-100 mt-3"(click)="goToOrderPage()">Checkout</button>
   </div>
 </div>

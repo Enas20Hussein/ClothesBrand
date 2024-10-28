@@ -1,1 +1,21 @@
-<p>course-detail works!</p>
+
+
+<div class="container">
+<div class="course-card"*ngIf="course">
+  <div class="row no-gutters">
+    <div class="col-lg-6 col-md-6 p-4 left-section">
+      
+      <h4 class="course-title">{{ course.title }}</h4>
+      <p class="pargraph text-white py-3"> Price {{ course.price.toFixed(2) | currency }}</p>
+    </div>
+    <div class="col-lg-6 col-md-6 p-5 bg-white right-section ">
+      <h5 class="chapter-title">{{ course.description }}</h5>
+      <p class="pargraph py-2"><i class="fa-solid fa-clock"></i> {{ course.duration }}</p>
+      <button class="btn btn-primary continue-btn mt-3"(click)="enrollInCourse()">Enroll Now</button> 
+      <a routerLink="/Courses" class="view-chapters">View all Courses </a>
+
+    </div>
+  </div>
+</div>
+
+</div>

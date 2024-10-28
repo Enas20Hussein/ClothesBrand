@@ -7,15 +7,18 @@ import { loadStripe } from '@stripe/stripe-js';
 import { HttpClient } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';  // <-- Import FormsModule
 import { Order } from '../../Models/order';
-
-
+import { AuthInterceptor } from '../../Models/AuthInterceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @Component({
   selector: 'app-order',
   standalone: true,
   imports: [CommonModule,ReactiveFormsModule,FormsModule,RouterModule],
   templateUrl: './order.component.html',
-  styleUrl: './order.component.css'
+  styleUrl: './order.component.css',
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true } // Provide the interceptor here
+  ]
 })
 export class OrderComponent implements OnInit {
 
@@ -28,9 +31,9 @@ export class OrderComponent implements OnInit {
     Country: '',
     ShippingMethod: ''
   };
-  
+
   shippingMethods: string[] = ['Standard', 'Express', 'International' ,'NA'];
-  userId: string|null = null;  
+  userId: string|null = null;
   cartData: any;
 
   constructor(private cartService: CartService,private accserv:AccounteService,private router:Router,private http: HttpClient) {  }
@@ -82,7 +85,7 @@ export class OrderComponent implements OnInit {
 
   checkout() {
     const requestBody = {
-      userId: this.userId, 
+      userId: this.userId,
       shippingDetails: {
         AddressLine1: this.shippingDetails.AddressLine1,
         AddressLine2: this.shippingDetails.AddressLine2,
@@ -95,7 +98,7 @@ export class OrderComponent implements OnInit {
     };
     console.log('Request body:', requestBody);
     const headers = this.accserv.getAuthHeaders(); // Get the authorization header
-    
+
     this.http.post<Order>('https://localhost:7108/api/ShoppingCart/checkout', requestBody,{headers}).subscribe(
       (response: Order) => {
           // Now the response is typed as OrderDto, and you can handle it safely
@@ -110,6 +113,6 @@ export class OrderComponent implements OnInit {
       }
     );
   }
-  
+
 }
 
