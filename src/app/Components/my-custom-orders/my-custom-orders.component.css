@@ -3,6 +3,7 @@
   margin-top: 4.7rem;
   padding: 30px;
   max-width: 1000px;
+  min-height: 100vh;
   font-family: 'Poppins', sans-serif;
 }
 

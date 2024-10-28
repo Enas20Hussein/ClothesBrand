@@ -47,17 +47,16 @@
 }
 
 .contact-submit-btn {
-  background-color:#243d3b;
+  background-color:#a34949e5;
   color: #fff;
   border-radius: 50px;
-  padding: 10px 0;
+  padding: 10px 30;
   margin-left: 80px;
   transition: background-color 0.3s ease;
-  padding: 10px;
 }
 
 .contact-submit-btn:hover {
-  background-color:#396958; 
+  background-color:#a34949e5;
 }
 
 .form-text {
