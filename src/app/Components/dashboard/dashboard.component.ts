@@ -78,7 +78,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.userId = this.auth.getUserId(); // Fetch user ID from authentication service
-
     // Fetch user orders
     this.orderService.getUserOrders(this.userId).subscribe((orders) => {
       this.orders = orders;

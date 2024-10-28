@@ -3,10 +3,17 @@ body {
   font-family: Arial, sans-serif;
 }
 
+.username{
+
+  padding-left: 20px;
+
+
+}
+
 .dashboard {
   max-width: 260px;
   width: 100%;
-  height: auto;
+  height: 150vh;
   float: left;
   
 }

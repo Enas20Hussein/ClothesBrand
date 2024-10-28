@@ -49,7 +49,7 @@ export const routes: Routes = [
     { path: 'order-confirmation', component: OrderComponent ,canActivate:[authGuard]},
     { path: 'Confirm-Order', component:CofirmedOrderComponent ,canActivate:[authGuard]},
 
-   
+
     { path: 'Confirm-Order/:orderId', component:CofirmedOrderComponent },
 
 
@@ -65,17 +65,17 @@ export const routes: Routes = [
     { path: 'course/:id', component: CourseDetailsComponent },
     { path: 'enrollment-success/:id', component: EnrollmentSuccessComponent,canActivate:[authGuard] },
     { path: 'already-enrolled', component: AlreadyEnrolledComponent,canActivate:[authGuard] },
-   
-    
+    { path: 'enrolled-courses', component: MyCoursesComponent,canActivate:[authGuard] },
+
     { path: 'profile', component: ProfileComponent,children: [
         { path: 'dashboard', component: DashboardComponent,canActivate:[authGuard] },
         { path: 'MyOrders', component: MyOrdersComponent,canActivate:[authGuard]  },
         { path: 'enrolled-courses', component: MyCoursesComponent,canActivate:[authGuard] },
         { path: 'custom-orders', component: MyCustomOrdersComponent,canActivate:[authGuard] },
-        
+
         { path: '', redirectTo: 'dashboard', pathMatch: 'full' }  // Default profile route
       ] },
-   
+
     {path: 'create-order',component:CreateCustomOrderComponent,canActivate:[authGuard]},
     {path:'orders/:orderId',component:CustomOrderComponent,canActivate:[authGuard]},
     {path:'custom-orders',component:MyCustomOrdersComponent,canActivate:[authGuard]},

@@ -11,7 +11,7 @@
         class="form-control"
       />
     </div>
-    
+
     <div class="form-group">
       <label for="minPrice">Min Price</label>
       <input
@@ -64,13 +64,13 @@
       <div class="card__precis">
         <a [routerLink]="['/product', product.id]" class="card__icon"><i class="fa-solid fa-heart"></i></a>
         <div>
-          <s style="color: #FF5151;"><span class="card__preci card__preci--before">{{ product.price | currency }}</span></s>
+          <s style="color: #FF5151;"><span class="card__preci card__preci--before" *ngIf="product.discount && (product.price - product.discount) !== 0">{{ product.price | currency }}</span></s>
           <span class="card__preci card__preci--now">{{ product.price - product.discount | currency }}</span>
         </div>
         <a href="" class="card__icon"><i class="fa-solid fa-cart-shopping"></i></a>
       </div>
     </article>
-    
+
   </main>
 
   <app-pagination [totalPages]="totalPages" [currentPage]="currentPage" (pageChange)="goToSlide($event)"></app-pagination>
