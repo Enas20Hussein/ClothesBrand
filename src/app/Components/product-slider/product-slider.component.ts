@@ -47,17 +47,6 @@ export class ProductSliderComponent implements OnInit {
   }
 
   
-  addToCart() {
-    const productId: any = this.route.snapshot.paramMap.get('id');
-    this.cartService.addToCart(this.accserv.getUserId(),productId,1).subscribe(
-      (cartResponse) => {
-        this.cartService.updateCartData(cartResponse); // Notify that cart data has been updated
-      },
-      (error) => {
-        console.error('Error adding product to cart', error); // Handle any errors that occur
-        //this.router.navigate(['/Login'])
-      }
-    );
-  }
+ 
 
 }
